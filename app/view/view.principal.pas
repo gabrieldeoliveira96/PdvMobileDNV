@@ -7,10 +7,10 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Layouts, System.Skia, UI.Base, UI.Standard, FMX.Skia,
   FMX.Objects, Alcinoe.FMX.Objects, FMX.ListBox, FMX.Effects,
-  FMX.Filter.Effects, uGosObjects;
+  FMX.Filter.Effects, uGosObjects, heranca.botao, view.produtos;
 
 type
-  TfrmHerancaBase1 = class(TfrmHerancaBase)
+  TfrmPrincipal = class(TfrmHerancaBotao)
     Layout1: TLayout;
     SkLabel1: TSkLabel;
     ButtonView1: TButtonView;
@@ -34,6 +34,7 @@ type
     SkLabel5: TSkLabel;
     GosCircle2: TGosCircle;
     FillRGBEffect2: TFillRGBEffect;
+    procedure lytbtn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,10 +42,40 @@ type
   end;
 
 var
-  frmHerancaBase1: TfrmHerancaBase1;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
 {$R *.fmx}
+
+procedure TfrmPrincipal.lytbtn3Click(Sender: TObject);
+begin
+  inherited;
+
+  //Loading
+
+  TThread.CreateAnonymousThread(
+  procedure
+  begin
+
+    TThread.Synchronize(nil,
+    procedure
+    begin
+      if not Assigned(frmProdutos) then
+        Application.CreateForm(TfrmProdutos,frmProdutos);
+    end);
+
+    frmProdutos.CarregaTela;
+
+    TThread.Synchronize(nil,
+    procedure
+    begin
+      frmProdutos.Show;
+    end);
+
+
+  end).Start;
+
+end;
 
 end.

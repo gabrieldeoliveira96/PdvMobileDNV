@@ -2,64 +2,12 @@ object frmHerancaBase: TfrmHerancaBase
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 600
-  ClientWidth = 400
+  ClientHeight = 633
+  ClientWidth = 393
+  Fill.Color = claWhitesmoke
   Fill.Kind = Solid
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
-  object lytBotao: TLayout
-    Align = Bottom
-    Locked = True
-    Position.Y = 530.000000000000000000
-    Size.Width = 400.000000000000000000
-    Size.Height = 70.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object lytbtn1: TLayout
-      Align = Scale
-      Locked = True
-      Size.Width = 80.000000000000000000
-      Size.Height = 70.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 4
-    end
-    object lytbtn3: TLayout
-      Align = Scale
-      Locked = True
-      Position.X = 160.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 70.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 3
-    end
-    object lytbtn4: TLayout
-      Align = Scale
-      Locked = True
-      Position.X = 240.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 70.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
-    end
-    object lytbtn2: TLayout
-      Align = Scale
-      Locked = True
-      Position.X = 80.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 70.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
-    end
-    object lytbtn5: TLayout
-      Align = Scale
-      Locked = True
-      Position.X = 320.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 70.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-    end
-  end
 end

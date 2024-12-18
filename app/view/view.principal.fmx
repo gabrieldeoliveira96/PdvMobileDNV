@@ -1,17 +1,26 @@
-inherited frmHerancaBase1: TfrmHerancaBase1
-  Caption = 'V'
+inherited frmPrincipal: TfrmPrincipal
+  Caption = 'Principal'
   ClientHeight = 712
   ClientWidth = 421
   DesignerMasterStyle = 0
   inherited lytBotao: TLayout
-    Position.Y = 642.000000000000000000
+    Position.Y = 638.000000000000000000
     Size.Width = 421.000000000000000000
     inherited lytbtn1: TLayout
       Size.Width = 84.200096130371090000
     end
     inherited lytbtn3: TLayout
+      HitTest = True
       Position.X = 168.400192260742200000
       Size.Width = 84.200241088867190000
+      OnClick = lytbtn3Click
+      inherited GosCircle3: TGosCircle
+        HitTest = False
+        Size.Width = 84.200241088867190000
+        inherited SkSvg1: TSkSvg
+          Size.Width = 64.200241088867190000
+        end
+      end
     end
     inherited lytbtn4: TLayout
       Position.X = 252.599807739257800000
@@ -313,18 +322,19 @@ inherited frmHerancaBase1: TfrmHerancaBase1
     Margins.Top = 16.000000000000000000
     Position.Y = 163.000000000000000000
     Size.Width = 421.000000000000000000
-    Size.Height = 504.000000000000000000
+    Size.Height = 390.000000000000000000
     Size.PlatformDefault = False
+    StyleLookup = 'transparentlistboxstyle'
     TabOrder = 5
     Columns = 2
     DisableFocusEffect = True
     DefaultItemStyles.ItemStyle = ''
     DefaultItemStyles.GroupHeaderStyle = ''
     DefaultItemStyles.GroupFooterStyle = ''
-    Viewport.Width = 417.000000000000000000
-    Viewport.Height = 500.000000000000000000
+    Viewport.Width = 421.000000000000000000
+    Viewport.Height = 390.000000000000000000
     object ListBoxItem1: TListBoxItem
-      Size.Width = 208.000000000000000000
+      Size.Width = 210.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
@@ -348,7 +358,7 @@ inherited frmHerancaBase1: TfrmHerancaBase1
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
         Margins.Bottom = 16.000000000000000000
-        Size.Width = 176.000000000000000000
+        Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
@@ -360,13 +370,13 @@ inherited frmHerancaBase1: TfrmHerancaBase1
           Margins.Top = 8.000000000000000000
           Margins.Right = 8.000000000000000000
           Margins.Bottom = 8.000000000000000000
-          Size.Width = 160.000000000000000000
+          Size.Width = 162.000000000000000000
           Size.Height = 102.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           object Layout4: TLayout
             Align = Top
-            Size.Width = 160.000000000000000000
+            Size.Width = 162.000000000000000000
             Size.Height = 50.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
@@ -578,7 +588,7 @@ inherited frmHerancaBase1: TfrmHerancaBase1
             Margins.Right = 8.000000000000000000
             Position.X = 8.000000000000000000
             Position.Y = 54.000000000000000000
-            Size.Width = 144.000000000000000000
+            Size.Width = 146.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
             StyledSettings = [Family, Size]
@@ -596,7 +606,7 @@ inherited frmHerancaBase1: TfrmHerancaBase1
             Margins.Right = 8.000000000000000000
             Position.X = 8.000000000000000000
             Position.Y = 77.000000000000000000
-            Size.Width = 144.000000000000000000
+            Size.Width = 146.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
             StyledSettings = [Family, Size]
@@ -611,8 +621,8 @@ inherited frmHerancaBase1: TfrmHerancaBase1
       end
     end
     object ListBoxItem2: TListBoxItem
-      Position.X = 208.000000000000000000
-      Size.Width = 208.000000000000000000
+      Position.X = 210.000000000000000000
+      Size.Width = 210.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
@@ -622,7 +632,7 @@ inherited frmHerancaBase1: TfrmHerancaBase1
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
         Margins.Bottom = 16.000000000000000000
-        Size.Width = 176.000000000000000000
+        Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
@@ -632,7 +642,7 @@ inherited frmHerancaBase1: TfrmHerancaBase1
     end
     object ListBoxItem3: TListBoxItem
       Position.Y = 150.000000000000000000
-      Size.Width = 208.000000000000000000
+      Size.Width = 210.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -642,7 +652,7 @@ inherited frmHerancaBase1: TfrmHerancaBase1
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
         Margins.Bottom = 16.000000000000000000
-        Size.Width = 176.000000000000000000
+        Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
@@ -651,9 +661,9 @@ inherited frmHerancaBase1: TfrmHerancaBase1
       end
     end
     object ListBoxItem4: TListBoxItem
-      Position.X = 208.000000000000000000
+      Position.X = 210.000000000000000000
       Position.Y = 150.000000000000000000
-      Size.Width = 208.000000000000000000
+      Size.Width = 210.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -663,7 +673,7 @@ inherited frmHerancaBase1: TfrmHerancaBase1
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
         Margins.Bottom = 16.000000000000000000
-        Size.Width = 176.000000000000000000
+        Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None

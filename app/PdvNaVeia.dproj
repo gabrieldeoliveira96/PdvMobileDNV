@@ -274,13 +274,26 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="view\view.principal.pas">
+            <Form>frmPrincipal</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <DCCReference Include="heranca\heranca.base.pas">
             <Form>frmHerancaBase</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="view\view.principal.pas">
-            <Form>frmHerancaBase1</Form>
+        <DCCReference Include="heranca\heranca.botao.pas">
+            <Form>frmHerancaBotao</Form>
             <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="view\view.produtos.pas">
+            <Form>frmProdutos</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="view\frame\frame.produtos.pas">
+            <Form>frameProduto</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

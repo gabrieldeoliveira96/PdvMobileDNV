@@ -1,0 +1,88 @@
+inherited frmHerancaBotao: TfrmHerancaBotao
+  Caption = 'frmHerancaBase1'
+  DesignerMasterStyle = 0
+  object lytBotao: TLayout
+    Align = Bottom
+    Locked = True
+    Margins.Bottom = 24.000000000000000000
+    Position.Y = 559.000000000000000000
+    Size.Width = 393.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lytbtn1: TLayout
+      Align = Scale
+      Locked = True
+      Size.Width = 78.599998474121090000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+    end
+    object lytbtn3: TLayout
+      Align = Scale
+      Locked = True
+      Position.X = 157.199996948242200000
+      Size.Width = 78.599990844726560000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object GosCircle3: TGosCircle
+        Align = Client
+        Fill.Color = xFF0086ED
+        Size.Width = 78.599990844726560000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object SkSvg1: TSkSvg
+          Align = Client
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 58.599990844726560000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.or' +
+            'g/Graphics/SVG/1.1/DTD/svg11.dtd">'#13#10#13#10'<!-- Uploaded to: SVG Repo' +
+            ', www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->'#13#10'<sv' +
+            'g width="800px" height="800px" viewBox="0 0 24 24" fill="none" x' +
+            'mlns="http://www.w3.org/2000/svg" stroke="#ffffff">'#13#10#13#10'<g id="SV' +
+            'GRepo_bgCarrier" stroke-width="0"/>'#13#10#13#10'<g id="SVGRepo_tracerCarr' +
+            'ier" stroke-linecap="round" stroke-linejoin="round"/>'#13#10#13#10'<g id="' +
+            'SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#000000' +
+            '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round' +
+            '"/> </g>'#13#10#13#10'</svg>'
+        end
+      end
+    end
+    object lytbtn4: TLayout
+      Align = Scale
+      Locked = True
+      Position.X = 235.800003051757800000
+      Size.Width = 78.599990844726560000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+    end
+    object lytbtn2: TLayout
+      Align = Scale
+      Locked = True
+      Position.X = 78.599998474121090000
+      Size.Width = 78.599998474121090000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object lytbtn5: TLayout
+      Align = Scale
+      Locked = True
+      Position.X = 314.399993896484400000
+      Size.Width = 78.600006103515630000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+  end
+end

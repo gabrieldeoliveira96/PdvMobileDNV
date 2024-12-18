@@ -1,0 +1,51 @@
+object frameProduto: TframeProduto
+  Margins.Top = 16.000000000000000000
+  Size.Width = 387.000000000000000000
+  Size.Height = 64.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Color = claWhite
+    Size.Width = 387.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    object lblProduto: TSkLabel
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 355.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Size, FontColor]
+      TextSettings.Font.Weight = Bold
+      Words = <
+        item
+          Text = 'Produto 1'
+        end>
+    end
+    object lblDescricao: TSkLabel
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 35.000000000000000000
+      Size.Width = 355.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Size]
+      TextSettings.Font.Weight = Semibold
+      TextSettings.FontColor = xFF3C3C3C
+      Words = <
+        item
+          Text = 'Descri'#231#227'o Produto 1'
+        end>
+    end
+  end
+end

@@ -17,6 +17,12 @@ type
     frameProduto1: TframeProduto;
   private
     { Private declarations }
+    {$IFDEF MSWINDOWS}
+    procedure CadastrarVenda(Sender:TObject);
+    {$ELSE}
+    procedure CadastrarVenda(Sender:TObject; const Point: TPointF);
+    {$ENDIF}
+
   public
     { Public declarations }
     procedure CarregaTela;
@@ -29,6 +35,8 @@ implementation
 
 {$R *.fmx}
 
+uses view.venda;
+
 { TfrmProdutos }
 
 procedure TfrmProdutos.CarregaTela;
@@ -40,6 +48,8 @@ begin
     LFrame.Name:= 'FRame'+i.ToString;
     LFrame.Align:= TAlignLayout.Top;
 
+    //LFrame.Tag:= 1; //ID
+
     LFrame.lblProduto.Text:= 'Produto '+i.ToString;
     LFrame.lblDescricao.Text:= 'Descrição do Produto '+i.ToString;
 
@@ -47,9 +57,59 @@ begin
     LFrame.Margins.Right:= 24;
     LFrame.Margins.Top:= 16;
 
+    LFrame.TagString:= LFrame.lblProduto.Text;
+
+    {$IFDEF MSWINDOWS}
+    LFrame.OnClick:= CadastrarVenda;
+    {$ELSE}
+    LFrame.OnTap:= CadastrarVenda;
+    {$ENDIF}
+
     VertScrollBox1.AddObject(LFrame);
                                           
   end;
+end;
+
+{$IFDEF MSWINDOWS}
+procedure TfrmProdutos.CadastrarVenda(Sender:TObject);
+{$ELSE}
+procedure TfrmProdutos.CadastrarVenda(Sender:TObject; const Point: TPointF);
+{$ENDIF}
+
+var
+ LProduto:string;
+begin
+
+  LProduto:= TframeProduto(Sender).TagString;
+
+
+  //Loading
+
+  TThread.CreateAnonymousThread(
+  procedure
+  begin
+
+    TThread.Synchronize(nil,
+    procedure
+    begin
+      if not Assigned(frmVenda) then
+        Application.CreateForm(TfrmVenda,frmVenda);
+    end);
+
+    frmVenda.CarregaTela(LProduto);
+
+    TThread.Synchronize(nil,
+    procedure
+    begin
+      frmVenda.Show;
+    end);
+
+
+  end).Start;
+
+
+
+//
 end;
 
 end.

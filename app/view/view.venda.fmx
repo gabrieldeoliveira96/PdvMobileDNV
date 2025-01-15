@@ -1,0 +1,271 @@
+inherited frmVenda: TfrmVenda
+  Caption = 'S'
+  ClientHeight = 593
+  ClientWidth = 402
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Bottom
+    Margins.Bottom = 24.000000000000000000
+    Position.Y = 504.000000000000000000
+    Size.Width = 402.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Layout6: TLayout
+      Align = Right
+      Margins.Right = 24.000000000000000000
+      Position.X = 225.000000000000000000
+      Size.Width = 153.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object GosButtonView1: TGosButtonView
+        Align = VertCenter
+        Background.XRadius = 5.000000000000000000
+        Background.YRadius = 5.000000000000000000
+        Background.ItemDefault.Color = xFF0086ED
+        Size.Width = 153.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        Position.Y = 12.000000000000000000
+        TabOrder = 0
+        TextSettings.Color.Default = claWhite
+        TextSettings.Color.Focused = claNull
+        TextSettings.Color.Selected = claNull
+        TextSettings.Color.Enabled = claNull
+        TextSettings.Font.Family = 'Arial'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.Gravity = Center
+        object SkLabel7: TSkLabel
+          Align = Client
+          Size.Width = 145.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size]
+          TextSettings.Font.Weight = Semibold
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Words = <
+            item
+              Text = 'Salvar'
+            end>
+        end
+      end
+    end
+    object Layout7: TLayout
+      Align = Left
+      Margins.Left = 24.000000000000000000
+      Position.X = 24.000000000000000000
+      Size.Width = 153.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object GosButtonView2: TGosButtonView
+        Align = VertCenter
+        Background.XRadius = 5.000000000000000000
+        Background.YRadius = 5.000000000000000000
+        Background.ItemDefault.Color = claWhite
+        Background.Border.Color.Default = xFF0086ED
+        Background.Border.Color.Focused = claNull
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Enabled = claNull
+        Size.Width = 153.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        Position.Y = 12.000000000000000000
+        TabOrder = 0
+        TextSettings.Color.Default = claWhite
+        TextSettings.Color.Focused = claNull
+        TextSettings.Color.Selected = claNull
+        TextSettings.Color.Enabled = claNull
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Gravity = Center
+        object SkLabel8: TSkLabel
+          Align = Client
+          Size.Width = 145.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size]
+          TextSettings.Font.Weight = Semibold
+          TextSettings.FontColor = xFF0086ED
+          TextSettings.HorzAlign = Center
+          Words = <
+            item
+              Text = 'Cancelar'
+            end>
+        end
+      end
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Margins.Left = 16.000000000000000000
+    Margins.Top = 16.000000000000000000
+    Margins.Right = 16.000000000000000000
+    Margins.Bottom = 16.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 82.000000000000000000
+    Size.Width = 370.000000000000000000
+    Size.Height = 257.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Layout3: TLayout
+      Align = Top
+      Size.Width = 370.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object SkLabel1: TSkLabel
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 16.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style]
+        TextSettings.Font.Size = 12.000000000000000000
+        TextSettings.FontColor = claGray
+        Words = <
+          item
+            Text = 'Nome'
+          end>
+      end
+      object lblProduto: TSkLabel
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        Words = <
+          item
+            Text = 'Bateria para Carro'
+          end>
+      end
+    end
+    object Layout4: TLayout
+      Align = Top
+      Position.Y = 75.000000000000000000
+      Size.Width = 370.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object SkLabel3: TSkLabel
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        Words = <
+          item
+            Text = 'R$ 120,00'
+          end>
+      end
+      object SkLabel4: TSkLabel
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 16.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style]
+        TextSettings.Font.Size = 12.000000000000000000
+        TextSettings.FontColor = claGray
+        Words = <
+          item
+            Text = 'Valor'
+          end>
+      end
+    end
+    object Layout5: TLayout
+      Align = Top
+      Position.Y = 150.000000000000000000
+      Size.Width = 370.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object SkLabel5: TSkLabel
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 16.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style]
+        TextSettings.Font.Size = 12.000000000000000000
+        TextSettings.FontColor = claGray
+        Words = <
+          item
+            Text = 'Fornecedor'
+          end>
+      end
+      object SkLabel6: TSkLabel
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        Words = <
+          item
+            Text = 'EletroCar'
+          end>
+      end
+    end
+  end
+  object Layout8: TLayout
+    Align = Top
+    Margins.Top = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 402.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object SkLabel9: TSkLabel
+      Align = Contents
+      Size.Width = 402.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, FontColor]
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.Weight = Semibold
+      TextSettings.HorzAlign = Center
+      Words = <
+        item
+          Text = 'Tela de Venda'
+        end>
+      object SpeedButton1: TSpeedButton
+        Align = Left
+        Size.Width = 80.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'arrowlefttoolbutton'
+        Text = 'SpeedButton1'
+        TextSettings.Trimming = None
+        object FillRGBEffect1: TFillRGBEffect
+          Color = claBlack
+        end
+      end
+    end
+  end
+end

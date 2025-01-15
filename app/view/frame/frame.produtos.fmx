@@ -6,6 +6,7 @@ object frameProduto: TframeProduto
   object Rectangle1: TRectangle
     Align = Client
     Fill.Color = claWhite
+    HitTest = False
     Size.Width = 387.000000000000000000
     Size.Height = 64.000000000000000000
     Size.PlatformDefault = False

@@ -2,6 +2,9 @@ inherited frmPrincipal: TfrmPrincipal
   Caption = 'Principal'
   ClientHeight = 712
   ClientWidth = 421
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
   DesignerMasterStyle = 0
   inherited lytBotao: TLayout
     Position.Y = 638.000000000000000000
@@ -322,7 +325,7 @@ inherited frmPrincipal: TfrmPrincipal
     Margins.Top = 16.000000000000000000
     Position.Y = 163.000000000000000000
     Size.Width = 421.000000000000000000
-    Size.Height = 390.000000000000000000
+    Size.Height = 310.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'transparentlistboxstyle'
     TabOrder = 5
@@ -332,7 +335,7 @@ inherited frmPrincipal: TfrmPrincipal
     DefaultItemStyles.GroupHeaderStyle = ''
     DefaultItemStyles.GroupFooterStyle = ''
     Viewport.Width = 421.000000000000000000
-    Viewport.Height = 390.000000000000000000
+    Viewport.Height = 310.000000000000000000
     object ListBoxItem1: TListBoxItem
       Size.Width = 210.000000000000000000
       Size.Height = 150.000000000000000000
@@ -581,31 +584,13 @@ inherited frmPrincipal: TfrmPrincipal
               end
             end
           end
-          object SkLabel4: TSkLabel
-            Align = Top
-            Margins.Left = 8.000000000000000000
-            Margins.Top = 4.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Position.X = 8.000000000000000000
-            Position.Y = 54.000000000000000000
-            Size.Width = 146.000000000000000000
-            Size.Height = 19.000000000000000000
-            Size.PlatformDefault = False
-            StyledSettings = [Family, Size]
-            TextSettings.Font.Weight = Semibold
-            TextSettings.FontColor = claWhite
-            Words = <
-              item
-                Text = '12 Vendas'
-              end>
-          end
           object SkLabel5: TSkLabel
             Align = Top
             Margins.Left = 8.000000000000000000
             Margins.Top = 4.000000000000000000
             Margins.Right = 8.000000000000000000
             Position.X = 8.000000000000000000
-            Position.Y = 77.000000000000000000
+            Position.Y = 73.000000000000000000
             Size.Width = 146.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
@@ -616,6 +601,49 @@ inherited frmPrincipal: TfrmPrincipal
               item
                 Text = 'Hoje'
               end>
+          end
+          object Layout5: TLayout
+            Align = Top
+            Position.Y = 50.000000000000000000
+            Size.Width = 162.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object lblQtdVendas: TSkLabel
+              Align = Left
+              Margins.Left = 8.000000000000000000
+              Margins.Top = 4.000000000000000000
+              Position.X = 8.000000000000000000
+              Position.Y = 4.000000000000000000
+              Size.Width = 13.409999847412110000
+              Size.Height = 15.000000000000000000
+              Size.PlatformDefault = False
+              StyledSettings = [Family, Size]
+              TextSettings.Font.Weight = Semibold
+              TextSettings.FontColor = claWhite
+              Words = <
+                item
+                  Text = '12'
+                end>
+            end
+            object SkLabel6: TSkLabel
+              Align = Left
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 4.000000000000000000
+              Margins.Right = 8.000000000000000000
+              Position.X = 25.409999847412110000
+              Position.Y = 4.000000000000000000
+              Size.Width = 45.470001220703130000
+              Size.Height = 15.000000000000000000
+              Size.PlatformDefault = False
+              StyledSettings = [Family, Size]
+              TextSettings.Font.Weight = Semibold
+              TextSettings.FontColor = claWhite
+              Words = <
+                item
+                  Text = 'Vendas'
+                end>
+            end
           end
         end
       end
@@ -681,5 +709,14 @@ inherited frmPrincipal: TfrmPrincipal
         YRadius = 15.000000000000000000
       end
     end
+  end
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 421.000000000000000000
+    Size.Height = 165.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Viewport.Width = 421.000000000000000000
+    Viewport.Height = 165.000000000000000000
   end
 end

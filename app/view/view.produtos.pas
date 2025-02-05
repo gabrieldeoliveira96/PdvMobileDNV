@@ -15,8 +15,10 @@ type
     FillRGBEffect1: TFillRGBEffect;
     VertScrollBox1: TVertScrollBox;
     frameProduto1: TframeProduto;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
+    FCallBack:TProc;
     {$IFDEF MSWINDOWS}
     procedure CadastrarVenda(Sender:TObject);
     {$ELSE}
@@ -25,7 +27,7 @@ type
 
   public
     { Public declarations }
-    procedure CarregaTela;
+    procedure CarregaTela(ACallBack:TProc);
   end;
 
 var
@@ -39,8 +41,9 @@ uses view.venda;
 
 { TfrmProdutos }
 
-procedure TfrmProdutos.CarregaTela;
+procedure TfrmProdutos.CarregaTela(ACallBack:TProc);
 begin
+  FCallBack:= ACallBack;
   for var i := 0 to 10 do
   begin
     var LFrame:= TframeProduto.Create(self);
@@ -70,6 +73,13 @@ begin
   end;
 end;
 
+procedure TfrmProdutos.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  Action:= TCloseAction.caFree;
+  frmProdutos:= nil;
+end;
+
 {$IFDEF MSWINDOWS}
 procedure TfrmProdutos.CadastrarVenda(Sender:TObject);
 {$ELSE}
@@ -96,12 +106,15 @@ begin
         Application.CreateForm(TfrmVenda,frmVenda);
     end);
 
-    frmVenda.CarregaTela(LProduto);
+    frmVenda.CarregaTela(LProduto, FCallBack);
 
     TThread.Synchronize(nil,
     procedure
     begin
       frmVenda.Show;
+
+      self.Close;
+
     end);
 
 

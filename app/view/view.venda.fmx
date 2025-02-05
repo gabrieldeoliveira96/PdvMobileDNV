@@ -2,6 +2,7 @@ inherited frmVenda: TfrmVenda
   Caption = 'S'
   ClientHeight = 593
   ClientWidth = 402
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object Layout1: TLayout
     Align = Bottom
@@ -29,6 +30,7 @@ inherited frmVenda: TfrmVenda
         Size.PlatformDefault = False
         Position.Y = 12.000000000000000000
         TabOrder = 0
+        OnClick = GosButtonView1Click
         TextSettings.Color.Default = claWhite
         TextSettings.Color.Focused = claNull
         TextSettings.Color.Selected = claNull
@@ -39,6 +41,7 @@ inherited frmVenda: TfrmVenda
         TextSettings.Gravity = Center
         object SkLabel7: TSkLabel
           Align = Client
+          Locked = True
           Size.Width = 145.000000000000000000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False

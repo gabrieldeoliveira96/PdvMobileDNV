@@ -1,0 +1,103 @@
+object FrameVendas: TFrameVendas
+  Size.Width = 388.000000000000000000
+  Size.Height = 68.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Color = claWhite
+    HitTest = False
+    Size.Width = 388.000000000000000000
+    Size.Height = 68.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    object lblCliente: TSkLabel
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 356.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Size, FontColor]
+      TextSettings.Font.Weight = Bold
+      Words = <
+        item
+          Text = 'Cliente X'
+        end>
+    end
+    object Layout1: TLayout
+      Align = Top
+      Position.Y = 27.000000000000000000
+      Size.Width = 388.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lblValor: TSkLabel
+        Align = Left
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 60.310001373291020000
+        Size.Width = 52.979999542236330000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'R$ 90,00'
+          end>
+      end
+      object SkLabel1: TSkLabel
+        Align = Left
+        Margins.Left = 16.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 16.000000000000000000
+        Size.Width = 36.310001373291020000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.Font.Weight = Semibold
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'Valor '
+          end>
+      end
+      object lblData: TSkLabel
+        Align = Right
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 245.529983520507800000
+        Size.Width = 126.470001220703100000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = '04/02/2025 21:05:00'
+          end>
+      end
+      object SkLabel3: TSkLabel
+        Align = Right
+        Margins.Left = 16.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 207.809982299804700000
+        Size.Width = 29.719999313354490000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.Font.Weight = Semibold
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'Data'
+          end>
+      end
+    end
+  end
+end

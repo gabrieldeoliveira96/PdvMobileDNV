@@ -1,5 +1,6 @@
 inherited frmProdutos: TfrmProdutos
   Caption = 'frmHerancaBase1'
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object Layout1: TLayout
     Align = Top

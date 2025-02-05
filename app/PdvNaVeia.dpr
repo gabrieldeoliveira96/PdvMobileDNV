@@ -8,7 +8,8 @@ uses
   heranca.botao in 'heranca\heranca.botao.pas' {frmHerancaBotao},
   view.produtos in 'view\view.produtos.pas' {frmProdutos},
   frame.produtos in 'view\frame\frame.produtos.pas' {frameProduto: TFrame},
-  view.venda in 'view\view.venda.pas' {frmVenda};
+  view.venda in 'view\view.venda.pas' {frmVenda},
+  frame.vendas in 'view\frame\frame.vendas.pas' {FrameVendas: TFrame};
 
 {$R *.res}
 

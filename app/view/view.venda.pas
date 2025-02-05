@@ -32,11 +32,14 @@ type
     SpeedButton1: TSpeedButton;
     FillRGBEffect1: TFillRGBEffect;
     SkLabel9: TSkLabel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure GosButtonView1Click(Sender: TObject);
   private
     { Private declarations }
+    FCallBack:TProc;
   public
     { Public declarations }
-    procedure CarregaTela(AProduto:string);
+    procedure CarregaTela(AProduto:string; ACallBack:TProc);
   end;
 
 var
@@ -46,17 +49,36 @@ implementation
 
 {$R *.fmx}
 
+uses view.principal;
+
 { TfrmHerancaBase1 }
 
-procedure TfrmVenda.CarregaTela(AProduto:string);
+procedure TfrmVenda.CarregaTela(AProduto:string; ACallBack:TProc);
 begin
-
+  FCallBack:= ACallBack;
   TThread.Synchronize(nil,
   procedure
   begin
     lblProduto.Text:= AProduto;
 
   end);
+
+end;
+
+procedure TfrmVenda.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  Action:= TCloseAction.caFree;
+  frmVenda:= nil;
+end;
+
+procedure TfrmVenda.GosButtonView1Click(Sender: TObject);
+begin
+  inherited;
+ //confirmação
+
+  FCallBack;
+  self.Close;
 
 end;
 

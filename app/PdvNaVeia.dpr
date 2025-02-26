@@ -9,7 +9,10 @@ uses
   view.produtos in 'view\view.produtos.pas' {frmProdutos},
   frame.produtos in 'view\frame\frame.produtos.pas' {frameProduto: TFrame},
   view.venda in 'view\view.venda.pas' {frmVenda},
-  frame.vendas in 'view\frame\frame.vendas.pas' {FrameVendas: TFrame};
+  frame.vendas in 'view\frame\frame.vendas.pas' {FrameVendas: TFrame},
+  uFancyDialog in 'feature\uFancyDialog.pas',
+  view.cliente in 'view\view.cliente.pas' {frmCliente},
+  view.addcliente in 'view\view.addcliente.pas' {frmaddcliente};
 
 {$R *.res}
 

@@ -8,7 +8,7 @@ uses
   heranca.base, FMX.Layouts, System.Skia, UI.Base, UI.Standard, FMX.Skia,
   FMX.Objects, Alcinoe.FMX.Objects, FMX.ListBox, FMX.Effects,
   FMX.Filter.Effects, uGosObjects, heranca.botao, view.produtos,
-  System.Generics.Collections, frame.vendas;
+  System.Generics.Collections, frame.vendas, view.addcliente;
 
 type
   TfrmPrincipal = class(TfrmHerancaBotao)
@@ -18,7 +18,7 @@ type
     Layout2: TLayout;
     SkLabel2: TSkLabel;
     SkLabel3: TSkLabel;
-    GosCircle1: TGosCircle;
+    GosCircle1: TALCircle;
     FillRGBEffect1: TFillRGBEffect;
     ListBox1: TListBox;
     ListBoxItem1: TListBoxItem;
@@ -33,15 +33,24 @@ type
     Layout4: TLayout;
     lblQtdVendas: TSkLabel;
     SkLabel5: TSkLabel;
-    GosCircle2: TGosCircle;
+    GosCircle2: TALCircle;
     FillRGBEffect2: TFillRGBEffect;
     SkLabel6: TSkLabel;
     Layout5: TLayout;
     VertScrollBox1: TVertScrollBox;
-    procedure lytbtn3Click(Sender: TObject);
+    Layout6: TLayout;
+    Layout7: TLayout;
+    GosCircle4: TALCircle;
+    FillRGBEffect3: TFillRGBEffect;
+    SkLabel4: TSkLabel;
+    Layout8: TLayout;
+    SkLabel7: TSkLabel;
+    SkLabel8: TSkLabel;
+    procedure btnAddClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure ListBoxItem2Click(Sender: TObject);
   private
     { Private declarations }
     FListaVendas:TObjectList<TFrameVendas>;
@@ -57,6 +66,8 @@ var
 implementation
 
 {$R *.fmx}
+
+uses view.cliente;
 
 procedure TfrmPrincipal.CarregaListaVendas;
 begin
@@ -82,6 +93,8 @@ begin
     FListaVendas.Add(LFrame);
 
   end;
+
+  lblQtdVendas.Text:= FListaVendas.Count.ToString;
 
 end;
 
@@ -109,21 +122,46 @@ begin
   CarregaTela;
 end;
 
-procedure TfrmPrincipal.lytbtn3Click(Sender: TObject);
-var
- LProc:TProc;
+procedure TfrmPrincipal.ListBoxItem2Click(Sender: TObject);
 begin
   inherited;
+  //loading
 
-  //Loading
-
-  LProc:=
+  TThread.CreateAnonymousThread(
   procedure
   begin
-    lblQtdVendas.Text:= (lblQtdVendas.Text.ToInteger+1).ToString;
-    CarregaListaVendas;
-  end;
 
+    Tthread.Synchronize(nil,
+    procedure
+    begin
+      if not Assigned(frmCliente) then
+        Application.CreateForm(TfrmCliente, frmCliente);
+
+    end);
+
+    frmCliente.CarregaTela(
+    procedure
+    begin
+      frmaddcliente.Close;
+      frmCliente.Close;
+      ShowMessage('oi');
+    end);
+
+    Tthread.Synchronize(nil,
+    procedure
+    begin
+      frmCliente.Show;
+
+    end);
+
+  end).Start;
+
+
+end;
+
+procedure TfrmPrincipal.btnAddClick(Sender: TObject);
+begin
+  inherited;
 
   TThread.CreateAnonymousThread(
   procedure
@@ -136,7 +174,7 @@ begin
         Application.CreateForm(TfrmProdutos,frmProdutos);
     end);
 
-    frmProdutos.CarregaTela(LProc);
+    frmProdutos.CarregaTela(CarregaListaVendas);
 
     TThread.Synchronize(nil,
     procedure

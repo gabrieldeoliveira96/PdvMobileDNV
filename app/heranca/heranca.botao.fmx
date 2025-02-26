@@ -18,7 +18,7 @@ inherited frmHerancaBotao: TfrmHerancaBotao
       Size.PlatformDefault = False
       TabOrder = 4
     end
-    object lytbtn3: TLayout
+    object btnAdd: TLayout
       Align = Scale
       Locked = True
       Position.X = 157.199996948242200000
@@ -26,7 +26,7 @@ inherited frmHerancaBotao: TfrmHerancaBotao
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      object GosCircle3: TGosCircle
+      object GosCircle3: TALCircle
         Align = Client
         Fill.Color = xFF0086ED
         Size.Width = 78.599990844726560000

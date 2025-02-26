@@ -7,11 +7,11 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Objects, uGosObjects, uGosBase, uGosStandard, FMX.Layouts,
   System.Skia, FMX.Skia, FMX.Effects, FMX.Filter.Effects,
-  FMX.Controls.Presentation;
+  FMX.Controls.Presentation, uFancyDialog, UI.Base, UI.Standard;
 
 type
   TfrmVenda = class(TfrmHerancaBase)
-    GosButtonView1: TGosButtonView;
+    GosButtonView1: TButtonView;
     Layout1: TLayout;
     Layout2: TLayout;
     SkLabel1: TSkLabel;
@@ -25,7 +25,7 @@ type
     Layout5: TLayout;
     Layout6: TLayout;
     Layout7: TLayout;
-    GosButtonView2: TGosButtonView;
+    GosButtonView2: TButtonView;
     SkLabel7: TSkLabel;
     SkLabel8: TSkLabel;
     Layout8: TLayout;
@@ -34,9 +34,14 @@ type
     SkLabel9: TSkLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure GosButtonView1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure SkLabel8Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
     FCallBack:TProc;
+    FMsg:TFancyDialog;
   public
     { Public declarations }
     procedure CarregaTela(AProduto:string; ACallBack:TProc);
@@ -72,14 +77,47 @@ begin
   frmVenda:= nil;
 end;
 
+procedure TfrmVenda.FormCreate(Sender: TObject);
+begin
+  inherited;
+  FMsg:= TFancyDialog.Create(self);
+end;
+
+procedure TfrmVenda.FormDestroy(Sender: TObject);
+begin
+  inherited;
+  FreeAndNil(FMsg);
+
+end;
+
 procedure TfrmVenda.GosButtonView1Click(Sender: TObject);
 begin
   inherited;
- //confirmação
 
-  FCallBack;
+  FMsg.Show(
+  TIconDialog.Question,
+  'Confirme',
+  'Confirme para salvar',
+  'Confirmar',
+  procedure
+  begin
+    FCallBack;
+    self.Close;
+  end,
+  'Sair');
+end;
+
+procedure TfrmVenda.SkLabel8Click(Sender: TObject);
+begin
+  inherited;
   self.Close;
 
+end;
+
+procedure TfrmVenda.SpeedButton1Click(Sender: TObject);
+begin
+  inherited;
+  self.Close;
 end;
 
 end.

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AA3066B5-20A9-41A7-ADE5-60A4EF1AB3D8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="app\PdvNaVeia.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="api\PdvAPI.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PdvNaVeia">
+        <MSBuild Projects="app\PdvNaVeia.dproj"/>
+    </Target>
+    <Target Name="PdvNaVeia:Clean">
+        <MSBuild Projects="app\PdvNaVeia.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PdvNaVeia:Make">
+        <MSBuild Projects="app\PdvNaVeia.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PdvAPI">
+        <MSBuild Projects="api\PdvAPI.dproj"/>
+    </Target>
+    <Target Name="PdvAPI:Clean">
+        <MSBuild Projects="api\PdvAPI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PdvAPI:Make">
+        <MSBuild Projects="api\PdvAPI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PdvNaVeia;PdvAPI"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PdvNaVeia:Clean;PdvAPI:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PdvNaVeia:Make;PdvAPI:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

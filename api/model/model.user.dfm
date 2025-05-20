@@ -1,10 +1,15 @@
 inherited modelUser: TmodelUser
   Height = 331
   Width = 591
-  inherited DB: TFDConnection
-    LoginPrompt = False
+  inherited FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorHome = ''
+    VendorLib = 
+      'D:\Fontes\DelphiFullStack2.0\PdvMobileDNV\api\Win32\Debug\libmar' +
+      'iadb.dll'
+    Left = 384
+    Top = 64
   end
-  object qUser: TFDQuery [1]
+  object qUser: TFDQuery
     Connection = DB
     SQL.Strings = (
       'select * from &macro')
@@ -32,7 +37,15 @@ inherited modelUser: TmodelUser
       Size = 50
     end
   end
-  inherited FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorHome = 'C:\Desenvolvimento\PdvMobileDNV\api\libmysql.dll'
+  object QryLogin: TFDQuery
+    Connection = DB
+    SQL.Strings = (
+      'select '
+      '  cod as ID,'
+      '  Login as Username,'
+      '  senha'
+      ' from user as tab_login')
+    Left = 280
+    Top = 224
   end
 end

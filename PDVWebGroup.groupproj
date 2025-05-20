@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{28884F59-9E65-4751-8974-A4CCE421C5D2}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\PdvMobileDNV\api\PdvAPI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="frontend\PDV_WEB.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PdvAPI">
+        <MSBuild Projects="..\PdvMobileDNV\api\PdvAPI.dproj"/>
+    </Target>
+    <Target Name="PdvAPI:Clean">
+        <MSBuild Projects="..\PdvMobileDNV\api\PdvAPI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PdvAPI:Make">
+        <MSBuild Projects="..\PdvMobileDNV\api\PdvAPI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PDV_WEB">
+        <MSBuild Projects="frontend\PDV_WEB.dproj"/>
+    </Target>
+    <Target Name="PDV_WEB:Clean">
+        <MSBuild Projects="frontend\PDV_WEB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PDV_WEB:Make">
+        <MSBuild Projects="frontend\PDV_WEB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PdvAPI;PDV_WEB"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PdvAPI:Clean;PDV_WEB:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PdvAPI:Make;PDV_WEB:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

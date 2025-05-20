@@ -1,0 +1,23 @@
+Ir no repositorio https://github.com/Daniel09Fernandes/DinosStyle 
+baixar os fontes, na pasta assetes, copiar a pasta css e js, e colocar junto do executavel. 
+
+arrastar todos os fontes da pasta ConversorBootstrap para dentro do seu projeto, ou com botão direito no seu projeto, clicar em adicionar e adicionar os fontes desta pasta. conforme ensinado na primeira aula. 
+
+após isso, ajustar no seu dpr os caminhos 
+
+  Bootstrap.Converter.Buttons.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Buttons.Dinos.pas',
+  Bootstrap.Converter.Checkbox.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Checkbox.Dinos.pas',
+  Bootstrap.Converter.Edits.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Edits.Dinos.pas',
+  Bootstrap.Converter.Grids.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Grids.Dinos.pas',
+  Bootstrap.Converter.Images.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Images.Dinos.pas',
+  Bootstrap.Converter.Labels.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Labels.Dinos.pas',
+  Bootstrap.Converter.Map.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Map.Dinos.pas',
+  Bootstrap.Converter.Memos.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Memos.Dinos.pas',
+  Bootstrap.Converter.Panels.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bootstrap.Converter.Panels.Dinos.pas',
+  Bridge.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\Bridge.Dinos.pas',
+  js.SweetAlert.Dinos in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\js.SweetAlert.Dinos.pas',
+  uConst.Buttons in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\uConst.Buttons.pas',
+  uConst.Form.Controls in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\uConst.Form.Controls.pas',
+  uConst.Grids in '..\..\..\componenetes\DinosStyle\ConversorBootstrap\uConst.Grids.pas',
+
+para a sua pasta, ou apagar e incluir novamente do seu local, para ficar com o caminho correto

@@ -1,0 +1,249 @@
+inherited frmLogin: TfrmLogin
+  Caption = 'frmHerancaBase1'
+  Fill.Kind = Gradient
+  Fill.Gradient.Points = <
+    item
+      Color = xFF2C8FC4
+      Offset = 0.000000000000000000
+    end
+    item
+      Color = xFF58C4EF
+      Offset = 1.000000000000000000
+    end>
+  Fill.Gradient.StartPosition.Y = 0.500000000000000000
+  Fill.Gradient.StopPosition.X = 1.000000000000000000
+  Fill.Gradient.StopPosition.Y = 0.500000000000000000
+  DesignerMasterStyle = 0
+  object S: TLayout
+    Align = Top
+    Size.Width = 393.000000000000000000
+    Size.Height = 89.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label1: TLabel
+      Align = Left
+      StyledSettings = [Style]
+      Size.Width = 121.000000000000000000
+      Size.Height = 89.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Constantia'
+      TextSettings.Font.Size = 32.000000000000000000
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Pdv'
+      TabOrder = 1
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Position.Y = 89.000000000000000000
+    Size.Width = 393.000000000000000000
+    Size.Height = 128.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label2: TLabel
+      Align = Left
+      StyledSettings = []
+      Size.Width = 345.000000000000000000
+      Size.Height = 128.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Arial'
+      TextSettings.Font.Size = 32.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
+      Text = 'Acesse a sua conta'
+      TabOrder = 1
+    end
+  end
+  object Rectangle1: TRectangle
+    Align = Client
+    Corners = [TopLeft, TopRight]
+    Fill.Color = claWhite
+    Size.Width = 393.000000000000000000
+    Size.Height = 416.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 80.000000000000000000
+    YRadius = 80.000000000000000000
+    object Layout3: TLayout
+      Align = Top
+      Size.Width = 393.000000000000000000
+      Size.Height = 273.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Layout4: TLayout
+        Align = Top
+        Margins.Top = 70.000000000000000000
+        Position.Y = 70.000000000000000000
+        Size.Width = 393.000000000000000000
+        Size.Height = 101.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Layout5: TLayout
+          Align = VertCenter
+          Margins.Left = 36.000000000000000000
+          Margins.Right = 36.000000000000000000
+          Position.X = 36.000000000000000000
+          Position.Y = 18.000000000000000000
+          Size.Width = 321.000000000000000000
+          Size.Height = 65.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object edtEmail: TALEdit
+            Align = Bottom
+            Fill.Color = xFFF8F8F8
+            Position.Y = 28.000000000000000000
+            Size.Width = 321.000000000000000000
+            Size.Height = 37.000000000000000000
+            Size.PlatformDefault = False
+            StateStyles.Hovered.StateLayer.XRadius = 5.000000000000000000
+            StateStyles.Hovered.StateLayer.YRadius = 5.000000000000000000
+            StateStyles.Focused.StateLayer.XRadius = 5.000000000000000000
+            StateStyles.Focused.StateLayer.YRadius = 5.000000000000000000
+            Stroke.Color = xFFCECECE
+            TabOrder = 0
+            TextSettings.Font.Color = xFF929292
+            XRadius = 5.000000000000000000
+            YRadius = 5.000000000000000000
+          end
+          object Label3: TLabel
+            Align = Top
+            StyledSettings = []
+            Size.Width = 321.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = xFF707070
+            Text = 'Email'
+            TabOrder = 1
+          end
+        end
+      end
+      object Layout6: TLayout
+        Align = Top
+        Position.Y = 171.000000000000000000
+        Size.Width = 393.000000000000000000
+        Size.Height = 101.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Layout7: TLayout
+          Align = VertCenter
+          Margins.Left = 36.000000000000000000
+          Margins.Right = 36.000000000000000000
+          Position.X = 36.000000000000000000
+          Position.Y = 18.000000000000000000
+          Size.Width = 321.000000000000000000
+          Size.Height = 65.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object edtSenha: TALEdit
+            Align = Bottom
+            Fill.Color = xFFF8F8F8
+            Position.Y = 28.000000000000000000
+            Size.Width = 321.000000000000000000
+            Size.Height = 37.000000000000000000
+            Size.PlatformDefault = False
+            StateStyles.Hovered.StateLayer.XRadius = 5.000000000000000000
+            StateStyles.Hovered.StateLayer.YRadius = 5.000000000000000000
+            StateStyles.Focused.StateLayer.XRadius = 5.000000000000000000
+            StateStyles.Focused.StateLayer.YRadius = 5.000000000000000000
+            Stroke.Color = xFFCECECE
+            TabOrder = 0
+            TextSettings.Font.Color = xFF929292
+            XRadius = 5.000000000000000000
+            YRadius = 5.000000000000000000
+            Password = True
+          end
+          object Label4: TLabel
+            Align = Top
+            StyledSettings = []
+            Size.Width = 321.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Family = 'Arial'
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = xFF707070
+            Text = 'Senha'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+    object Layout8: TLayout
+      Align = Bottom
+      Position.Y = 281.000000000000000000
+      Size.Width = 393.000000000000000000
+      Size.Height = 135.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Layout9: TLayout
+        Align = Top
+        Size.Width = 393.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object btnLogin: TButtonView
+          Align = Center
+          Background.XRadius = 5.000000000000000000
+          Background.YRadius = 5.000000000000000000
+          Background.ItemDefault.Kind = Gradient
+          Background.ItemDefault.Gradient.Points = <
+            item
+              Color = xFF2C8FC4
+              Offset = 0.000000000000000000
+            end
+            item
+              Color = xFF58C4EF
+              Offset = 1.000000000000000000
+            end>
+          Background.ItemDefault.Gradient.StartPosition.Y = 0.500000000000000000
+          Background.ItemDefault.Gradient.StopPosition.X = 1.000000000000000000
+          Background.ItemDefault.Gradient.StopPosition.Y = 0.500000000000000000
+          Size.Width = 338.000000000000000000
+          Size.Height = 51.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          OnClick = btnLoginClick
+          Text = 'Login'
+          TextSettings.Color.Default = claWhite
+          TextSettings.Color.Focused = claNull
+          TextSettings.Color.Selected = claNull
+          TextSettings.Color.Enabled = claNull
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.Gravity = Center
+          Drawable.XRadius = 5.000000000000000000
+          Drawable.YRadius = 5.000000000000000000
+        end
+      end
+      object Layout10: TLayout
+        Align = Top
+        Margins.Top = 14.000000000000000000
+        Position.Y = 74.000000000000000000
+        Size.Width = 393.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Label5: TLabel
+          Align = Top
+          StyledSettings = []
+          Size.Width = 393.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Arial'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.FontColor = xFF707070
+          TextSettings.HorzAlign = Center
+          Text = 'Esqueci minha senha'
+          TabOrder = 1
+        end
+      end
+    end
+  end
+end

@@ -26,13 +26,13 @@ inherited frmHerancaBotao: TfrmHerancaBotao
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      object GosCircle3: TALCircle
+      object GosCircle3: TGosCircle
         Align = Client
         Fill.Color = xFF0086ED
         Size.Width = 78.599990844726560000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Kind = None
+        Stroke.Color = claNull
         object SkSvg1: TSkSvg
           Align = Client
           Margins.Left = 10.000000000000000000

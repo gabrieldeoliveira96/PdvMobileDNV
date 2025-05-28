@@ -12,13 +12,16 @@ uses
   frame.vendas in 'view\frame\frame.vendas.pas' {FrameVendas: TFrame},
   uFancyDialog in 'feature\uFancyDialog.pas',
   view.cliente in 'view\view.cliente.pas' {frmCliente},
-  view.addcliente in 'view\view.addcliente.pas' {frmaddcliente};
+  view.addcliente in 'view\view.addcliente.pas' {frmaddcliente},
+  view.login in 'view\view.login.pas' {frmLogin},
+  view.splash in 'view\view.splash.pas' {frmSplash},
+  uConnection in 'feature\uConnection.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmSplash, frmSplash);
   Application.CreateForm(TfrmHerancaBase, frmHerancaBase);
   Application.CreateForm(TfrmHerancaBotao, frmHerancaBotao);
   Application.Run;

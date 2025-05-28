@@ -17,7 +17,7 @@ inherited frmPrincipal: TfrmPrincipal
       Position.X = 168.400192260742200000
       Size.Width = 84.200241088867190000
       OnClick = btnAddClick
-      inherited GosCircle3: TALCircle
+      inherited GosCircle3: TGosCircle
         HitTest = False
         Size.Width = 84.200241088867190000
         inherited SkSvg1: TSkSvg
@@ -118,7 +118,7 @@ inherited frmPrincipal: TfrmPrincipal
           Text = 'Gabriel'
         end>
     end
-    object GosCircle1: TALCircle
+    object GosCircle1: TGosCircle
       Align = MostRight
       Fill.Bitmap.Bitmap.PNG = {
         89504E470D0A1A0A0000000D49484452000001000000010008060000005C72A8
@@ -314,7 +314,7 @@ inherited frmPrincipal: TfrmPrincipal
       Size.Width = 64.000000000000000000
       Size.Height = 74.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
+      Stroke.Color = claNull
       object FillRGBEffect1: TFillRGBEffect
         Color = claSilver
       end
@@ -341,22 +341,9 @@ inherited frmPrincipal: TfrmPrincipal
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      object ALRectangle1: TALRectangle
+      object ALRectangle1: TGosRectangle
         Align = Client
-        Fill.Kind = Gradient
-        Fill.Gradient.Points = <
-          item
-            Color = xFF0086ED
-            Offset = 0.000000000000000000
-          end
-          item
-            Color = xFF52B4DA
-            Offset = 1.000000000000000000
-          end>
-        Fill.Gradient.StartPosition.X = 0.211324885487556500
-        Fill.Gradient.StartPosition.Y = 1.000000000000000000
-        Fill.Gradient.StopPosition.X = 0.788675129413604700
-        Fill.Gradient.StopPosition.Y = -0.000000016464525743
+        Fill.Color = xFF0481E7
         Margins.Left = 16.000000000000000000
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
@@ -364,7 +351,7 @@ inherited frmPrincipal: TfrmPrincipal
         Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Kind = None
+        Stroke.Color = claNull
         XRadius = 15.000000000000000000
         YRadius = 15.000000000000000000
         object Layout3: TLayout
@@ -383,7 +370,7 @@ inherited frmPrincipal: TfrmPrincipal
             Size.Height = 50.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object GosCircle2: TALCircle
+            object GosCircle2: TGosCircle
               Align = Left
               Fill.Bitmap.Bitmap.PNG = {
                 89504E470D0A1A0A0000000D49484452000001000000010008060000005C72A8
@@ -578,7 +565,7 @@ inherited frmPrincipal: TfrmPrincipal
               Size.Width = 58.000000000000000000
               Size.Height = 50.000000000000000000
               Size.PlatformDefault = False
-              Stroke.Kind = None
+              Stroke.Color = claNull
               object FillRGBEffect2: TFillRGBEffect
                 Color = claWhite
               end
@@ -656,8 +643,9 @@ inherited frmPrincipal: TfrmPrincipal
       Size.PlatformDefault = False
       TabOrder = 2
       OnClick = ListBoxItem2Click
-      object ALRectangle2: TALRectangle
+      object ALRectangle2: TGosRectangle
         Align = Client
+        Fill.Color = xFFD7D7D7
         HitTest = False
         Margins.Left = 16.000000000000000000
         Margins.Top = 16.000000000000000000
@@ -666,7 +654,7 @@ inherited frmPrincipal: TfrmPrincipal
         Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Kind = None
+        Stroke.Color = claNull
         XRadius = 15.000000000000000000
         YRadius = 15.000000000000000000
         object Layout6: TLayout
@@ -685,7 +673,7 @@ inherited frmPrincipal: TfrmPrincipal
             Size.Height = 50.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object GosCircle4: TALCircle
+            object GosCircle4: TGosCircle
               Align = Left
               Fill.Bitmap.Bitmap.PNG = {
                 89504E470D0A1A0A0000000D49484452000001000000010008060000005C72A8
@@ -881,7 +869,7 @@ inherited frmPrincipal: TfrmPrincipal
               Size.Width = 58.000000000000000000
               Size.Height = 50.000000000000000000
               Size.PlatformDefault = False
-              Stroke.Kind = None
+              Stroke.Color = claNull
               object FillRGBEffect3: TFillRGBEffect
                 Color = claBlack
               end
@@ -954,8 +942,9 @@ inherited frmPrincipal: TfrmPrincipal
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      object ALRectangle4: TALRectangle
+      object ALRectangle4: TGosRectangle
         Align = Client
+        Fill.Color = xFFD7D7D7
         Margins.Left = 16.000000000000000000
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
@@ -963,7 +952,7 @@ inherited frmPrincipal: TfrmPrincipal
         Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Kind = None
+        Stroke.Color = claNull
         XRadius = 15.000000000000000000
         YRadius = 15.000000000000000000
       end
@@ -975,8 +964,9 @@ inherited frmPrincipal: TfrmPrincipal
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      object ALRectangle3: TALRectangle
+      object S: TGosRectangle
         Align = Client
+        Fill.Color = xFFD7D7D7
         Margins.Left = 16.000000000000000000
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
@@ -984,7 +974,7 @@ inherited frmPrincipal: TfrmPrincipal
         Size.Width = 178.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
-        Stroke.Kind = None
+        Stroke.Color = claNull
         XRadius = 15.000000000000000000
         YRadius = 15.000000000000000000
       end

@@ -8,7 +8,8 @@ uses
   heranca.base, FMX.Layouts, System.Skia, UI.Base, UI.Standard, FMX.Skia,
   FMX.Objects, Alcinoe.FMX.Objects, FMX.ListBox, FMX.Effects,
   FMX.Filter.Effects, uGosObjects, heranca.botao, view.produtos,
-  System.Generics.Collections, frame.vendas, view.addcliente;
+  System.Generics.Collections, frame.vendas, view.addcliente,
+  Alcinoe.FMX.Controls;
 
 type
   TfrmPrincipal = class(TfrmHerancaBotao)
@@ -18,29 +19,29 @@ type
     Layout2: TLayout;
     SkLabel2: TSkLabel;
     SkLabel3: TSkLabel;
-    GosCircle1: TALCircle;
+    GosCircle1: TGosCircle;
     FillRGBEffect1: TFillRGBEffect;
     ListBox1: TListBox;
     ListBoxItem1: TListBoxItem;
     ListBoxItem2: TListBoxItem;
     ListBoxItem3: TListBoxItem;
     ListBoxItem4: TListBoxItem;
-    ALRectangle1: TALRectangle;
-    ALRectangle2: TALRectangle;
-    ALRectangle3: TALRectangle;
-    ALRectangle4: TALRectangle;
+    ALRectangle1: TGosRectangle;
+    ALRectangle2: TGosRectangle;
+    S: TGosRectangle;
+    ALRectangle4: TGosRectangle;
     Layout3: TLayout;
     Layout4: TLayout;
     lblQtdVendas: TSkLabel;
     SkLabel5: TSkLabel;
-    GosCircle2: TALCircle;
+    GosCircle2: TGosCircle;
     FillRGBEffect2: TFillRGBEffect;
     SkLabel6: TSkLabel;
     Layout5: TLayout;
     VertScrollBox1: TVertScrollBox;
     Layout6: TLayout;
     Layout7: TLayout;
-    GosCircle4: TALCircle;
+    GosCircle4: TGosCircle;
     FillRGBEffect3: TFillRGBEffect;
     SkLabel4: TSkLabel;
     Layout8: TLayout;

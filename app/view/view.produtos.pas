@@ -73,6 +73,11 @@ begin
   end;
 end;
 
+procedure TfrmProdutos.CarregaTela;
+begin
+
+end;
+
 procedure TfrmProdutos.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;

@@ -1,0 +1,40 @@
+object frmSplash: TfrmSplash
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 621
+  ClientWidth = 383
+  Fill.Kind = Gradient
+  Fill.Gradient.Points = <
+    item
+      Color = xFF2C8FC4
+      Offset = 0.000000000000000000
+    end
+    item
+      Color = xFF58C4EF
+      Offset = 1.000000000000000000
+    end>
+  Fill.Gradient.StartPosition.Y = 0.500000000000000000
+  Fill.Gradient.StopPosition.X = 1.000000000000000000
+  Fill.Gradient.StopPosition.Y = 0.500000000000000000
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    Align = VertCenter
+    StyledSettings = [Style]
+    Position.Y = 246.000000000000000000
+    Size.Width = 383.000000000000000000
+    Size.Height = 128.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Constantia'
+    TextSettings.Font.Size = 64.000000000000000000
+    TextSettings.FontColor = claWhite
+    TextSettings.HorzAlign = Center
+    TextSettings.Trimming = None
+    Text = 'Pdv Delphi na Veia'
+    TabOrder = 1
+  end
+end

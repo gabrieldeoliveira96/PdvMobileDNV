@@ -10,12 +10,18 @@ uses
 type
   TFrameVendas = class(TFrame)
     Rectangle1: TRectangle;
-    lblCliente: TSkLabel;
-    lblValor: TSkLabel;
     Layout1: TLayout;
+    lblCliente: TSkLabel;
+    lblProduto: TSkLabel;
     SkLabel1: TSkLabel;
+    lblValor: TSkLabel;
     lblData: TSkLabel;
     SkLabel3: TSkLabel;
+    Layout2: TLayout;
+    Layout3: TLayout;
+    Layout4: TLayout;
+    Layout5: TLayout;
+    Layout6: TLayout;
   private
     { Private declarations }
   public

@@ -9,7 +9,7 @@ uses
   FMX.Objects, Alcinoe.FMX.Objects, FMX.ListBox, FMX.Effects,
   FMX.Filter.Effects, uGosObjects, heranca.botao, view.produtos,
   System.Generics.Collections, frame.vendas, view.addcliente,
-  Alcinoe.FMX.Controls;
+  Alcinoe.FMX.Controls, uLoading;
 
 type
   TfrmPrincipal = class(TfrmHerancaBotao)
@@ -24,41 +24,33 @@ type
     ListBox1: TListBox;
     ListBoxItem1: TListBoxItem;
     ListBoxItem2: TListBoxItem;
-    ListBoxItem3: TListBoxItem;
-    ListBoxItem4: TListBoxItem;
     ALRectangle1: TGosRectangle;
     ALRectangle2: TGosRectangle;
-    S: TGosRectangle;
-    ALRectangle4: TGosRectangle;
     Layout3: TLayout;
-    Layout4: TLayout;
     lblQtdVendas: TSkLabel;
     SkLabel5: TSkLabel;
-    GosCircle2: TGosCircle;
-    FillRGBEffect2: TFillRGBEffect;
-    SkLabel6: TSkLabel;
     Layout5: TLayout;
     VertScrollBox1: TVertScrollBox;
     Layout6: TLayout;
-    Layout7: TLayout;
-    GosCircle4: TGosCircle;
-    FillRGBEffect3: TFillRGBEffect;
     SkLabel4: TSkLabel;
     Layout8: TLayout;
     SkLabel7: TSkLabel;
+    SkLabel6: TSkLabel;
     SkLabel8: TSkLabel;
     procedure btnAddClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure ListBoxItem2Click(Sender: TObject);
+    procedure ListBoxItem1Click(Sender: TObject);
   private
     { Private declarations }
     FListaVendas:TObjectList<TFrameVendas>;
   public
     { Public declarations }
-    procedure CarregaTela;
+    procedure CarregaTela(AToken:string);
     procedure CarregaListaVendas;
+    var
+     FToken:string;
   end;
 
 var
@@ -73,6 +65,7 @@ uses view.cliente;
 procedure TfrmPrincipal.CarregaListaVendas;
 begin
 
+
   FListaVendas.Clear;
 
   for var i := 0 to 10 do
@@ -83,6 +76,7 @@ begin
     LFrame.Align:= TAlignLayout.Top;
 
     LFrame.lblCliente.Text:= 'Cliente '+i.ToString;
+    LFrame.lblProduto.Text:= 'Produto '+i.ToString;
     LFrame.lblValor.Text:= (i*random(999)).tostring;
     LFrame.lblData.Text:= FormatDateTime('dd/mm/yyyy hh:mm:ss',now);
 
@@ -99,10 +93,24 @@ begin
 
 end;
 
-procedure TfrmPrincipal.CarregaTela;
+procedure TfrmPrincipal.CarregaTela(AToken:string);
 begin
-//
+  FToken:= AToken;
+
+  TThread.Synchronize(nil,
+  procedure
+  begin
+    VertScrollBox1.BeginUpdate;
+  end);
+
   CarregaListaVendas;
+
+  TThread.Synchronize(nil,
+  procedure
+  begin
+    VertScrollBox1.EndUpdate;
+  end);
+
 end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
@@ -120,43 +128,52 @@ end;
 procedure TfrmPrincipal.FormShow(Sender: TObject);
 begin
   inherited;
-  CarregaTela;
+//  CarregaTela;
 end;
 
-procedure TfrmPrincipal.ListBoxItem2Click(Sender: TObject);
+procedure TfrmPrincipal.ListBoxItem1Click(Sender: TObject);
 begin
   inherited;
-  //loading
+
+  TLoading.Show(self,'Aguarde, carregando cliente!');
 
   TThread.CreateAnonymousThread(
   procedure
   begin
+    try
+      Tthread.Synchronize(nil,
+      procedure
+      begin
+        if not Assigned(frmCliente) then
+          Application.CreateForm(TfrmCliente, frmCliente);
 
-    Tthread.Synchronize(nil,
-    procedure
-    begin
-      if not Assigned(frmCliente) then
-        Application.CreateForm(TfrmCliente, frmCliente);
+      end);
 
-    end);
+      frmCliente.CarregaTela(
+      procedure
+      begin
+        frmaddcliente.Close;
+        frmCliente.Close;
+        ShowMessage('oi');
+      end);
 
-    frmCliente.CarregaTela(
-    procedure
-    begin
-      frmaddcliente.Close;
-      frmCliente.Close;
-      ShowMessage('oi');
-    end);
+      Tthread.Synchronize(nil,
+      procedure
+      begin
+        frmCliente.Show;
 
-    Tthread.Synchronize(nil,
-    procedure
-    begin
-      frmCliente.Show;
+      end);
+    finally
 
-    end);
+      Tthread.Synchronize(nil,
+      procedure
+      begin
+        TLoading.Hide;
+
+      end);
+    end;
 
   end).Start;
-
 
 end;
 
@@ -164,24 +181,36 @@ procedure TfrmPrincipal.btnAddClick(Sender: TObject);
 begin
   inherited;
 
+  TLoading.Show(self,'Aguarde carregando tela');
+
   TThread.CreateAnonymousThread(
   procedure
   begin
+    try
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        if not Assigned(frmProdutos) then
+          Application.CreateForm(TfrmProdutos,frmProdutos);
+      end);
 
-    TThread.Synchronize(nil,
-    procedure
-    begin
-      if not Assigned(frmProdutos) then
-        Application.CreateForm(TfrmProdutos,frmProdutos);
-    end);
+      frmProdutos.CarregaTela(CarregaListaVendas);
 
-    frmProdutos.CarregaTela(CarregaListaVendas);
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        frmProdutos.Show;
+      end);
 
-    TThread.Synchronize(nil,
-    procedure
-    begin
-      frmProdutos.Show;
-    end);
+    finally
+
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        TLoading.Hide;
+      end);
+
+    end;
 
 
   end).Start;

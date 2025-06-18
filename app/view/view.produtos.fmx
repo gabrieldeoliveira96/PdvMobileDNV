@@ -6,7 +6,7 @@ inherited frmProdutos: TfrmProdutos
     Align = Top
     Margins.Top = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 393.000000000000000000
+    Size.Width = 500.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -26,12 +26,12 @@ inherited frmProdutos: TfrmProdutos
   object VertScrollBox1: TVertScrollBox
     Align = Client
     Margins.Top = 16.000000000000000000
-    Size.Width = 393.000000000000000000
-    Size.Height = 551.000000000000000000
+    Size.Width = 500.000000000000000000
+    Size.Height = 718.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Viewport.Width = 393.000000000000000000
-    Viewport.Height = 551.000000000000000000
+    Viewport.Width = 500.000000000000000000
+    Viewport.Height = 718.000000000000000000
     inline frameProduto1: TframeProduto
       Align = Top
       Margins.Left = 24.000000000000000000
@@ -39,16 +39,16 @@ inherited frmProdutos: TfrmProdutos
       Margins.Right = 24.000000000000000000
       Position.X = 24.000000000000000000
       Position.Y = 16.000000000000000000
-      Size.Width = 345.000000000000000000
+      Size.Width = 452.000000000000000000
       Size.Height = 64.000000000000000000
       Size.PlatformDefault = False
       inherited Rectangle1: TRectangle
-        Size.Width = 345.000000000000000000
+        Size.Width = 452.000000000000000000
         inherited lblProduto: TSkLabel
-          Size.Width = 313.000000000000000000
+          Size.Width = 420.000000000000000000
         end
         inherited lblDescricao: TSkLabel
-          Size.Width = 313.000000000000000000
+          Size.Width = 420.000000000000000000
         end
       end
     end

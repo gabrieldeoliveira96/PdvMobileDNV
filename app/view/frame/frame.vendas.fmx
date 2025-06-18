@@ -1,102 +1,158 @@
 object FrameVendas: TFrameVendas
-  Size.Width = 388.000000000000000000
+  Size.Width = 336.000000000000000000
   Size.Height = 68.000000000000000000
   Size.PlatformDefault = False
   object Rectangle1: TRectangle
     Align = Client
     Fill.Color = claWhite
     HitTest = False
-    Size.Width = 388.000000000000000000
+    Size.Width = 336.000000000000000000
     Size.Height = 68.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
     XRadius = 10.000000000000000000
     YRadius = 10.000000000000000000
-    object lblCliente: TSkLabel
-      Align = Top
-      Margins.Left = 16.000000000000000000
-      Margins.Top = 8.000000000000000000
-      Margins.Right = 16.000000000000000000
-      Position.X = 16.000000000000000000
-      Position.Y = 8.000000000000000000
-      Size.Width = 356.000000000000000000
-      Size.Height = 19.000000000000000000
-      Size.PlatformDefault = False
-      StyledSettings = [Family, Size, FontColor]
-      TextSettings.Font.Weight = Bold
-      Words = <
-        item
-          Text = 'Cliente X'
-        end>
-    end
     object Layout1: TLayout
       Align = Top
-      Position.Y = 27.000000000000000000
-      Size.Width = 388.000000000000000000
+      Size.Width = 336.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      object lblValor: TSkLabel
-        Align = Left
-        Margins.Left = 4.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 60.310001373291020000
-        Size.Width = 52.979999542236330000
+      object Layout2: TLayout
+        Align = Client
+        Size.Width = 196.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
-        StyledSettings = [Family, Size]
-        TextSettings.FontColor = xFF3C3C3C
-        Words = <
-          item
-            Text = 'R$ 90,00'
-          end>
+        TabOrder = 0
+        object lblProduto: TSkLabel
+          Align = Top
+          Margins.Left = 16.000000000000000000
+          Margins.Top = 8.000000000000000000
+          Margins.Right = 16.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 164.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size, FontColor]
+          TextSettings.Font.Weight = Bold
+          TextSettings.MaxLines = 1
+          Words = <
+            item
+              Text = 'Produto X'
+            end>
+        end
       end
-      object SkLabel1: TSkLabel
-        Align = Left
-        Margins.Left = 16.000000000000000000
-        Margins.Right = 4.000000000000000000
-        Position.X = 16.000000000000000000
-        Size.Width = 36.310001373291020000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Family, Size]
-        TextSettings.Font.Weight = Semibold
-        TextSettings.FontColor = xFF3C3C3C
-        Words = <
-          item
-            Text = 'Valor '
-          end>
-      end
-      object lblData: TSkLabel
+      object Layout3: TLayout
         Align = Right
-        Margins.Left = 4.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 245.529983520507800000
-        Size.Width = 126.470001220703100000
+        Position.X = 196.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
-        StyledSettings = [Family, Size]
-        TextSettings.FontColor = xFF3C3C3C
-        Words = <
-          item
-            Text = '04/02/2025 21:05:00'
-          end>
+        TabOrder = 1
+        object lblValor: TSkLabel
+          Align = Right
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 16.000000000000000000
+          Position.X = 71.020004272460940000
+          Size.Width = 52.979999542236330000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size]
+          TextSettings.FontColor = xFF3C3C3C
+          Words = <
+            item
+              Text = 'R$ 90,00'
+            end>
+        end
+        object SkLabel1: TSkLabel
+          Align = Right
+          Margins.Left = 16.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 26.710002899169920000
+          Size.Width = 36.310001373291020000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size]
+          TextSettings.Font.Weight = Semibold
+          TextSettings.FontColor = xFF3C3C3C
+          Words = <
+            item
+              Text = 'Valor '
+            end>
+        end
       end
-      object SkLabel3: TSkLabel
-        Align = Right
-        Margins.Left = 16.000000000000000000
-        Margins.Right = 4.000000000000000000
-        Position.X = 207.809982299804700000
-        Size.Width = 29.719999313354490000
+    end
+    object Layout4: TLayout
+      Align = Top
+      Position.Y = 33.000000000000000000
+      Size.Width = 336.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Layout5: TLayout
+        Align = Client
+        Size.Width = 136.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
-        StyledSettings = [Family, Size]
-        TextSettings.Font.Weight = Semibold
-        TextSettings.FontColor = xFF3C3C3C
-        Words = <
-          item
-            Text = 'Data'
-          end>
+        TabOrder = 0
+        object lblCliente: TSkLabel
+          Align = Top
+          Margins.Left = 16.000000000000000000
+          Margins.Top = 8.000000000000000000
+          Margins.Right = 16.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 104.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size, FontColor]
+          TextSettings.Font.Weight = Bold
+          TextSettings.MaxLines = 1
+          Words = <
+            item
+              Text = 'Cliente X'
+            end>
+        end
+      end
+      object Layout6: TLayout
+        Align = Right
+        Position.X = 136.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object SkLabel3: TSkLabel
+          Align = Right
+          Margins.Left = 16.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 19.809997558593750000
+          Size.Width = 29.719999313354490000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size]
+          TextSettings.Font.Weight = Semibold
+          TextSettings.FontColor = xFF3C3C3C
+          Words = <
+            item
+              Text = 'Data'
+            end>
+        end
+        object lblData: TSkLabel
+          Align = Right
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 16.000000000000000000
+          Position.X = 57.529998779296880000
+          Size.Width = 126.470001220703100000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size]
+          TextSettings.FontColor = xFF3C3C3C
+          Words = <
+            item
+              Text = '04/02/2025 21:05:00'
+            end>
+        end
       end
     end
   end

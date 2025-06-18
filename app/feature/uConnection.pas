@@ -3,12 +3,13 @@ unit uConnection;
 interface
 
 uses System.SysUtils, System.Classes, REST.Types, REST.Client, System.JSON, System.Generics.Collections,
-     REST.Authenticator.Basic;
+     REST.Authenticator.Basic, REST.Authenticator.OAuth;
 
 type
   TParameter = record
     Value: string;
     key: string;
+    Token: string;
   end;
 
   TBody = record
@@ -27,6 +28,7 @@ type
      FRESTRequest: TRESTRequest;
      FRESTResponse: TRESTResponse;
      FHttpBasicAuthenticator:  THTTPBasicAuthenticator;
+     FOAuth2Authenticator: TOAuth2Authenticator;
     public
      constructor Create;
      destructor Destroy;
@@ -35,6 +37,7 @@ type
      function Post(AUrl:string; AParameter: TList<TParameter>; ABody:TList<TBody>; out AResult:string): Boolean; overload;
      function Get(AUrl:string; AParameter: array of string; out AResult:string): Boolean; overload;
      function Get(AUrl:string; AParameter: TList<TParameter>; out AResult:string): Boolean; overload;
+     function Get(AUrl:string; AParameter: TParameter; out AResult:string): Boolean; overload;
      function Get(AUrl:string; AParameter: array of string; ABody: TJSONArray; out AResult:string): Boolean; overload;
      function Get(AUrl:string; AParameter: array of string; ABody:TJSONObject; out AResult:string): Boolean; overload;
      function Put(AUrl:string; AParameter: array of string; ABody:TJSONObject; out AResult:string): Boolean;
@@ -88,6 +91,7 @@ begin
   FRESTRequest:= TRESTRequest.Create(nil);
   FRESTResponse:= TRESTResponse.Create(nil);
   FHttpBasicAuthenticator:= THTTPBasicAuthenticator.Create(nil);
+  FOAuth2Authenticator:= TOAuth2Authenticator.Create(nil);
 end;
 
 function TConnection.Delete(AUrl: string; AParameter: array of string;
@@ -134,6 +138,42 @@ begin
   FreeAndNil(FRESTRequest);
   FreeAndNil(FRESTResponse);
   FreeAndNil(FHttpBasicAuthenticator);
+  FreeAndNil(FOAuth2Authenticator);
+end;
+
+function TConnection.Get(AUrl: string; AParameter: TParameter;
+  out AResult: string): Boolean;
+var
+ LUrl:string;
+ i : Integer;
+begin
+
+  FRESTRequest.Client:= FRESTClient;
+  FRESTRequest.Response:= FRESTResponse;
+  try
+    LUrl:= AUrl;
+
+    FRESTRequest.ContentType.ctAPPLICATION_JSON;
+
+    FOAuth2Authenticator.TokenType:= TOAuth2TokenType.ttBEARER;
+    FOAuth2Authenticator.AccessToken:= AParameter.Token;
+
+    FRESTClient.Authenticator := FOAuth2Authenticator;
+
+    FRESTClient.BaseURL := LUrl;
+    FRESTRequest.Method := rmGET;
+    FRESTRequest.Execute;
+
+    AResult:= FRESTResponse.Content;
+    Result:= FRESTResponse.StatusCode = 200;
+
+  except
+    on e: exception do
+    begin
+      Result := false;
+    end;
+
+  end;
 end;
 
 function TConnection.Get(AUrl: string; AParameter: TList<TParameter>;

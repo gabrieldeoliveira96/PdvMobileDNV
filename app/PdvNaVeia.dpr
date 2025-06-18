@@ -15,7 +15,9 @@ uses
   view.addcliente in 'view\view.addcliente.pas' {frmaddcliente},
   view.login in 'view\view.login.pas' {frmLogin},
   view.splash in 'view\view.splash.pas' {frmSplash},
-  uConnection in 'feature\uConnection.pas';
+  uConnection in 'feature\uConnection.pas',
+  uLoading in 'feature\uLoading.pas',
+  uConstants in 'feature\uConstants.pas';
 
 {$R *.res}
 

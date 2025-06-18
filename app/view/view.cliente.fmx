@@ -1,12 +1,13 @@
 inherited frmCliente: TfrmCliente
   Caption = 'frmHerancaBase1'
   OnClose = FormClose
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object Layout1: TLayout
     Align = Top
     Margins.Top = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 393.000000000000000000
+    Size.Width = 500.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -25,7 +26,7 @@ inherited frmCliente: TfrmCliente
     end
     object SpeedButton2: TSpeedButton
       Align = Right
-      Position.X = 313.000000000000000000
+      Position.X = 420.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -41,13 +42,13 @@ inherited frmCliente: TfrmCliente
   object VertScrollBox1: TVertScrollBox
     Align = Client
     Margins.Top = 16.000000000000000000
-    Size.Width = 393.000000000000000000
-    Size.Height = 485.000000000000000000
+    Size.Width = 500.000000000000000000
+    Size.Height = 652.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     OnClick = SpeedButton1Click
-    Viewport.Width = 393.000000000000000000
-    Viewport.Height = 485.000000000000000000
+    Viewport.Width = 500.000000000000000000
+    Viewport.Height = 652.000000000000000000
     inline frameProduto1: TframeProduto
       Align = Top
       Margins.Left = 24.000000000000000000
@@ -55,20 +56,20 @@ inherited frmCliente: TfrmCliente
       Margins.Right = 24.000000000000000000
       Position.X = 24.000000000000000000
       Position.Y = 16.000000000000000000
-      Size.Width = 345.000000000000000000
+      Size.Width = 452.000000000000000000
       Size.Height = 64.000000000000000000
       Size.PlatformDefault = False
       inherited Rectangle1: TRectangle
-        Size.Width = 345.000000000000000000
+        Size.Width = 452.000000000000000000
         inherited lblProduto: TSkLabel
-          Size.Width = 313.000000000000000000
+          Size.Width = 420.000000000000000000
           Words = <
             item
               Text = 'Cliente 1'
             end>
         end
         inherited lblDescricao: TSkLabel
-          Size.Width = 313.000000000000000000
+          Size.Width = 420.000000000000000000
           Words = <
             item
               Text = 'Data da Cria'#231#227'o'
@@ -81,7 +82,7 @@ inherited frmCliente: TfrmCliente
     Align = Top
     Margins.Top = 16.000000000000000000
     Position.Y = 82.000000000000000000
-    Size.Width = 393.000000000000000000
+    Size.Width = 500.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3

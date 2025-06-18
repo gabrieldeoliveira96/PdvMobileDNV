@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, frame.produtos, FMX.Layouts, FMX.Effects, FMX.Filter.Effects,
-  FMX.Controls.Presentation, UI.Base, UI.Edit;
+  FMX.Controls.Presentation, UI.Base, UI.Edit, uConnection, uConstants,
+  view.principal, System.JSON, uFancyDialog;
 
 type
   TfrmCliente = class(TfrmHerancaBase)
@@ -22,9 +23,11 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     FCallBack: TProc;
+    FMsg:TFancyDialog;
   public
     { Public declarations }
     procedure CarregaTela(ACallBack:TProc);
@@ -41,22 +44,44 @@ implementation
 uses view.addcliente;
 
 procedure TfrmCliente.CarregaTela(ACallBack:TProc);
+var
+ LCon:TConnection;
+ LParam: TParameter;
+ LResult:string;
+ LJsonArray:TJSONArray;
 begin
   FCallBack:= ACallBack;
 
-  //buscar cliente da api
+  LCon:= TConnection.Create;
+  try
+    LParam.Token:= frmPrincipal.FToken;
 
-  for var i := 0 to 10 do
+    if not LCon.Get(URL+'lista/cliente',LParam,LResult) then
+    begin
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        FMsg.Show(TIconDialog.Error,'erro na requisição','');
+        exit;
+      end);
+    end;
+
+    LJsonArray:= TJSONObject.ParseJSONValue(LResult) as TJSONArray;
+
+  finally
+    FreeAndNil(LCon);
+  end;
+
+  for var LJson in LJsonArray do
   begin
-    var LFrame:= TframeProduto.Create(self);
+    var LFrame:= TframeProduto.Create(self);  //alterar para frame de cliente
 
-    LFrame.Name:= 'FRame'+i.ToString;
+    LFrame.Name:= 'FRame'+LJson.GetValue<string>('cod');
     LFrame.Align:= TAlignLayout.Top;
+    LFrame.Tag:= LJson.GetValue<integer>('cod');
 
-    //LFrame.Tag:= 1; //ID
-
-    LFrame.lblProduto.Text:= 'Cliente  '+i.ToString;
-    LFrame.lblDescricao.Text:= 'Data de Criação do cliente '+i.ToString;
+    LFrame.lblProduto.Text:= LJson.GetValue<string>('nome');
+    LFrame.lblDescricao.Text:= LJson.GetValue<string>('complemento');
 
     LFrame.Margins.Left:= 24;
     LFrame.Margins.Right:= 24;
@@ -78,9 +103,17 @@ end;
 procedure TfrmCliente.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
+
+  FreeAndNil(FMsg);
   Action:= TCloseAction.caFree;
   frmCliente:= nil;
 
+end;
+
+procedure TfrmCliente.FormShow(Sender: TObject);
+begin
+  inherited;
+  FMsg:= TFancyDialog.Create(self);
 end;
 
 procedure TfrmCliente.SpeedButton1Click(Sender: TObject);

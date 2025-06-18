@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Layouts, FMX.Controls.Presentation, FMX.Objects,
   Alcinoe.FMX.Controls, Alcinoe.FMX.Objects, Alcinoe.FMX.Edit, UI.Base,
-  UI.Standard, uConnection, view.principal;
+  UI.Standard, uConnection, view.principal, uConstants;
 
 type
   TfrmLogin = class(TfrmHerancaBase)
@@ -53,6 +53,7 @@ var
  LJson:TJsonObject;
  LResult:string;
  LBasicAuth:TBasicAuth;
+ LToken:string;
 begin
 
   inherited;
@@ -68,22 +69,31 @@ begin
     try
 
       LJson:= TJSONObject.Create;
-      LJson.AddPair('login',edtEmail.Text);
-      LJson.AddPair('senha',edtSenha.Text);
+      try
+        LJson.AddPair('login',edtEmail.Text);
+        LJson.AddPair('senha',edtSenha.Text);
 
-      if LCon.Post('http://localhost:9000/valida/login',[],LJson,LBasicAuth,LResult) then
-      begin
-
-        TThread.Synchronize(nil,
-        procedure
+        if LCon.Post(URL+'valida/login',[],LJson,LBasicAuth,LResult) then
         begin
-          if not Assigned(frmPrincipal) then
-            Application.CreateForm(TfrmPrincipal, frmPrincipal);
 
-          frmPrincipal.CarregaTela;
-          frmPrincipal.Show;
-        end);
+          TThread.Synchronize(nil,
+          procedure
+          begin
+            if not Assigned(frmPrincipal) then
+              Application.CreateForm(TfrmPrincipal, frmPrincipal);
+          end);
 
+          LJson:= TJSONObject.ParseJSONValue(LResult) as TJSONObject;
+          frmPrincipal.CarregaTela(LJson.GetValue<string>('token'));
+
+          TThread.Synchronize(nil,
+          procedure
+          begin
+            frmPrincipal.Show;
+          end);
+        end;
+      finally
+        FreeAndNil(LJson);
       end;
 
     finally

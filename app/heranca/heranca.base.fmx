@@ -2,8 +2,8 @@ object frmHerancaBase: TfrmHerancaBase
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 633
-  ClientWidth = 393
+  ClientHeight = 800
+  ClientWidth = 500
   Fill.Color = claWhitesmoke
   Fill.Kind = Solid
   FormFactor.Width = 320

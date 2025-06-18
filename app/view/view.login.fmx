@@ -16,7 +16,7 @@ inherited frmLogin: TfrmLogin
   DesignerMasterStyle = 0
   object S: TLayout
     Align = Top
-    Size.Width = 393.000000000000000000
+    Size.Width = 500.000000000000000000
     Size.Height = 89.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
@@ -38,7 +38,7 @@ inherited frmLogin: TfrmLogin
   object Layout2: TLayout
     Align = Top
     Position.Y = 89.000000000000000000
-    Size.Width = 393.000000000000000000
+    Size.Width = 500.000000000000000000
     Size.Height = 128.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -62,15 +62,15 @@ inherited frmLogin: TfrmLogin
     Align = Client
     Corners = [TopLeft, TopRight]
     Fill.Color = claWhite
-    Size.Width = 393.000000000000000000
-    Size.Height = 416.000000000000000000
+    Size.Width = 500.000000000000000000
+    Size.Height = 583.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
     XRadius = 80.000000000000000000
     YRadius = 80.000000000000000000
     object Layout3: TLayout
       Align = Top
-      Size.Width = 393.000000000000000000
+      Size.Width = 500.000000000000000000
       Size.Height = 273.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -78,7 +78,7 @@ inherited frmLogin: TfrmLogin
         Align = Top
         Margins.Top = 70.000000000000000000
         Position.Y = 70.000000000000000000
-        Size.Width = 393.000000000000000000
+        Size.Width = 500.000000000000000000
         Size.Height = 101.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -88,22 +88,26 @@ inherited frmLogin: TfrmLogin
           Margins.Right = 36.000000000000000000
           Position.X = 36.000000000000000000
           Position.Y = 18.000000000000000000
-          Size.Width = 321.000000000000000000
+          Size.Width = 428.000000000000000000
           Size.Height = 65.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           object edtEmail: TALEdit
             Align = Bottom
             Fill.Color = xFFF8F8F8
-            Position.Y = 28.000000000000000000
-            Size.Width = 321.000000000000000000
-            Size.Height = 37.000000000000000000
+            Position.Y = 30.599998474121090000
+            Size.Width = 428.000000000000000000
+            Size.Height = 34.400001525878910000
             Size.PlatformDefault = False
+            StateStyles.Disabled.Stroke.Thickness = 0.800000011920929000
             StateStyles.Hovered.StateLayer.XRadius = 5.000000000000000000
             StateStyles.Hovered.StateLayer.YRadius = 5.000000000000000000
+            StateStyles.Hovered.Stroke.Thickness = 0.800000011920929000
             StateStyles.Focused.StateLayer.XRadius = 5.000000000000000000
             StateStyles.Focused.StateLayer.YRadius = 5.000000000000000000
+            StateStyles.Focused.Stroke.Thickness = 0.800000011920929000
             Stroke.Color = xFFCECECE
+            Stroke.Thickness = 0.800000011920929000
             TabOrder = 0
             TextSettings.Font.Color = xFF929292
             XRadius = 5.000000000000000000
@@ -112,7 +116,7 @@ inherited frmLogin: TfrmLogin
           object Label3: TLabel
             Align = Top
             StyledSettings = []
-            Size.Width = 321.000000000000000000
+            Size.Width = 428.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Family = 'Arial'
@@ -127,7 +131,7 @@ inherited frmLogin: TfrmLogin
       object Layout6: TLayout
         Align = Top
         Position.Y = 171.000000000000000000
-        Size.Width = 393.000000000000000000
+        Size.Width = 500.000000000000000000
         Size.Height = 101.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -137,22 +141,26 @@ inherited frmLogin: TfrmLogin
           Margins.Right = 36.000000000000000000
           Position.X = 36.000000000000000000
           Position.Y = 18.000000000000000000
-          Size.Width = 321.000000000000000000
+          Size.Width = 428.000000000000000000
           Size.Height = 65.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           object edtSenha: TALEdit
             Align = Bottom
             Fill.Color = xFFF8F8F8
-            Position.Y = 28.000000000000000000
-            Size.Width = 321.000000000000000000
-            Size.Height = 37.000000000000000000
+            Position.Y = 30.599998474121090000
+            Size.Width = 428.000000000000000000
+            Size.Height = 34.400001525878910000
             Size.PlatformDefault = False
+            StateStyles.Disabled.Stroke.Thickness = 0.800000011920929000
             StateStyles.Hovered.StateLayer.XRadius = 5.000000000000000000
             StateStyles.Hovered.StateLayer.YRadius = 5.000000000000000000
+            StateStyles.Hovered.Stroke.Thickness = 0.800000011920929000
             StateStyles.Focused.StateLayer.XRadius = 5.000000000000000000
             StateStyles.Focused.StateLayer.YRadius = 5.000000000000000000
+            StateStyles.Focused.Stroke.Thickness = 0.800000011920929000
             Stroke.Color = xFFCECECE
+            Stroke.Thickness = 0.800000011920929000
             TabOrder = 0
             TextSettings.Font.Color = xFF929292
             XRadius = 5.000000000000000000
@@ -162,7 +170,7 @@ inherited frmLogin: TfrmLogin
           object Label4: TLabel
             Align = Top
             StyledSettings = []
-            Size.Width = 321.000000000000000000
+            Size.Width = 428.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Family = 'Arial'
@@ -177,14 +185,14 @@ inherited frmLogin: TfrmLogin
     end
     object Layout8: TLayout
       Align = Bottom
-      Position.Y = 281.000000000000000000
-      Size.Width = 393.000000000000000000
+      Position.Y = 448.000000000000000000
+      Size.Width = 500.000000000000000000
       Size.Height = 135.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object Layout9: TLayout
         Align = Top
-        Size.Width = 393.000000000000000000
+        Size.Width = 500.000000000000000000
         Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -226,14 +234,14 @@ inherited frmLogin: TfrmLogin
         Align = Top
         Margins.Top = 14.000000000000000000
         Position.Y = 74.000000000000000000
-        Size.Width = 393.000000000000000000
+        Size.Width = 500.000000000000000000
         Size.Height = 37.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object Label5: TLabel
           Align = Top
           StyledSettings = []
-          Size.Width = 393.000000000000000000
+          Size.Width = 500.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Family = 'Arial'

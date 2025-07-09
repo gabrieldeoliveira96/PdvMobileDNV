@@ -33,6 +33,8 @@ type
      constructor Create;
      destructor Destroy;
      function Post(AUrl:string; AParameter: array of string; ABody:TJSONObject; ABasicAuth:TBasicAuth; out AResult:string): Boolean; overload;
+     function Post(AUrl:string; AParameter: array of string; ABody:TJSONObject; out AResult:string): Boolean; overload;
+     function Post(AUrl:string; AParameter: TParameter; ABody:TJSONObject; out AResult:string): Boolean; overload;
      function Post(AUrl:string; AParameter: array of string; ABody:TJSONArray; out AResult:string): Boolean; overload;
      function Post(AUrl:string; AParameter: TList<TParameter>; ABody:TList<TBody>; out AResult:string): Boolean; overload;
      function Get(AUrl:string; AParameter: array of string; out AResult:string): Boolean; overload;
@@ -402,6 +404,88 @@ begin
     end;
 
   end;
+end;
+
+function TConnection.Post(AUrl: string; AParameter: TParameter;
+  ABody: TJSONObject; out AResult: string): Boolean;
+var
+ LUrl:string;
+ i : Integer;
+begin
+
+  FRESTRequest.Client:= FRESTClient;
+  FRESTRequest.Response:= FRESTResponse;
+  try
+    LUrl:= AUrl;
+
+    FRESTRequest.ContentType.ctAPPLICATION_JSON;
+
+    FOAuth2Authenticator.TokenType:= TOAuth2TokenType.ttBEARER;
+    FOAuth2Authenticator.AccessToken:= AParameter.Token;
+
+    FRESTClient.Authenticator := FOAuth2Authenticator;
+
+    FRESTRequest.ClearBody;
+    FRESTRequest.AddBody(ABody);
+
+    FRESTClient.BaseURL := LUrl;
+    FRESTRequest.Method := rmPOST;
+    FRESTRequest.Timeout := 60000;
+    FRESTRequest.Execute;
+
+    AResult:= FRESTResponse.Content;
+    Result:= (FRESTResponse.StatusCode = 200) or (FRESTResponse.StatusCode = 201);
+
+  except
+    on e: exception do
+    begin
+      Result := false;
+    end;
+
+  end;
+
+
+
+
+
+
+
+end;
+
+function TConnection.Post(AUrl: string; AParameter: array of string;
+  ABody: TJSONObject; out AResult: string): Boolean;
+
+var
+ LUrl:string;
+ i : Integer;
+begin
+
+  FRESTRequest.Client:= FRESTClient;
+  FRESTRequest.Response:= FRESTResponse;
+  try
+    LUrl:= AUrl;
+    for  i := 0 to pred(length(AParameter)) do
+      LUrl := LUrl + '/' + AParameter[i];
+
+    FRESTRequest.ClearBody;
+    FRESTRequest.AddBody(ABody);
+
+    FRESTClient.BaseURL := LUrl;
+    FRESTRequest.Method := rmPOST;
+    FRESTRequest.Timeout := 60000;
+    FRESTRequest.Execute;
+
+    AResult:= FRESTResponse.Content;
+    Result:= (FRESTResponse.StatusCode = 200) or (FRESTResponse.StatusCode = 201);
+
+  except
+    on e: exception do
+    begin
+      Result := false;
+    end;
+
+  end;
+
 end;
 
 function TConnection.Put(AUrl: string; AParameter: array of string;

@@ -5,9 +5,10 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  heranca.base, frame.produtos, FMX.Layouts, FMX.Effects, FMX.Filter.Effects,
+  heranca.base, frame.clientes, FMX.Layouts, FMX.Effects, FMX.Filter.Effects,
   FMX.Controls.Presentation, UI.Base, UI.Edit, uConnection, uConstants,
-  view.principal, System.JSON, uFancyDialog;
+  view.principal, System.JSON, uFancyDialog, System.Skia, FMX.Skia, FMX.Objects,
+  UI.Standard, frame.produtos;
 
 type
   TfrmCliente = class(TfrmHerancaBase)
@@ -15,15 +16,17 @@ type
     SpeedButton1: TSpeedButton;
     FillRGBEffect1: TFillRGBEffect;
     VertScrollBox1: TVertScrollBox;
-    frameProduto1: TframeProduto;
     Layout2: TLayout;
     EditView1: TEditView;
-    SpeedButton2: TSpeedButton;
-    FillRGBEffect2: TFillRGBEffect;
+    SkLabel1: TSkLabel;
+    SkLabel2: TSkLabel;
+    Circle1: TCircle;
+    SkLabel3: TSkLabel;
+    btnLogin: TButtonView;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton1Click(Sender: TObject);
-    procedure SpeedButton2Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Circle1Click(Sender: TObject);
   private
     { Private declarations }
     FCallBack: TProc;
@@ -74,20 +77,20 @@ begin
 
   for var LJson in LJsonArray do
   begin
-    var LFrame:= TframeProduto.Create(self);  //alterar para frame de cliente
+    var LFrame:= TFrameClientes.Create(self);  //alterar para frame de cliente
 
     LFrame.Name:= 'FRame'+LJson.GetValue<string>('cod');
     LFrame.Align:= TAlignLayout.Top;
     LFrame.Tag:= LJson.GetValue<integer>('cod');
 
-    LFrame.lblProduto.Text:= LJson.GetValue<string>('nome');
-    LFrame.lblDescricao.Text:= LJson.GetValue<string>('complemento');
+    LFrame.lblCliente.Text:= LJson.GetValue<string>('nome');
+    LFrame.lblEndereco.Text:= LJson.GetValue<string>('complemento');
 
     LFrame.Margins.Left:= 24;
     LFrame.Margins.Right:= 24;
     LFrame.Margins.Top:= 16;
 
-    LFrame.TagString:= LFrame.lblProduto.Text;
+    LFrame.TagString:= LFrame.lblCliente.Text;
 
     {$IFDEF MSWINDOWS}
 //    LFrame.OnClick:= CadastrarVenda;
@@ -98,6 +101,19 @@ begin
     VertScrollBox1.AddObject(LFrame);
 
   end;
+end;
+
+procedure TfrmCliente.Circle1Click(Sender: TObject);
+begin
+  inherited;
+
+  if not Assigned(frmaddcliente) then
+    Application.CreateForm(Tfrmaddcliente,frmaddcliente);
+
+  frmaddcliente.CarregaTela(FCallBack);
+  frmaddcliente.Show;
+
+
 end;
 
 procedure TfrmCliente.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -120,19 +136,6 @@ procedure TfrmCliente.SpeedButton1Click(Sender: TObject);
 begin
   inherited;
   close;
-end;
-
-procedure TfrmCliente.SpeedButton2Click(Sender: TObject);
-begin
-  inherited;
-
-  if not Assigned(frmaddcliente) then
-    Application.CreateForm(Tfrmaddcliente,frmaddcliente);
-
-  frmaddcliente.CarregaTela(FCallBack);
-  frmaddcliente.Show;
-
-
 end;
 
 end.

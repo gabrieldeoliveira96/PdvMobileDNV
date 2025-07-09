@@ -152,9 +152,13 @@ begin
       frmCliente.CarregaTela(
       procedure
       begin
-        frmaddcliente.Close;
-        frmCliente.Close;
-        ShowMessage('oi');
+        Tthread.Synchronize(TThread.CurrentThread,
+        procedure
+        begin
+          frmaddcliente.Close;
+          frmCliente.Close;
+          ShowMessage('oi');
+        end);
       end);
 
       Tthread.Synchronize(nil,

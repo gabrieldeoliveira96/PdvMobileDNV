@@ -2,8 +2,8 @@ object frmSplash: TfrmSplash
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 620
-  ClientWidth = 384
+  ClientHeight = 600
+  ClientWidth = 400
   Fill.Kind = Gradient
   Fill.Gradient.Points = <
     item
@@ -25,8 +25,8 @@ object frmSplash: TfrmSplash
   object Label1: TLabel
     Align = VertCenter
     StyledSettings = [Style]
-    Position.Y = 246.000000000000000000
-    Size.Width = 384.000000000000000000
+    Position.Y = 236.000000000000000000
+    Size.Width = 400.000000000000000000
     Size.Height = 128.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Family = 'Constantia'

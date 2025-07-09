@@ -17,7 +17,8 @@ uses
   view.splash in 'view\view.splash.pas' {frmSplash},
   uConnection in 'feature\uConnection.pas',
   uLoading in 'feature\uLoading.pas',
-  uConstants in 'feature\uConstants.pas';
+  uConstants in 'feature\uConstants.pas',
+  frame.clientes in 'view\frame\frame.clientes.pas' {FrameClientes: TFrame};
 
 {$R *.res}
 

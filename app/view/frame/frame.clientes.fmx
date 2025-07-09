@@ -1,0 +1,100 @@
+object FrameClientes: TFrameClientes
+  Size.Width = 340.000000000000000000
+  Size.Height = 68.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Color = claWhite
+    HitTest = False
+    Size.Width = 340.000000000000000000
+    Size.Height = 68.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    object Layout1: TLayout
+      Align = Top
+      Size.Width = 340.000000000000000000
+      Size.Height = 37.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lblCliente: TSkLabel
+        Align = Client
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 189.360000610351600000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, FontColor]
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.Weight = Bold
+        Words = <
+          item
+            Text = 'Cliente'
+          end>
+      end
+      object lblData: TSkLabel
+        Align = Right
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 237.360000610351600000
+        Position.Y = 4.000000000000000000
+        Size.Width = 86.639999389648440000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'DD/MM/YYYY'
+          end>
+      end
+    end
+    object Layout2: TLayout
+      Align = Bottom
+      Position.Y = 36.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lblEndereco: TSkLabel
+        Align = Client
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 230.570007324218800000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'Endere'#231'o'
+          end>
+      end
+      object lblValor: TSkLabel
+        Align = Right
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 278.570007324218800000
+        Position.Y = 4.000000000000000000
+        Size.Width = 45.430000305175780000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'R$ 0,00'
+          end>
+      end
+    end
+  end
+end

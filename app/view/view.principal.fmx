@@ -1,49 +1,45 @@
 inherited frmPrincipal: TfrmPrincipal
   Caption = 'Principal'
-  ClientHeight = 844
-  ClientWidth = 388
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
   DesignerMasterStyle = 0
   inherited lytBotao: TLayout
-    Position.Y = 770.000000000000000000
-    Size.Width = 388.000000000000000000
     inherited lytbtn1: TLayout
-      Size.Width = 77.600090026855470000
+      Size.Width = 80.000091552734380000
     end
     inherited btnAdd: TLayout
       HitTest = True
-      Position.X = 155.200180053710900000
-      Size.Width = 77.600204467773440000
+      Position.X = 160.000183105468800000
+      Size.Width = 80.000213623046880000
       OnClick = btnAddClick
       inherited GosCircle3: TGosCircle
         Fill.Color = xFF1E8EBA
         HitTest = False
-        Size.Width = 77.600204467773440000
+        Size.Width = 80.000213623046880000
         inherited SkSvg1: TSkSvg
-          Size.Width = 57.600204467773440000
+          Size.Width = 60.000213623046880000
         end
       end
     end
     inherited lytbtn4: TLayout
-      Position.X = 232.799819946289100000
-      Size.Width = 77.600143432617190000
+      Position.X = 239.999801635742200000
+      Size.Width = 80.000137329101560000
     end
     inherited lytbtn2: TLayout
-      Position.X = 77.600090026855470000
-      Size.Width = 77.600090026855470000
+      Position.X = 80.000091552734380000
+      Size.Width = 80.000091552734380000
     end
     inherited lytbtn5: TLayout
-      Position.X = 310.400360107421900000
-      Size.Width = 77.600158691406250000
+      Position.X = 320.000366210937500000
+      Size.Width = 80.000152587890630000
     end
   end
   object Layout1: TLayout
     Align = Top
     Margins.Top = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 388.000000000000000000
+    Size.Width = 400.000000000000000000
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
@@ -69,7 +65,7 @@ inherited frmPrincipal: TfrmPrincipal
       Size.Width = 40.000000000000000000
       Size.Height = 41.000000000000000000
       Size.PlatformDefault = False
-      Position.X = 332.000000000000000000
+      Position.X = 344.000000000000000000
       TabOrder = 1
       TextSettings.Gravity = Center
       Drawable.Position = Center
@@ -82,7 +78,7 @@ inherited frmPrincipal: TfrmPrincipal
     Align = Top
     Margins.Top = 16.000000000000000000
     Position.Y = 73.000000000000000000
-    Size.Width = 388.000000000000000000
+    Size.Width = 400.000000000000000000
     Size.Height = 81.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
@@ -92,7 +88,7 @@ inherited frmPrincipal: TfrmPrincipal
       Margins.Top = 8.000000000000000000
       Position.X = 16.000000000000000000
       Position.Y = 8.000000000000000000
-      Size.Width = 292.000000000000000000
+      Size.Width = 304.000000000000000000
       Size.Height = 19.000000000000000000
       Size.PlatformDefault = False
       StyledSettings = [Family, FontColor]
@@ -108,7 +104,7 @@ inherited frmPrincipal: TfrmPrincipal
       Margins.Top = 16.000000000000000000
       Position.X = 16.000000000000000000
       Position.Y = 43.000000000000000000
-      Size.Width = 292.000000000000000000
+      Size.Width = 304.000000000000000000
       Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
       StyledSettings = [Family, FontColor]
@@ -311,7 +307,7 @@ inherited frmPrincipal: TfrmPrincipal
       Fill.Bitmap.WrapMode = TileStretch
       Fill.Kind = Bitmap
       Margins.Right = 16.000000000000000000
-      Position.X = 308.000000000000000000
+      Position.X = 320.000000000000000000
       Size.Width = 64.000000000000000000
       Size.Height = 81.000000000000000000
       Size.PlatformDefault = False
@@ -325,7 +321,7 @@ inherited frmPrincipal: TfrmPrincipal
     Align = Top
     Margins.Top = 8.000000000000000000
     Position.Y = 199.000000000000000000
-    Size.Width = 388.000000000000000000
+    Size.Width = 400.000000000000000000
     Size.Height = 158.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'transparentlistboxstyle'
@@ -335,10 +331,10 @@ inherited frmPrincipal: TfrmPrincipal
     DefaultItemStyles.ItemStyle = ''
     DefaultItemStyles.GroupHeaderStyle = ''
     DefaultItemStyles.GroupFooterStyle = ''
-    Viewport.Width = 388.000000000000000000
+    Viewport.Width = 400.000000000000000000
     Viewport.Height = 158.000000000000000000
     object ListBoxItem1: TListBoxItem
-      Size.Width = 194.000000000000000000
+      Size.Width = 200.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -362,7 +358,7 @@ inherited frmPrincipal: TfrmPrincipal
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
         Margins.Bottom = 16.000000000000000000
-        Size.Width = 162.000000000000000000
+        Size.Width = 168.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = claNull
@@ -376,7 +372,7 @@ inherited frmPrincipal: TfrmPrincipal
           Margins.Bottom = 8.000000000000000000
           Position.X = 8.000000000000000000
           Position.Y = 36.000000000000000000
-          Size.Width = 146.000000000000000000
+          Size.Width = 152.000000000000000000
           Size.Height = 45.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
@@ -387,7 +383,7 @@ inherited frmPrincipal: TfrmPrincipal
             Margins.Right = 8.000000000000000000
             Position.X = 8.000000000000000000
             Position.Y = 28.000000000000000000
-            Size.Width = 130.000000000000000000
+            Size.Width = 136.000000000000000000
             Size.Height = 21.000000000000000000
             Size.PlatformDefault = False
             StyledSettings = [Family]
@@ -401,7 +397,7 @@ inherited frmPrincipal: TfrmPrincipal
           end
           object Layout5: TLayout
             Align = Top
-            Size.Width = 146.000000000000000000
+            Size.Width = 152.000000000000000000
             Size.Height = 24.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
@@ -429,8 +425,8 @@ inherited frmPrincipal: TfrmPrincipal
     end
     object ListBoxItem2: TListBoxItem
       HitTest = True
-      Position.X = 194.000000000000000000
-      Size.Width = 194.000000000000000000
+      Position.X = 200.000000000000000000
+      Size.Width = 200.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -442,7 +438,7 @@ inherited frmPrincipal: TfrmPrincipal
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
         Margins.Bottom = 16.000000000000000000
-        Size.Width = 162.000000000000000000
+        Size.Width = 168.000000000000000000
         Size.Height = 118.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = claNull
@@ -456,7 +452,7 @@ inherited frmPrincipal: TfrmPrincipal
           Margins.Bottom = 8.000000000000000000
           Position.X = 8.000000000000000000
           Position.Y = 36.000000000000000000
-          Size.Width = 146.000000000000000000
+          Size.Width = 152.000000000000000000
           Size.Height = 45.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
@@ -467,7 +463,7 @@ inherited frmPrincipal: TfrmPrincipal
             Margins.Right = 8.000000000000000000
             Position.X = 8.000000000000000000
             Position.Y = 27.000000000000000000
-            Size.Width = 130.000000000000000000
+            Size.Width = 136.000000000000000000
             Size.Height = 21.000000000000000000
             Size.PlatformDefault = False
             StyledSettings = [Family]
@@ -480,7 +476,7 @@ inherited frmPrincipal: TfrmPrincipal
           end
           object Layout8: TLayout
             Align = Top
-            Size.Width = 146.000000000000000000
+            Size.Width = 152.000000000000000000
             Size.Height = 23.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
@@ -508,12 +504,12 @@ inherited frmPrincipal: TfrmPrincipal
   end
   object VertScrollBox1: TVertScrollBox
     Align = Client
-    Size.Width = 388.000000000000000000
-    Size.Height = 376.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 132.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 6
-    Viewport.Width = 388.000000000000000000
-    Viewport.Height = 376.000000000000000000
+    Viewport.Width = 400.000000000000000000
+    Viewport.Height = 132.000000000000000000
   end
   object SkLabel6: TSkLabel
     Align = Top
@@ -521,7 +517,7 @@ inherited frmPrincipal: TfrmPrincipal
     Margins.Top = 16.000000000000000000
     Position.X = 16.000000000000000000
     Position.Y = 170.000000000000000000
-    Size.Width = 372.000000000000000000
+    Size.Width = 384.000000000000000000
     Size.Height = 21.000000000000000000
     Size.PlatformDefault = False
     StyledSettings = [Family, FontColor]
@@ -539,7 +535,7 @@ inherited frmPrincipal: TfrmPrincipal
     Margins.Bottom = 8.000000000000000000
     Position.X = 16.000000000000000000
     Position.Y = 365.000000000000000000
-    Size.Width = 372.000000000000000000
+    Size.Width = 384.000000000000000000
     Size.Height = 21.000000000000000000
     Size.PlatformDefault = False
     StyledSettings = [Family, FontColor]

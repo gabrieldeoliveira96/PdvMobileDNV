@@ -1,13 +1,13 @@
 object frameProduto: TframeProduto
   Margins.Top = 16.000000000000000000
-  Size.Width = 387.000000000000000000
+  Size.Width = 388.000000000000000000
   Size.Height = 64.000000000000000000
   Size.PlatformDefault = False
   object Rectangle1: TRectangle
     Align = Client
     Fill.Color = claWhite
     HitTest = False
-    Size.Width = 387.000000000000000000
+    Size.Width = 388.000000000000000000
     Size.Height = 64.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -20,7 +20,7 @@ object frameProduto: TframeProduto
       Margins.Right = 16.000000000000000000
       Position.X = 16.000000000000000000
       Position.Y = 8.000000000000000000
-      Size.Width = 355.000000000000000000
+      Size.Width = 356.000000000000000000
       Size.Height = 19.000000000000000000
       Size.PlatformDefault = False
       StyledSettings = [Family, Size, FontColor]
@@ -37,7 +37,7 @@ object frameProduto: TframeProduto
       Margins.Right = 16.000000000000000000
       Position.X = 16.000000000000000000
       Position.Y = 35.000000000000000000
-      Size.Width = 355.000000000000000000
+      Size.Width = 356.000000000000000000
       Size.Height = 19.000000000000000000
       Size.PlatformDefault = False
       StyledSettings = [Family, Size]

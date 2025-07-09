@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Effects, FMX.Filter.Effects, FMX.Controls.Presentation,
   FMX.Layouts, System.Skia, FMX.Skia, UI.Base, UI.Edit, UI.Standard, UI.Calendar,
-  uGosBase, uGosStandard, uFancyDialog;
+  uGosBase, uGosStandard, uFancyDialog, uLoading, uConnection, uConstants,
+  System.JSON;
 
 type
   Tfrmaddcliente = class(TfrmHerancaBase)
@@ -19,23 +20,21 @@ type
     Layout2: TLayout;
     SkLabel1: TSkLabel;
     Layout3: TLayout;
-    edtCPF: TEditView;
     SkLabel2: TSkLabel;
+    Layout5: TLayout;
     Layout4: TLayout;
     SkLabel3: TSkLabel;
-    DateView1: TDateView;
-    Layout5: TLayout;
-    Layout6: TLayout;
-    btnSalvar: TButtonView;
-    SkLabel7: TSkLabel;
-    Layout7: TLayout;
-    GosButtonView2: TButtonView;
-    SkLabel8: TSkLabel;
-    procedure btnSalvarClick(Sender: TObject);
+    edtEndereco: TEditView;
+    edtTelefone: TEditView;
+    Layout8: TLayout;
+    SkLabel4: TSkLabel;
+    edtEmail: TEditView;
+    btnCadastrar: TButtonView;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton1Click(Sender: TObject);
     procedure GosButtonView2Click(Sender: TObject);
+    procedure btnCadastrarClick(Sender: TObject);
   private
     { Private declarations }
     FMsg:TFancyDialog;
@@ -52,6 +51,92 @@ var
 implementation
 
 {$R *.fmx}
+
+uses view.principal;
+
+procedure Tfrmaddcliente.btnCadastrarClick(Sender: TObject);
+begin
+  inherited;
+
+
+  FMsg.Show(TIconDialog.Question,
+  'Confirme',
+  'Confirme para salvar',
+  'Confirmar',
+  procedure
+  begin
+    TLoading.Show(self,'Aguarde Cadatrando');
+
+    TThread.CreateAnonymousThread(
+    procedure
+    var
+      LCon:TConnection;
+      LJsonObject:TJSONObject;
+      LResult:string;
+      LParameter:TParameter;
+    begin
+
+      try
+
+        LCon:= TConnection.Create;
+        LJsonObject:= TJSONObject.Create;
+        try
+
+          LJsonObject.AddPair('nome',edtNome.Text);
+          LJsonObject.AddPair('endereco',edtEndereco.Text);
+          LJsonObject.AddPair('celular',edtTelefone.Text);
+          LJsonObject.AddPair('email',edtEmail.Text);
+
+          LJsonObject.AddPair('cpf','01012345600');
+          LJsonObject.AddPair('dataNascimento','2023/03/03');
+          LJsonObject.AddPair('cep','29900100');
+          LJsonObject.AddPair('cidade','linhares');
+          LJsonObject.AddPair('bairro','bnh');
+
+          LJsonObject.AddPair('uf','ES');
+          LJsonObject.AddPair('numero','5');
+          LJsonObject.AddPair('complemento','');
+
+          LParameter.Token:= frmPrincipal.FToken;
+
+          if not LCon.Post(URL+'cadastra/cliente',LParameter,LJsonObject,LResult) then
+          begin
+            Tthread.Synchronize(nil,
+            procedure
+            begin
+              FMsg.Show(TIconDialog.Error,'Erro ao enviar','Erro ao enviar dados para o servidor');
+            end);
+
+            exit;
+          end;
+
+          FCallBack;
+
+        finally
+          FreeAndNil(LCon);
+          FreeAndNil(LJsonObject);
+        end;
+
+
+      finally
+
+        Tthread.Synchronize(nil,
+        procedure
+        begin
+
+          TLoading.Hide;
+        end);
+
+      end;
+
+    end).Start;
+
+
+
+  end,
+  'Cancelar');
+
+end;
 
 procedure Tfrmaddcliente.CarregaTela(ACallBack: TProc);
 begin
@@ -70,22 +155,6 @@ procedure Tfrmaddcliente.FormCreate(Sender: TObject);
 begin
   inherited;
   FMsg:= TFancyDialog.Create(self);
-end;
-
-procedure Tfrmaddcliente.btnSalvarClick(Sender: TObject);
-begin
-  inherited;
-
-  FMsg.Show(TIconDialog.Question,
-  'Confirme',
-  'Confirme para salvar',
-  'Confirmar',
-  procedure
-  begin
-    //post na api
-    FCallBack;
-  end,
-  'Cancelar');
 end;
 
 procedure Tfrmaddcliente.GosButtonView2Click(Sender: TObject);

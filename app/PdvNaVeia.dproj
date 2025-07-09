@@ -304,6 +304,11 @@
         <DCCReference Include="feature\uConnection.pas"/>
         <DCCReference Include="feature\uLoading.pas"/>
         <DCCReference Include="feature\uConstants.pas"/>
+        <DCCReference Include="view\frame\frame.clientes.pas">
+            <Form>FrameClientes</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -7,7 +7,7 @@ inherited frmaddcliente: Tfrmaddcliente
     Align = Top
     Margins.Top = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 393.000000000000000000
+    Size.Width = 400.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -27,12 +27,12 @@ inherited frmaddcliente: Tfrmaddcliente
   end
   object VertScrollBox1: TVertScrollBox
     Align = Client
-    Size.Width = 393.000000000000000000
-    Size.Height = 567.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 534.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Viewport.Width = 393.000000000000000000
-    Viewport.Height = 567.000000000000000000
+    Viewport.Width = 400.000000000000000000
+    Viewport.Height = 534.000000000000000000
     object Layout2: TLayout
       Align = Top
       Margins.Left = 16.000000000000000000
@@ -41,10 +41,10 @@ inherited frmaddcliente: Tfrmaddcliente
       Margins.Bottom = 8.000000000000000000
       Position.X = 16.000000000000000000
       Position.Y = 16.000000000000000000
-      Size.Width = 361.000000000000000000
+      Size.Width = 368.000000000000000000
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 4
       object edtNome: TEditView
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
@@ -61,7 +61,7 @@ inherited frmaddcliente: Tfrmaddcliente
         Padding.Right = 6.000000000000000000
         Padding.Bottom = 2.000000000000000000
         Margins.Top = 8.000000000000000000
-        Size.Width = 361.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 43.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -70,7 +70,7 @@ inherited frmaddcliente: Tfrmaddcliente
       end
       object SkLabel1: TSkLabel
         Align = Top
-        Size.Width = 361.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
         StyledSettings = [Family, Size, FontColor]
@@ -88,12 +88,24 @@ inherited frmaddcliente: Tfrmaddcliente
       Margins.Right = 16.000000000000000000
       Margins.Bottom = 8.000000000000000000
       Position.X = 16.000000000000000000
-      Position.Y = 110.000000000000000000
-      Size.Width = 361.000000000000000000
+      Position.Y = 204.000000000000000000
+      Size.Width = 368.000000000000000000
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
-      object edtCPF: TEditView
+      TabOrder = 3
+      object SkLabel2: TSkLabel
+        Align = Top
+        Size.Width = 368.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+        TextSettings.Font.Weight = Semibold
+        Words = <
+          item
+            Text = 'Telefone'
+          end>
+      end
+      object edtTelefone: TEditView
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         Background.Border.Color.Default = xBFC0C0C0
@@ -109,24 +121,53 @@ inherited frmaddcliente: Tfrmaddcliente
         Padding.Right = 6.000000000000000000
         Padding.Bottom = 2.000000000000000000
         Margins.Top = 8.000000000000000000
-        Size.Width = 361.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 43.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         TextSettings.Gravity = CenterVertical
         DisableFocusEffect = True
       end
-      object SkLabel2: TSkLabel
-        Align = Top
-        Size.Width = 361.000000000000000000
-        Size.Height = 19.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Family, Size, FontColor]
-        TextSettings.Font.Weight = Semibold
-        Words = <
+    end
+    object Layout5: TLayout
+      Align = Bottom
+      Margins.Bottom = 24.000000000000000000
+      Position.Y = 445.000000000000000000
+      Size.Width = 400.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object btnCadastrar: TButtonView
+        Align = Center
+        Background.XRadius = 5.000000000000000000
+        Background.YRadius = 5.000000000000000000
+        Background.ItemDefault.Kind = Gradient
+        Background.ItemDefault.Gradient.Points = <
           item
-            Text = 'CPF'
+            Color = xFF2C8FC4
+            Offset = 0.000000000000000000
+          end
+          item
+            Color = xFF58C4EF
+            Offset = 1.000000000000000000
           end>
+        Background.ItemDefault.Gradient.StartPosition.Y = 0.500000000000000000
+        Background.ItemDefault.Gradient.StopPosition.X = 1.000000000000000000
+        Background.ItemDefault.Gradient.StopPosition.Y = 0.500000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnCadastrarClick
+        Text = 'Criar Cliente'
+        TextSettings.Color.Default = claWhite
+        TextSettings.Color.Focused = claNull
+        TextSettings.Color.Selected = claNull
+        TextSettings.Color.Enabled = claNull
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Gravity = Center
+        Drawable.XRadius = 5.000000000000000000
+        Drawable.YRadius = 5.000000000000000000
       end
     end
     object Layout4: TLayout
@@ -136,132 +177,93 @@ inherited frmaddcliente: Tfrmaddcliente
       Margins.Right = 16.000000000000000000
       Margins.Bottom = 8.000000000000000000
       Position.X = 16.000000000000000000
-      Position.Y = 204.000000000000000000
-      Size.Width = 361.000000000000000000
+      Position.Y = 110.000000000000000000
+      Size.Width = 368.000000000000000000
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 0
+      TabOrder = 1
       object SkLabel3: TSkLabel
         Align = Top
-        Size.Width = 361.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
         StyledSettings = [Family, Size, FontColor]
         TextSettings.Font.Weight = Semibold
         Words = <
           item
-            Text = 'Data de Nascimento'
+            Text = 'Endereco'
           end>
       end
-      object DateView1: TDateView
+      object edtEndereco: TEditView
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
+        Background.Border.Color.Default = xBFC0C0C0
+        Background.Border.Color.Pressed = claNull
+        Background.Border.Color.Focused = xFF0066CC
+        Background.Border.Color.Hovered = claSilver
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Checked = claNull
+        Background.Border.Color.Enabled = claNull
+        ClipChildren = True
+        Padding.Left = 6.000000000000000000
+        Padding.Top = 2.000000000000000000
+        Padding.Right = 6.000000000000000000
+        Padding.Bottom = 2.000000000000000000
         Margins.Top = 8.000000000000000000
-        Size.Width = 361.000000000000000000
+        Size.Width = 368.000000000000000000
         Size.Height = 43.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        Text = '25/02/2025'
-        TextSettings.Font.Size = 16.000000000000000000
         TextSettings.Gravity = CenterVertical
-        DateTimeFormat = 'dd/mm/yyyy'
+        DisableFocusEffect = True
       end
     end
-    object Layout5: TLayout
-      Align = Bottom
-      Margins.Bottom = 24.000000000000000000
-      Position.Y = 478.000000000000000000
-      Size.Width = 393.000000000000000000
-      Size.Height = 65.000000000000000000
+    object Layout8: TLayout
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 298.000000000000000000
+      Size.Width = 368.000000000000000000
+      Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
-      object Layout6: TLayout
-        Align = Right
-        Margins.Right = 24.000000000000000000
-        Position.X = 216.000000000000000000
-        Size.Width = 153.000000000000000000
-        Size.Height = 65.000000000000000000
+      TabOrder = 2
+      object SkLabel4: TSkLabel
+        Align = Top
+        Size.Width = 368.000000000000000000
+        Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 1
-        object btnSalvar: TButtonView
-          Align = VertCenter
-          Background.XRadius = 5.000000000000000000
-          Background.YRadius = 5.000000000000000000
-          Background.ItemDefault.Color = xFF0086ED
-          Size.Width = 153.000000000000000000
-          Size.Height = 41.000000000000000000
-          Size.PlatformDefault = False
-          Position.Y = 12.000000000000000000
-          TabOrder = 0
-          OnClick = btnSalvarClick
-          TextSettings.Color.Default = claWhite
-          TextSettings.Color.Focused = claNull
-          TextSettings.Color.Selected = claNull
-          TextSettings.Color.Enabled = claNull
-          TextSettings.Font.Family = 'Arial'
-          TextSettings.Font.Size = 14.000000000000000000
-          TextSettings.Font.StyleExt = {00070000000000000004000000}
-          TextSettings.Gravity = Center
-          object SkLabel7: TSkLabel
-            Align = Client
-            Locked = True
-            Size.Width = 145.000000000000000000
-            Size.Height = 33.000000000000000000
-            Size.PlatformDefault = False
-            StyledSettings = [Family, Size]
-            TextSettings.Font.Weight = Semibold
-            TextSettings.FontColor = claWhite
-            TextSettings.HorzAlign = Center
-            Words = <
-              item
-                Text = 'Salvar'
-              end>
-          end
-        end
+        StyledSettings = [Family, Size, FontColor]
+        TextSettings.Font.Weight = Semibold
+        Words = <
+          item
+            Text = 'E-mail'
+          end>
       end
-      object Layout7: TLayout
-        Align = Left
-        Margins.Left = 24.000000000000000000
-        Position.X = 24.000000000000000000
-        Size.Width = 153.000000000000000000
-        Size.Height = 65.000000000000000000
+      object edtEmail: TEditView
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        Background.Border.Color.Default = xBFC0C0C0
+        Background.Border.Color.Pressed = claNull
+        Background.Border.Color.Focused = xFF0066CC
+        Background.Border.Color.Hovered = claSilver
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Checked = claNull
+        Background.Border.Color.Enabled = claNull
+        ClipChildren = True
+        Padding.Left = 6.000000000000000000
+        Padding.Top = 2.000000000000000000
+        Padding.Right = 6.000000000000000000
+        Padding.Bottom = 2.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Size.Width = 368.000000000000000000
+        Size.Height = 43.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        object GosButtonView2: TButtonView
-          Align = VertCenter
-          Background.XRadius = 5.000000000000000000
-          Background.YRadius = 5.000000000000000000
-          Background.ItemDefault.Color = claWhite
-          Background.Border.Color.Default = xFF0086ED
-          Background.Border.Color.Focused = claNull
-          Background.Border.Color.Selected = claNull
-          Background.Border.Color.Enabled = claNull
-          Size.Width = 153.000000000000000000
-          Size.Height = 41.000000000000000000
-          Size.PlatformDefault = False
-          Position.Y = 12.000000000000000000
-          TabOrder = 0
-          OnClick = GosButtonView2Click
-          TextSettings.Color.Default = claWhite
-          TextSettings.Color.Focused = claNull
-          TextSettings.Color.Selected = claNull
-          TextSettings.Color.Enabled = claNull
-          TextSettings.Font.Size = 14.000000000000000000
-          TextSettings.Gravity = Center
-          object SkLabel8: TSkLabel
-            Align = Client
-            Size.Width = 145.000000000000000000
-            Size.Height = 33.000000000000000000
-            Size.PlatformDefault = False
-            StyledSettings = [Family, Size]
-            TextSettings.Font.Weight = Semibold
-            TextSettings.FontColor = xFF0086ED
-            TextSettings.HorzAlign = Center
-            Words = <
-              item
-                Text = 'Cancelar'
-              end>
-          end
-        end
+        TextSettings.Gravity = CenterVertical
+        DisableFocusEffect = True
       end
     end
   end

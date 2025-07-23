@@ -87,14 +87,14 @@ inherited frmCliente: TfrmCliente
   end
   object VertScrollBox1: TVertScrollBox
     Align = Client
-    Margins.Top = 16.000000000000000000
+    Margins.Top = 8.000000000000000000
     Size.Width = 400.000000000000000000
-    Size.Height = 452.000000000000000000
+    Size.Height = 431.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     OnClick = SpeedButton1Click
     Viewport.Width = 400.000000000000000000
-    Viewport.Height = 452.000000000000000000
+    Viewport.Height = 431.000000000000000000
   end
   object Layout2: TLayout
     Align = Top
@@ -120,6 +120,7 @@ inherited frmCliente: TfrmCliente
       ClipChildren = True
       Padding.Left = 18.000000000000000000
       Padding.Top = 2.000000000000000000
+      Padding.Right = 6.000000000000000000
       Padding.Bottom = 2.000000000000000000
       Size.Width = 377.000000000000000000
       Size.Height = 50.000000000000000000
@@ -155,7 +156,7 @@ inherited frmCliente: TfrmCliente
         Size.Width = 103.000000000000000000
         Size.Height = 42.000000000000000000
         Size.PlatformDefault = False
-        Position.X = 270.000000000000000000
+        Position.X = 264.000000000000000000
         Position.Y = 4.000000000000000000
         TabOrder = 0
         Text = 'Buscar'
@@ -170,5 +171,22 @@ inherited frmCliente: TfrmCliente
         Drawable.YRadius = 5.000000000000000000
       end
     end
+  end
+  object SkLabel4: TSkLabel
+    Align = Top
+    Margins.Left = 16.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 140.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 21.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, FontColor]
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.Weight = Semibold
+    Words = <
+      item
+        Text = 'Todos'
+      end>
   end
 end

@@ -38,10 +38,9 @@ type
   private
     { Private declarations }
     FMsg:TFancyDialog;
-    FCallBack:TProc;
   public
     { Public declarations }
-    procedure CarregaTela(ACallBack:TProc);
+    procedure CarregaTela;
 
   end;
 
@@ -52,7 +51,7 @@ implementation
 
 {$R *.fmx}
 
-uses view.principal;
+uses view.principal, view.cliente;
 
 procedure Tfrmaddcliente.btnCadastrarClick(Sender: TObject);
 begin
@@ -110,8 +109,6 @@ begin
             exit;
           end;
 
-          FCallBack;
-
         finally
           FreeAndNil(LCon);
           FreeAndNil(LJsonObject);
@@ -123,8 +120,10 @@ begin
         Tthread.Synchronize(nil,
         procedure
         begin
-
           TLoading.Hide;
+          self.Close;
+          if Assigned(frmCliente) then
+            frmCliente.Close;
         end);
 
       end;
@@ -138,9 +137,8 @@ begin
 
 end;
 
-procedure Tfrmaddcliente.CarregaTela(ACallBack: TProc);
+procedure Tfrmaddcliente.CarregaTela;
 begin
-  FCallBack:= ACallBack;
 end;
 
 procedure Tfrmaddcliente.FormClose(Sender: TObject; var Action: TCloseAction);

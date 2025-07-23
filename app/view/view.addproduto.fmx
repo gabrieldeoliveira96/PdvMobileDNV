@@ -1,0 +1,222 @@
+inherited frmaddproduto: Tfrmaddproduto
+  Caption = 'frmHerancaBase1'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Top
+    Margins.Top = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object SpeedButton1: TSpeedButton
+      Align = Left
+      Size.Width = 80.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowlefttoolbutton'
+      Text = 'SpeedButton1'
+      TextSettings.Trimming = None
+      OnClick = SpeedButton1Click
+      object FillRGBEffect1: TFillRGBEffect
+        Color = claBlack
+      end
+    end
+  end
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 400.000000000000000000
+    Size.Height = 534.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 400.000000000000000000
+    Viewport.Height = 534.000000000000000000
+    object Layout2: TLayout
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 368.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object edtNome: TEditView
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        Background.Border.Color.Default = xBFC0C0C0
+        Background.Border.Color.Pressed = claNull
+        Background.Border.Color.Focused = xFF0066CC
+        Background.Border.Color.Hovered = claSilver
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Checked = claNull
+        Background.Border.Color.Enabled = claNull
+        ClipChildren = True
+        Padding.Left = 6.000000000000000000
+        Padding.Top = 2.000000000000000000
+        Padding.Right = 6.000000000000000000
+        Padding.Bottom = 2.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Size.Width = 368.000000000000000000
+        Size.Height = 43.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        TextSettings.Gravity = CenterVertical
+        DisableFocusEffect = True
+      end
+      object SkLabel1: TSkLabel
+        Align = Top
+        Size.Width = 368.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+        TextSettings.Font.Weight = Semibold
+        Words = <
+          item
+            Text = 'Nome'
+          end>
+      end
+    end
+    object Layout3: TLayout
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 204.000000000000000000
+      Size.Width = 368.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object SkLabel2: TSkLabel
+        Align = Top
+        Size.Width = 368.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+        TextSettings.Font.Weight = Semibold
+        Words = <
+          item
+            Text = 'Valor'
+          end>
+      end
+      object edtValor: TEditView
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        Background.Border.Color.Default = xBFC0C0C0
+        Background.Border.Color.Pressed = claNull
+        Background.Border.Color.Focused = xFF0066CC
+        Background.Border.Color.Hovered = claSilver
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Checked = claNull
+        Background.Border.Color.Enabled = claNull
+        ClipChildren = True
+        Padding.Left = 6.000000000000000000
+        Padding.Top = 2.000000000000000000
+        Padding.Right = 6.000000000000000000
+        Padding.Bottom = 2.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Size.Width = 368.000000000000000000
+        Size.Height = 43.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        TextSettings.Gravity = CenterVertical
+        DisableFocusEffect = True
+      end
+    end
+    object Layout5: TLayout
+      Align = Bottom
+      Margins.Bottom = 24.000000000000000000
+      Position.Y = 445.000000000000000000
+      Size.Width = 400.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object btnCadastrar: TButtonView
+        Align = Center
+        Background.XRadius = 5.000000000000000000
+        Background.YRadius = 5.000000000000000000
+        Background.ItemDefault.Kind = Gradient
+        Background.ItemDefault.Gradient.Points = <
+          item
+            Color = xFF2C8FC4
+            Offset = 0.000000000000000000
+          end
+          item
+            Color = xFF58C4EF
+            Offset = 1.000000000000000000
+          end>
+        Background.ItemDefault.Gradient.StartPosition.Y = 0.500000000000000000
+        Background.ItemDefault.Gradient.StopPosition.X = 1.000000000000000000
+        Background.ItemDefault.Gradient.StopPosition.Y = 0.500000000000000000
+        Size.Width = 338.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnCadastrarClick
+        Text = 'Criar Produto'
+        TextSettings.Color.Default = claWhite
+        TextSettings.Color.Focused = claNull
+        TextSettings.Color.Selected = claNull
+        TextSettings.Color.Enabled = claNull
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Gravity = Center
+        Drawable.XRadius = 5.000000000000000000
+        Drawable.YRadius = 5.000000000000000000
+      end
+    end
+    object Layout4: TLayout
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 110.000000000000000000
+      Size.Width = 368.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object SkLabel3: TSkLabel
+        Align = Top
+        Size.Width = 368.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+        TextSettings.Font.Weight = Semibold
+        Words = <
+          item
+            Text = 'Cod Barra'
+          end>
+      end
+      object edtCodBarra: TEditView
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        Background.Border.Color.Default = xBFC0C0C0
+        Background.Border.Color.Pressed = claNull
+        Background.Border.Color.Focused = xFF0066CC
+        Background.Border.Color.Hovered = claSilver
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Checked = claNull
+        Background.Border.Color.Enabled = claNull
+        ClipChildren = True
+        Padding.Left = 6.000000000000000000
+        Padding.Top = 2.000000000000000000
+        Padding.Right = 6.000000000000000000
+        Padding.Bottom = 2.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Size.Width = 368.000000000000000000
+        Size.Height = 43.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        TextSettings.Gravity = CenterVertical
+        DisableFocusEffect = True
+      end
+    end
+  end
+end

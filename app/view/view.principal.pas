@@ -9,7 +9,8 @@ uses
   FMX.Objects, Alcinoe.FMX.Objects, FMX.ListBox, FMX.Effects,
   FMX.Filter.Effects, uGosObjects, heranca.botao, view.produtos,
   System.Generics.Collections, frame.vendas, view.addcliente,
-  Alcinoe.FMX.Controls, uLoading;
+  Alcinoe.FMX.Controls, uLoading, uConnection, uConstants, System.JSON,
+  uFancyDialog;
 
 type
   TfrmPrincipal = class(TfrmHerancaBotao)
@@ -27,14 +28,14 @@ type
     ALRectangle1: TGosRectangle;
     ALRectangle2: TGosRectangle;
     Layout3: TLayout;
-    lblQtdVendas: TSkLabel;
+    lblQtdClientes: TSkLabel;
     SkLabel5: TSkLabel;
     Layout5: TLayout;
     VertScrollBox1: TVertScrollBox;
     Layout6: TLayout;
     SkLabel4: TSkLabel;
     Layout8: TLayout;
-    SkLabel7: TSkLabel;
+    lblQtdProdutos: TSkLabel;
     SkLabel6: TSkLabel;
     SkLabel8: TSkLabel;
     procedure btnAddClick(Sender: TObject);
@@ -42,9 +43,12 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure ListBoxItem1Click(Sender: TObject);
+    procedure ListBoxItem2Click(Sender: TObject);
   private
     { Private declarations }
     FListaVendas:TObjectList<TFrameVendas>;
+    procedure AtualizaContadorProduto;
+    procedure AtualizaContadorCliente;
   public
     { Public declarations }
     procedure CarregaTela(AToken:string);
@@ -89,8 +93,6 @@ begin
 
   end;
 
-  lblQtdVendas.Text:= FListaVendas.Count.ToString;
-
 end;
 
 procedure TfrmPrincipal.CarregaTela(AToken:string);
@@ -110,6 +112,9 @@ begin
   begin
     VertScrollBox1.EndUpdate;
   end);
+
+  AtualizaContadorProduto;
+  AtualizaContadorCliente;
 
 end;
 
@@ -149,17 +154,7 @@ begin
 
       end);
 
-      frmCliente.CarregaTela(
-      procedure
-      begin
-        Tthread.Synchronize(TThread.CurrentThread,
-        procedure
-        begin
-          frmaddcliente.Close;
-          frmCliente.Close;
-          ShowMessage('oi');
-        end);
-      end);
+      frmCliente.CarregaTela;
 
       Tthread.Synchronize(nil,
       procedure
@@ -179,6 +174,100 @@ begin
 
   end).Start;
 
+end;
+
+procedure TfrmPrincipal.ListBoxItem2Click(Sender: TObject);
+begin
+  inherited;
+  TLoading.Show(self,'Aguarde, carregando produtos!');
+
+  TThread.CreateAnonymousThread(
+  procedure
+  begin
+    try
+      Tthread.Synchronize(nil,
+      procedure
+      begin
+        if not Assigned(frmProdutos) then
+          Application.CreateForm(TfrmProdutos, frmProdutos);
+
+      end);
+
+      frmProdutos.CarregaTela(AtualizaContadorProduto);
+
+      Tthread.Synchronize(nil,
+      procedure
+      begin
+        frmProdutos.Show;
+
+      end);
+    finally
+
+      Tthread.Synchronize(nil,
+      procedure
+      begin
+        TLoading.Hide;
+
+      end);
+    end;
+
+  end).Start;
+
+
+end;
+
+procedure TfrmPrincipal.AtualizaContadorCliente;
+var
+ LCon:TConnection;
+ LParam: TParameter;
+ LResult:string;
+ LJsonArray:TJSONArray;
+begin
+
+  LCon:= TConnection.Create;
+  try
+    LParam.Token:= FToken;
+
+    if not LCon.Get(URL+'lista/cliente',LParam,LResult) then
+      exit;
+
+    LJsonArray:= TJSONObject.ParseJSONValue(LResult) as TJSONArray;
+
+  finally
+    FreeAndNil(LCon);
+  end;
+
+
+  lblQtdClientes.Text:= LJsonArray.Count.ToString;
+
+end;
+
+procedure TfrmPrincipal.AtualizaContadorProduto;
+var
+ LCon:TConnection;
+ LParam: TParameter;
+ LResult:string;
+ LJsonArray:TJSONArray;
+begin
+
+  LCon:= TConnection.Create;
+  try
+    LParam.Token:= FToken;
+
+    if not LCon.Get(URL+'lista/produto',LParam,LResult) then
+      exit;
+
+    LJsonArray:= TJSONObject.ParseJSONValue(LResult) as TJSONArray;
+
+  finally
+    FreeAndNil(LCon);
+  end;
+
+  TThread.Synchronize(nil,
+  procedure
+  begin
+    lblQtdProdutos.Text:= LJsonArray.Count.ToString;
+  end);
 end;
 
 procedure TfrmPrincipal.btnAddClick(Sender: TObject);
@@ -220,5 +309,7 @@ begin
   end).Start;
 
 end;
+
+
 
 end.

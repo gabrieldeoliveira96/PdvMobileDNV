@@ -401,7 +401,7 @@ inherited frmPrincipal: TfrmPrincipal
             Size.Height = 24.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object lblQtdVendas: TSkLabel
+            object lblQtdClientes: TSkLabel
               Align = Left
               Margins.Left = 8.000000000000000000
               Margins.Top = 4.000000000000000000
@@ -430,6 +430,7 @@ inherited frmPrincipal: TfrmPrincipal
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
+      OnClick = ListBoxItem2Click
       object ALRectangle2: TGosRectangle
         Align = Client
         Fill.Color = xFFEDEDED
@@ -480,7 +481,7 @@ inherited frmPrincipal: TfrmPrincipal
             Size.Height = 23.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object SkLabel7: TSkLabel
+            object lblQtdProdutos: TSkLabel
               Align = Left
               Margins.Left = 8.000000000000000000
               Margins.Top = 4.000000000000000000

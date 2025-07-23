@@ -18,7 +18,8 @@ uses
   uConnection in 'feature\uConnection.pas',
   uLoading in 'feature\uLoading.pas',
   uConstants in 'feature\uConstants.pas',
-  frame.clientes in 'view\frame\frame.clientes.pas' {FrameClientes: TFrame};
+  frame.clientes in 'view\frame\frame.clientes.pas' {FrameClientes: TFrame},
+  view.addproduto in 'view\view.addproduto.pas' {frmaddproduto};
 
 {$R *.res}
 
@@ -27,5 +28,6 @@ begin
   Application.CreateForm(TfrmSplash, frmSplash);
   Application.CreateForm(TfrmHerancaBase, frmHerancaBase);
   Application.CreateForm(TfrmHerancaBotao, frmHerancaBotao);
+  Application.CreateForm(Tfrmaddproduto, frmaddproduto);
   Application.Run;
 end.

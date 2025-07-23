@@ -8,7 +8,7 @@ uses
   heranca.base, frame.clientes, FMX.Layouts, FMX.Effects, FMX.Filter.Effects,
   FMX.Controls.Presentation, UI.Base, UI.Edit, uConnection, uConstants,
   view.principal, System.JSON, uFancyDialog, System.Skia, FMX.Skia, FMX.Objects,
-  UI.Standard, frame.produtos;
+  UI.Standard, frame.produtos, uLoading;
 
 type
   TfrmCliente = class(TfrmHerancaBase)
@@ -23,17 +23,17 @@ type
     Circle1: TCircle;
     SkLabel3: TSkLabel;
     btnLogin: TButtonView;
+    SkLabel4: TSkLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Circle1Click(Sender: TObject);
   private
     { Private declarations }
-    FCallBack: TProc;
     FMsg:TFancyDialog;
   public
     { Public declarations }
-    procedure CarregaTela(ACallBack:TProc);
+    procedure CarregaTela;
 
   end;
 
@@ -46,14 +46,13 @@ implementation
 
 uses view.addcliente;
 
-procedure TfrmCliente.CarregaTela(ACallBack:TProc);
+procedure TfrmCliente.CarregaTela;
 var
  LCon:TConnection;
  LParam: TParameter;
  LResult:string;
  LJsonArray:TJSONArray;
 begin
-  FCallBack:= ACallBack;
 
   LCon:= TConnection.Create;
   try
@@ -107,11 +106,40 @@ procedure TfrmCliente.Circle1Click(Sender: TObject);
 begin
   inherited;
 
-  if not Assigned(frmaddcliente) then
-    Application.CreateForm(Tfrmaddcliente,frmaddcliente);
+  TLoading.Show(self,'Aguarde, carregando produtos');
+  TThread.CreateAnonymousThread(
+  procedure
+  begin
 
-  frmaddcliente.CarregaTela(FCallBack);
-  frmaddcliente.Show;
+    try
+
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        if not Assigned(frmaddcliente) then
+          Application.CreateForm(Tfrmaddcliente,frmaddcliente);
+      end);
+
+      frmaddcliente.CarregaTela;
+
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        frmaddcliente.Show;
+      end);
+
+    finally
+
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        TLoading.Hide;
+
+      end);
+
+
+    end;
+  end).Start;
 
 
 end;

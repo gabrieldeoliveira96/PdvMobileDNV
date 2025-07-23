@@ -13,40 +13,89 @@ object frameProduto: TframeProduto
     Stroke.Kind = None
     XRadius = 10.000000000000000000
     YRadius = 10.000000000000000000
-    object lblProduto: TSkLabel
+    object Layout1: TLayout
       Align = Top
-      Margins.Left = 16.000000000000000000
-      Margins.Top = 8.000000000000000000
-      Margins.Right = 16.000000000000000000
-      Position.X = 16.000000000000000000
-      Position.Y = 8.000000000000000000
-      Size.Width = 356.000000000000000000
-      Size.Height = 19.000000000000000000
+      Size.Width = 388.000000000000000000
+      Size.Height = 37.000000000000000000
       Size.PlatformDefault = False
-      StyledSettings = [Family, Size, FontColor]
-      TextSettings.Font.Weight = Bold
-      Words = <
-        item
-          Text = 'Produto 1'
-        end>
+      TabOrder = 1
+      object lblProduto: TSkLabel
+        Align = Client
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 237.359985351562500000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, FontColor]
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.Weight = Bold
+        Words = <
+          item
+            Text = 'Produto'
+          end>
+      end
+      object lblData: TSkLabel
+        Align = Right
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 285.359985351562500000
+        Position.Y = 4.000000000000000000
+        Size.Width = 86.639999389648440000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'DD/MM/YYYY'
+          end>
+      end
     end
-    object lblDescricao: TSkLabel
-      Align = Top
-      Margins.Left = 16.000000000000000000
-      Margins.Top = 8.000000000000000000
-      Margins.Right = 16.000000000000000000
-      Position.X = 16.000000000000000000
-      Position.Y = 35.000000000000000000
-      Size.Width = 356.000000000000000000
-      Size.Height = 19.000000000000000000
+    object Layout2: TLayout
+      Align = Bottom
+      Position.Y = 32.000000000000000000
+      Size.Width = 388.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
-      StyledSettings = [Family, Size]
-      TextSettings.Font.Weight = Semibold
-      TextSettings.FontColor = xFF3C3C3C
-      Words = <
-        item
-          Text = 'Descri'#231#227'o Produto 1'
-        end>
+      TabOrder = 0
+      object lblDetalhes: TSkLabel
+        Align = Client
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 278.570007324218800000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'Detalhes'
+          end>
+      end
+      object lblValor: TSkLabel
+        Align = Right
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 326.570007324218800000
+        Position.Y = 4.000000000000000000
+        Size.Width = 45.430000305175780000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Size]
+        TextSettings.FontColor = xFF3C3C3C
+        Words = <
+          item
+            Text = 'R$ 0,00'
+          end>
+      end
     end
   end
 end

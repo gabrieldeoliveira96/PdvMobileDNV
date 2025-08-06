@@ -5,15 +5,15 @@ inherited frmHerancaBotao: TfrmHerancaBotao
     Align = Bottom
     Locked = True
     Margins.Bottom = 24.000000000000000000
-    Position.Y = 559.000000000000000000
-    Size.Width = 393.000000000000000000
+    Position.Y = 526.000000000000000000
+    Size.Width = 400.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object lytbtn1: TLayout
       Align = Scale
       Locked = True
-      Size.Width = 78.599998474121090000
+      Size.Width = 79.999992370605470000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
@@ -21,25 +21,26 @@ inherited frmHerancaBotao: TfrmHerancaBotao
     object btnAdd: TLayout
       Align = Scale
       Locked = True
-      Position.X = 157.199996948242200000
-      Size.Width = 78.599990844726560000
+      Position.X = 159.999984741210900000
+      Size.Width = 79.999984741210940000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      object GosCircle3: TGosCircle
+      object GosCircle3: TALCircle
         Align = Client
         Fill.Color = xFF0086ED
-        Size.Width = 78.599990844726560000
+        Size.Width = 79.999984741210940000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = claNull
+        Stroke.Thickness = 0.800000011920929000
         object SkSvg1: TSkSvg
           Align = Client
           Margins.Left = 10.000000000000000000
           Margins.Top = 10.000000000000000000
           Margins.Right = 10.000000000000000000
           Margins.Bottom = 10.000000000000000000
-          Size.Width = 58.599990844726560000
+          Size.Width = 59.999984741210940000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
@@ -60,8 +61,8 @@ inherited frmHerancaBotao: TfrmHerancaBotao
     object lytbtn4: TLayout
       Align = Scale
       Locked = True
-      Position.X = 235.800003051757800000
-      Size.Width = 78.599990844726560000
+      Position.X = 239.999984741210900000
+      Size.Width = 79.999984741210940000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
@@ -69,8 +70,8 @@ inherited frmHerancaBotao: TfrmHerancaBotao
     object lytbtn2: TLayout
       Align = Scale
       Locked = True
-      Position.X = 78.599998474121090000
-      Size.Width = 78.599998474121090000
+      Position.X = 79.999992370605470000
+      Size.Width = 79.999992370605470000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -78,8 +79,8 @@ inherited frmHerancaBotao: TfrmHerancaBotao
     object lytbtn5: TLayout
       Align = Scale
       Locked = True
-      Position.X = 314.399993896484400000
-      Size.Width = 78.600006103515630000
+      Position.X = 319.999969482421900000
+      Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0

@@ -6,9 +6,6 @@
         <Projects Include="app\PdvNaVeia.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="api\PdvAPI.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -26,23 +23,14 @@
     <Target Name="PdvNaVeia:Make">
         <MSBuild Projects="app\PdvNaVeia.dproj" Targets="Make"/>
     </Target>
-    <Target Name="PdvAPI">
-        <MSBuild Projects="api\PdvAPI.dproj"/>
-    </Target>
-    <Target Name="PdvAPI:Clean">
-        <MSBuild Projects="api\PdvAPI.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="PdvAPI:Make">
-        <MSBuild Projects="api\PdvAPI.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="PdvNaVeia;PdvAPI"/>
+        <CallTarget Targets="PdvNaVeia"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="PdvNaVeia:Clean;PdvAPI:Clean"/>
+        <CallTarget Targets="PdvNaVeia:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="PdvNaVeia:Make;PdvAPI:Make"/>
+        <CallTarget Targets="PdvNaVeia:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  heranca.base, System.Skia, FMX.Skia, FMX.Objects, uGosObjects, FMX.Layouts,
+  heranca.base, System.Skia, FMX.Skia, FMX.Objects, FMX.Layouts,
   Alcinoe.FMX.Objects, Alcinoe.FMX.Controls;
 
 type
@@ -13,7 +13,7 @@ type
     lytBotao: TLayout;
     lytbtn1: TLayout;
     btnAdd: TLayout;
-    GosCircle3: TGosCircle;
+    GosCircle3: TALCircle;
     SkSvg1: TSkSvg;
     lytbtn4: TLayout;
     lytbtn2: TLayout;

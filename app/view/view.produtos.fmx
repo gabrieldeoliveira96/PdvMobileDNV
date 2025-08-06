@@ -32,6 +32,7 @@ inherited frmProdutos: TfrmProdutos
       StyleLookup = 'priortoolbutton'
       Text = 'SpeedButton1'
       TextSettings.Trimming = None
+      OnClick = SpeedButton1Click
       object FillRGBEffect1: TFillRGBEffect
         Color = xFF606060
       end

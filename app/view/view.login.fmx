@@ -13,6 +13,7 @@ inherited frmLogin: TfrmLogin
   Fill.Gradient.StartPosition.Y = 0.500000000000000000
   Fill.Gradient.StopPosition.X = 1.000000000000000000
   Fill.Gradient.StopPosition.Y = 0.500000000000000000
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object S: TLayout
     Align = Top

@@ -29,7 +29,6 @@ type
         procedure EndAnimation(Sender: TObject);
         procedure ClickBtn1(Sender: TObject);
         procedure ClickBtn2(Sender: TObject);
-        procedure OnClickLink(Sender: TObject);
         procedure EndAnimationArco(Sender: TObject);
     public
         Flink : string;
@@ -231,7 +230,6 @@ begin
     LabelLink.Trimming := TTextTrimming.None;
     LabelLink.AutoSize:= true;
     LabelLink.HitTest := true;
-    LabelLink.OnClick := OnClickLink;
 
     // Layout botoes...
     LayoutBtn := TLayout.Create(Frm);
@@ -443,18 +441,6 @@ procedure TFancyDialog.ClickBtn2(Sender: TObject);
 begin
     RectMsg.Tag := 2;
     CloseDialog(Sender);
-end;
-
-// clique do link...
-
-procedure TFancyDialog.OnClickLink(Sender: TObject);
-begin
-{$IFDEF IOS}
-  frmRemessas.AbrirGmailIOS('https://mail.google.com/mail/u/0/#inbox?compose=CllgCKHQdGMrLQzmFHKVdflbqNkcZlQVhTTfJzSNdTJVvWWxJmSgdbKTTDjlmFbzbMPLNdhbMbV');
-{$ENDIF}
-{$IFDEF ANDROID}
-  frmRemessas.AbrirGmailANDROID(frmRemessas.FMsg.Flink,' ',' ' );
-{$ENDIF}
 end;
 
 // Exibe a mensagem para o usuario...

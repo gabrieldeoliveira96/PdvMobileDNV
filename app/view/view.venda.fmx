@@ -1,109 +1,11 @@
 inherited frmVenda: TfrmVenda
   Caption = 'S'
-  ClientHeight = 593
-  ClientWidth = 402
+  ClientHeight = 592
+  ClientWidth = 404
   OnCreate = FormCreate
   OnClose = FormClose
   OnDestroy = FormDestroy
   DesignerMasterStyle = 0
-  object Layout1: TLayout
-    Align = Bottom
-    Margins.Bottom = 24.000000000000000000
-    Position.Y = 504.000000000000000000
-    Size.Width = 402.000000000000000000
-    Size.Height = 65.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object Layout6: TLayout
-      Align = Right
-      Margins.Right = 24.000000000000000000
-      Position.X = 225.000000000000000000
-      Size.Width = 153.000000000000000000
-      Size.Height = 65.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
-      object GosButtonView1: TButtonView
-        Align = VertCenter
-        Background.XRadius = 5.000000000000000000
-        Background.YRadius = 5.000000000000000000
-        Background.ItemDefault.Color = xFF0086ED
-        Size.Width = 153.000000000000000000
-        Size.Height = 41.000000000000000000
-        Size.PlatformDefault = False
-        Position.Y = 12.000000000000000000
-        TabOrder = 0
-        OnClick = GosButtonView1Click
-        TextSettings.Color.Default = claWhite
-        TextSettings.Color.Focused = claNull
-        TextSettings.Color.Selected = claNull
-        TextSettings.Color.Enabled = claNull
-        TextSettings.Font.Family = 'Arial'
-        TextSettings.Font.Size = 14.000000000000000000
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TextSettings.Gravity = Center
-        object SkLabel7: TSkLabel
-          Align = Client
-          Locked = True
-          Size.Width = 145.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          StyledSettings = [Family, Size]
-          TextSettings.Font.Weight = Semibold
-          TextSettings.FontColor = claWhite
-          TextSettings.HorzAlign = Center
-          Words = <
-            item
-              Text = 'Salvar'
-            end>
-        end
-      end
-    end
-    object Layout7: TLayout
-      Align = Left
-      Margins.Left = 24.000000000000000000
-      Position.X = 24.000000000000000000
-      Size.Width = 153.000000000000000000
-      Size.Height = 65.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      object GosButtonView2: TButtonView
-        Align = VertCenter
-        Background.XRadius = 5.000000000000000000
-        Background.YRadius = 5.000000000000000000
-        Background.ItemDefault.Color = claWhite
-        Background.Border.Color.Default = xFF0086ED
-        Background.Border.Color.Focused = claNull
-        Background.Border.Color.Selected = claNull
-        Background.Border.Color.Enabled = claNull
-        Size.Width = 153.000000000000000000
-        Size.Height = 41.000000000000000000
-        Size.PlatformDefault = False
-        Position.Y = 12.000000000000000000
-        TabOrder = 0
-        TextSettings.Color.Default = claWhite
-        TextSettings.Color.Focused = claNull
-        TextSettings.Color.Selected = claNull
-        TextSettings.Color.Enabled = claNull
-        TextSettings.Font.Size = 14.000000000000000000
-        TextSettings.Gravity = Center
-        object SkLabel8: TSkLabel
-          Align = Client
-          Size.Width = 145.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          OnClick = SkLabel8Click
-          StyledSettings = [Family, Size]
-          TextSettings.Font.Weight = Semibold
-          TextSettings.FontColor = xFF0086ED
-          TextSettings.HorzAlign = Center
-          Words = <
-            item
-              Text = 'Cancelar'
-            end>
-        end
-      end
-    end
-  end
   object Layout2: TLayout
     Align = Top
     Margins.Left = 16.000000000000000000
@@ -112,129 +14,115 @@ inherited frmVenda: TfrmVenda
     Margins.Bottom = 16.000000000000000000
     Position.X = 16.000000000000000000
     Position.Y = 82.000000000000000000
-    Size.Width = 370.000000000000000000
-    Size.Height = 257.000000000000000000
+    Size.Width = 372.000000000000000000
+    Size.Height = 199.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
-    object Layout3: TLayout
+    object Layout1: TLayout
       Align = Top
-      Size.Width = 370.000000000000000000
-      Size.Height = 75.000000000000000000
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 0
+      TabOrder = 5
+      object edtCliente: TEditView
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        Background.Border.Color.Default = xBFC0C0C0
+        Background.Border.Color.Pressed = claNull
+        Background.Border.Color.Focused = xFF0066CC
+        Background.Border.Color.Hovered = claSilver
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Checked = claNull
+        Background.Border.Color.Enabled = claNull
+        ClipChildren = True
+        Padding.Left = 6.000000000000000000
+        Padding.Top = 2.000000000000000000
+        Padding.Right = 6.000000000000000000
+        Padding.Bottom = 2.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Size.Width = 340.000000000000000000
+        Size.Height = 43.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = edtClienteClick
+        TextSettings.Color.Default = claGray
+        TextSettings.Color.Focused = claNull
+        TextSettings.Color.Selected = claNull
+        TextSettings.Color.Enabled = claNull
+        TextSettings.Gravity = CenterVertical
+        DisableFocusEffect = True
+        ReadOnly = True
+      end
       object SkLabel1: TSkLabel
         Align = Top
-        Margins.Left = 16.000000000000000000
-        Margins.Top = 16.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 16.000000000000000000
-        Position.Y = 16.000000000000000000
-        Size.Width = 338.000000000000000000
-        Size.Height = 16.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Family, Style]
-        TextSettings.Font.Size = 12.000000000000000000
-        TextSettings.FontColor = claGray
-        Words = <
-          item
-            Text = 'Nome'
-          end>
-      end
-      object lblProduto: TSkLabel
-        Align = Top
-        Margins.Left = 16.000000000000000000
-        Margins.Top = 8.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 16.000000000000000000
-        Position.Y = 40.000000000000000000
-        Size.Width = 338.000000000000000000
+        Size.Width = 340.000000000000000000
         Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+        TextSettings.Font.Weight = Semibold
         Words = <
           item
-            Text = 'Bateria para Carro'
+            Text = 'Selecione o Cliente'
           end>
       end
     end
-    object Layout4: TLayout
+    object Layout3: TLayout
       Align = Top
-      Position.Y = 75.000000000000000000
-      Size.Width = 370.000000000000000000
-      Size.Height = 75.000000000000000000
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 110.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
-      object SkLabel3: TSkLabel
-        Align = Top
-        Margins.Left = 16.000000000000000000
+      TabOrder = 4
+      object edtProduto: TEditView
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        Background.Border.Color.Default = xBFC0C0C0
+        Background.Border.Color.Pressed = claNull
+        Background.Border.Color.Focused = xFF0066CC
+        Background.Border.Color.Hovered = claSilver
+        Background.Border.Color.Selected = claNull
+        Background.Border.Color.Checked = claNull
+        Background.Border.Color.Enabled = claNull
+        ClipChildren = True
+        Padding.Left = 6.000000000000000000
+        Padding.Top = 2.000000000000000000
+        Padding.Right = 6.000000000000000000
+        Padding.Bottom = 2.000000000000000000
         Margins.Top = 8.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 16.000000000000000000
-        Position.Y = 40.000000000000000000
-        Size.Width = 338.000000000000000000
+        Size.Width = 340.000000000000000000
+        Size.Height = 43.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = edtProdutoClick
+        TextSettings.Color.Default = claGray
+        TextSettings.Color.Focused = claNull
+        TextSettings.Color.Selected = claNull
+        TextSettings.Color.Enabled = claNull
+        TextSettings.Gravity = CenterVertical
+        DisableFocusEffect = True
+        ReadOnly = True
+      end
+      object SkLabel2: TSkLabel
+        Align = Top
+        Size.Width = 340.000000000000000000
         Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
+        StyledSettings = [Family, Size, FontColor]
+        TextSettings.Font.Weight = Semibold
         Words = <
           item
-            Text = 'R$ 120,00'
-          end>
-      end
-      object SkLabel4: TSkLabel
-        Align = Top
-        Margins.Left = 16.000000000000000000
-        Margins.Top = 16.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 16.000000000000000000
-        Position.Y = 16.000000000000000000
-        Size.Width = 338.000000000000000000
-        Size.Height = 16.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Family, Style]
-        TextSettings.Font.Size = 12.000000000000000000
-        TextSettings.FontColor = claGray
-        Words = <
-          item
-            Text = 'Valor'
-          end>
-      end
-    end
-    object Layout5: TLayout
-      Align = Top
-      Position.Y = 150.000000000000000000
-      Size.Width = 370.000000000000000000
-      Size.Height = 75.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
-      object SkLabel5: TSkLabel
-        Align = Top
-        Margins.Left = 16.000000000000000000
-        Margins.Top = 16.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 16.000000000000000000
-        Position.Y = 16.000000000000000000
-        Size.Width = 338.000000000000000000
-        Size.Height = 16.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Family, Style]
-        TextSettings.Font.Size = 12.000000000000000000
-        TextSettings.FontColor = claGray
-        Words = <
-          item
-            Text = 'Fornecedor'
-          end>
-      end
-      object SkLabel6: TSkLabel
-        Align = Top
-        Margins.Left = 16.000000000000000000
-        Margins.Top = 8.000000000000000000
-        Margins.Right = 16.000000000000000000
-        Position.X = 16.000000000000000000
-        Position.Y = 40.000000000000000000
-        Size.Width = 338.000000000000000000
-        Size.Height = 19.000000000000000000
-        Size.PlatformDefault = False
-        Words = <
-          item
-            Text = 'EletroCar'
+            Text = 'Selecione o Produto'
           end>
       end
     end
@@ -243,13 +131,13 @@ inherited frmVenda: TfrmVenda
     Align = Top
     Margins.Top = 16.000000000000000000
     Position.Y = 16.000000000000000000
-    Size.Width = 402.000000000000000000
+    Size.Width = 404.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 0
+    TabOrder = 1
     object SkLabel9: TSkLabel
       Align = Contents
-      Size.Width = 402.000000000000000000
+      Size.Width = 404.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       StyledSettings = [Family, FontColor]
@@ -273,6 +161,47 @@ inherited frmVenda: TfrmVenda
           Color = claBlack
         end
       end
+    end
+  end
+  object Layout5: TLayout
+    Align = Bottom
+    Margins.Bottom = 24.000000000000000000
+    Position.Y = 503.000000000000000000
+    Size.Width = 404.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnCadastrar: TButtonView
+      Align = Center
+      Background.XRadius = 5.000000000000000000
+      Background.YRadius = 5.000000000000000000
+      Background.ItemDefault.Kind = Gradient
+      Background.ItemDefault.Gradient.Points = <
+        item
+          Color = xFF2C8FC4
+          Offset = 0.000000000000000000
+        end
+        item
+          Color = xFF58C4EF
+          Offset = 1.000000000000000000
+        end>
+      Background.ItemDefault.Gradient.StartPosition.Y = 0.500000000000000000
+      Background.ItemDefault.Gradient.StopPosition.X = 1.000000000000000000
+      Background.ItemDefault.Gradient.StopPosition.Y = 0.500000000000000000
+      Size.Width = 338.000000000000000000
+      Size.Height = 51.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnClick = btnCadastrarClick
+      Text = 'Cadastrar Venda'
+      TextSettings.Color.Default = claWhite
+      TextSettings.Color.Focused = claNull
+      TextSettings.Color.Selected = claNull
+      TextSettings.Color.Enabled = claNull
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Gravity = Center
+      Drawable.XRadius = 5.000000000000000000
+      Drawable.YRadius = 5.000000000000000000
     end
   end
 end

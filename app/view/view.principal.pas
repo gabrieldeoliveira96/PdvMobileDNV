@@ -5,12 +5,12 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  heranca.base, FMX.Layouts, System.Skia, UI.Base, UI.Standard, FMX.Skia,
+  heranca.base, FMX.Layouts, System.Skia, FMX.Skia,
   FMX.Objects, Alcinoe.FMX.Objects, FMX.ListBox, FMX.Effects,
-  FMX.Filter.Effects, uGosObjects, heranca.botao, view.produtos,
+  FMX.Filter.Effects, heranca.botao, view.produtos,
   System.Generics.Collections, frame.vendas, view.addcliente,
   Alcinoe.FMX.Controls, uLoading, uConnection, uConstants, System.JSON,
-  uFancyDialog;
+  uFancyDialog, view.venda, UI.Base, UI.Standard;
 
 type
   TfrmPrincipal = class(TfrmHerancaBotao)
@@ -20,13 +20,13 @@ type
     Layout2: TLayout;
     SkLabel2: TSkLabel;
     SkLabel3: TSkLabel;
-    GosCircle1: TGosCircle;
+    GosCircle1: TALCircle;
     FillRGBEffect1: TFillRGBEffect;
     ListBox1: TListBox;
     ListBoxItem1: TListBoxItem;
     ListBoxItem2: TListBoxItem;
-    ALRectangle1: TGosRectangle;
-    ALRectangle2: TGosRectangle;
+    ALRectangle1: TALRectangle;
+    ALRectangle2: TALRectangle;
     Layout3: TLayout;
     lblQtdClientes: TSkLabel;
     SkLabel5: TSkLabel;
@@ -47,14 +47,17 @@ type
   private
     { Private declarations }
     FListaVendas:TObjectList<TFrameVendas>;
+    FMsg:TFancyDialog;
     procedure AtualizaContadorProduto;
     procedure AtualizaContadorCliente;
+    procedure OnClickVendas(Sender: TObject);
   public
     { Public declarations }
-    procedure CarregaTela(AToken:string);
+    procedure CarregaTela(ACodUser, AToken:string);
     procedure CarregaListaVendas;
     var
      FToken:string;
+     FCodUser:string;
   end;
 
 var
@@ -67,37 +70,121 @@ implementation
 uses view.cliente;
 
 procedure TfrmPrincipal.CarregaListaVendas;
+var
+ LCon:TConnection;
+ LParam: TParameter;
+ LResult:string;
+ LJsonArray:TJSONArray;
 begin
 
+  TLoading.Show(self,'Aguarde, carregando vendas');
 
-  FListaVendas.Clear;
-
-  for var i := 0 to 10 do
+  TThread.CreateAnonymousThread(
+  procedure
   begin
-    var LFrame:= TFrameVendas.Create(self);
 
-    LFrame.Name:= 'FRame'+i.ToString;
-    LFrame.Align:= TAlignLayout.Top;
+    LCon:= TConnection.Create;
+    try
+      LParam.Token:= FToken;
 
-    LFrame.lblCliente.Text:= 'Cliente '+i.ToString;
-    LFrame.lblProduto.Text:= 'Produto '+i.ToString;
-    LFrame.lblValor.Text:= (i*random(999)).tostring;
-    LFrame.lblData.Text:= FormatDateTime('dd/mm/yyyy hh:mm:ss',now);
+      if not LCon.Get(URL+'lista/venda',LParam,LResult) then
+      begin
+        TThread.Synchronize(nil,
+        procedure
+        begin
+          FMsg.Show(TIconDialog.Error,'erro na requisição','');
+          exit;
+        end);
+      end;
 
-    LFrame.Margins.Left:= 24;
-    LFrame.Margins.Right:= 24;
-    LFrame.Margins.Top:= 16;
+      LJsonArray:= TJSONObject.ParseJSONValue(LResult) as TJSONArray;
 
-    VertScrollBox1.AddObject(LFrame);
-    FListaVendas.Add(LFrame);
+    finally
+      FreeAndNil(LCon);
+    end;
 
-  end;
+    TThread.Synchronize(nil,
+    procedure
+    begin
+      FListaVendas.Clear;
 
+      for var LJson in LJsonArray do
+      begin
+        var LFrame:= TFrameVendas.Create(self);
+
+        LFrame.Name:= 'FRame'+LJson.GetValue<string>('codVenda');
+        LFrame.Align:= TAlignLayout.Top;
+
+        LFrame.lblCliente.Text:= LJson.GetValue<string>('nomeCliente');
+        LFrame.lblValor.Text:= LJson.GetValue<string>('valorTotal');
+        LFrame.lblData.Text:= LJson.GetValue<string>('dataVenda');
+
+        LFrame.Margins.Left:= 24;
+        LFrame.Margins.Right:= 24;
+        LFrame.Margins.Top:= 16;
+
+        LFrame.OnClick:= OnClickVendas;
+        LFrame.Tag:= LJson.GetValue<integer>('codVenda');
+
+
+        VertScrollBox1.AddObject(LFrame);
+        FListaVendas.Add(LFrame);
+
+      end;
+
+      TLoading.Hide;
+    end);
+
+  end).Start;
 end;
 
-procedure TfrmPrincipal.CarregaTela(AToken:string);
+procedure TfrmPrincipal.OnClickVendas(Sender: TObject);
+begin
+  TLoading.Show(self,'Aguarde carregando tela');
+
+  TThread.CreateAnonymousThread(
+  procedure
+  begin
+    try
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        if not Assigned(frmVenda) then
+          Application.CreateForm(TfrmVenda,frmVenda);
+      end);
+
+      frmVenda.CarregaTela(TFrameVendas(Sender).Tag, TTipoCarreTela.VisualizarVenda);
+
+
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        frmVenda.Show;
+      end);
+
+    finally
+
+      TThread.Synchronize(nil,
+      procedure
+      begin
+        TLoading.Hide;
+      end);
+
+    end;
+
+
+  end).Start;
+
+
+
+//
+end;
+
+
+procedure TfrmPrincipal.CarregaTela(ACodUser, AToken:string);
 begin
   FToken:= AToken;
+  FCodUser:= ACodUser;
 
   TThread.Synchronize(nil,
   procedure
@@ -122,12 +209,14 @@ procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
   inherited;
   FListaVendas:= TObjectList<TFrameVendas>.create;
+  FMsg:= TFancyDialog.Create(self);
 end;
 
 procedure TfrmPrincipal.FormDestroy(Sender: TObject);
 begin
   inherited;
   FreeAndNil(FListaVendas);
+  FreeAndNil(FMsg);
 end;
 
 procedure TfrmPrincipal.FormShow(Sender: TObject);
@@ -283,16 +372,14 @@ begin
       TThread.Synchronize(nil,
       procedure
       begin
-        if not Assigned(frmProdutos) then
-          Application.CreateForm(TfrmProdutos,frmProdutos);
+        if not Assigned(frmVenda) then
+          Application.CreateForm(TfrmVenda,frmVenda);
       end);
-
-      frmProdutos.CarregaTela(CarregaListaVendas);
 
       TThread.Synchronize(nil,
       procedure
       begin
-        frmProdutos.Show;
+        frmVenda.Show;
       end);
 
     finally

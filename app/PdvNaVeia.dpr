@@ -19,7 +19,8 @@ uses
   uLoading in 'feature\uLoading.pas',
   uConstants in 'feature\uConstants.pas',
   frame.clientes in 'view\frame\frame.clientes.pas' {FrameClientes: TFrame},
-  view.addproduto in 'view\view.addproduto.pas' {frmaddproduto};
+  view.addproduto in 'view\view.addproduto.pas' {frmaddproduto},
+  uCombobox in 'feature\uCombobox.pas';
 
 {$R *.res}
 
@@ -28,6 +29,5 @@ begin
   Application.CreateForm(TfrmSplash, frmSplash);
   Application.CreateForm(TfrmHerancaBase, frmHerancaBase);
   Application.CreateForm(TfrmHerancaBotao, frmHerancaBotao);
-  Application.CreateForm(Tfrmaddproduto, frmaddproduto);
   Application.Run;
 end.

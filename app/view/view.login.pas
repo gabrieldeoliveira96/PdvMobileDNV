@@ -31,6 +31,7 @@ type
     Layout10: TLayout;
     Label5: TLabel;
     procedure btnLoginClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,7 +85,9 @@ begin
           end);
 
           LJson:= TJSONObject.ParseJSONValue(LResult) as TJSONObject;
-          frmPrincipal.CarregaTela(LJson.GetValue<string>('token'));
+          frmPrincipal.CarregaTela(
+            LJson.GetValue<string>('cod'),
+            LJson.GetValue<string>('token'));
 
           TThread.Synchronize(nil,
           procedure
@@ -104,6 +107,15 @@ begin
   end).Start;
 
 
+end;
+
+procedure TfrmLogin.FormShow(Sender: TObject);
+begin
+  inherited;
+  {$IFDEF MSWINDOWS}
+  edtEmail.Text := 'teste@teste.com';
+  edtSenha.Text := '1';
+  {$ENDIF}
 end;
 
 end.

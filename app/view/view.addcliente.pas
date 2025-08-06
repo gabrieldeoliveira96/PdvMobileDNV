@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Effects, FMX.Filter.Effects, FMX.Controls.Presentation,
   FMX.Layouts, System.Skia, FMX.Skia, UI.Base, UI.Edit, UI.Standard, UI.Calendar,
-  uGosBase, uGosStandard, uFancyDialog, uLoading, uConnection, uConstants,
+  uFancyDialog, uLoading, uConnection, uConstants,
   System.JSON;
 
 type

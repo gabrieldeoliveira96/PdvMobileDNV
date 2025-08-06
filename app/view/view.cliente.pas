@@ -91,12 +91,6 @@ begin
 
     LFrame.TagString:= LFrame.lblCliente.Text;
 
-    {$IFDEF MSWINDOWS}
-//    LFrame.OnClick:= CadastrarVenda;
-    {$ELSE}
-    LFrame.OnTap:= CadastrarVenda;
-    {$ENDIF}
-
     VertScrollBox1.AddObject(LFrame);
 
   end;

@@ -1,5 +1,6 @@
 inherited frmCliente: TfrmCliente
   Caption = 'frmHerancaBase1'
+  SystemStatusBar.BackgroundColor = xFF1E8EBA
   OnClose = FormClose
   OnShow = FormShow
   DesignerMasterStyle = 0
@@ -15,7 +16,7 @@ inherited frmCliente: TfrmCliente
       Align = Left
       Margins.Left = 12.000000000000000000
       Position.X = 12.000000000000000000
-      Size.Width = 41.000000000000000000
+      Size.Width = 48.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'priortoolbutton'
@@ -28,7 +29,7 @@ inherited frmCliente: TfrmCliente
     end
     object SkLabel1: TSkLabel
       Align = Left
-      Position.X = 53.000000000000000000
+      Position.X = 60.000000000000000000
       Size.Width = 41.299999237060550000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -57,7 +58,7 @@ inherited frmCliente: TfrmCliente
           Text = 'Clientes'
         end>
     end
-    object Circle1: TCircle
+    object Circle1: TGosCircle
       Align = Right
       Fill.Color = xFF1E8EBA
       Margins.Right = 16.000000000000000000
@@ -70,6 +71,8 @@ inherited frmCliente: TfrmCliente
       object SkLabel3: TSkLabel
         Align = Center
         Locked = True
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Size.Width = 15.050000190734860000
         Size.Height = 29.000000000000000000
@@ -104,7 +107,7 @@ inherited frmCliente: TfrmCliente
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    object EditView1: TEditView
+    object EditView1: TGosEditView
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Center
       Background.XRadius = 25.000000000000000000
@@ -133,7 +136,7 @@ inherited frmCliente: TfrmCliente
       Drawable.ItemDefault.Accessory.Accessory = Search
       Drawable.ItemDefault.Accessory.Color = claBlack
       DisableFocusEffect = True
-      object btnLogin: TButtonView
+      object btnLogin: TGosButtonView
         Align = Right
         Background.XRadius = 20.000000000000000000
         Background.YRadius = 20.000000000000000000
@@ -188,5 +191,10 @@ inherited frmCliente: TfrmCliente
       item
         Text = 'Todos'
       end>
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 1.000000000000000000
+    Left = 240
+    Top = 249
   end
 end

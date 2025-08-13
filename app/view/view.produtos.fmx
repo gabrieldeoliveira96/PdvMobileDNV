@@ -81,6 +81,8 @@ inherited frmProdutos: TfrmProdutos
       object SkLabel3: TSkLabel
         Align = Center
         Locked = True
+        Margins.Left = 1.000000000000000000
+        Margins.Top = 4.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Size.Width = 15.050000190734860000
         Size.Height = 29.000000000000000000
@@ -104,7 +106,7 @@ inherited frmProdutos: TfrmProdutos
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
-    object EditView1: TEditView
+    object EditView1: TGosEditView
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Center
       Background.XRadius = 25.000000000000000000
@@ -133,7 +135,7 @@ inherited frmProdutos: TfrmProdutos
       Drawable.ItemDefault.Accessory.Accessory = Search
       Drawable.ItemDefault.Accessory.Color = claBlack
       DisableFocusEffect = True
-      object btnLogin: TButtonView
+      object btnLogin: TGosButtonView
         Align = Right
         Background.XRadius = 20.000000000000000000
         Background.YRadius = 20.000000000000000000

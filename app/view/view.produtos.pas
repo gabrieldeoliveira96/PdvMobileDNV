@@ -6,9 +6,9 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Effects, FMX.Filter.Effects, FMX.Controls.Presentation,
-  FMX.Layouts, frame.produtos, System.Skia, FMX.Objects, FMX.Skia, UI.Standard,
-  UI.Base, UI.Edit, uConnection, System.JSON, uConstants, uFancyDialog, uLoading,
-  view.addproduto;
+  FMX.Layouts, frame.produtos, System.Skia, FMX.Objects, FMX.Skia,
+  uConnection, System.JSON, uConstants, uFancyDialog, uLoading,
+  view.addproduto, uGosStandard, uGosBase, uGosEdit;
 
 type
   TfrmProdutos = class(TfrmHerancaBase)
@@ -21,8 +21,8 @@ type
     Circle1: TCircle;
     SkLabel3: TSkLabel;
     Layout2: TLayout;
-    EditView1: TEditView;
-    btnLogin: TButtonView;
+    EditView1: TGosEditView;
+    btnLogin: TGosButtonView;
     SkLabel4: TSkLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -91,7 +91,7 @@ begin
     LFrame.lblProduto.Text:= LJson.GetValue<string>('descricao');
     LFrame.lblDetalhes.Text:= LJson.GetValue<string>('codigoBarra');
     LFrame.lblData.Text:= Formatdatetime('dd/mm/yyyy',now);
-    LFrame.lblValor.Text:= LJson.GetValue<string>('precoVenda');
+    LFrame.lblValor.Text:=  formatfloat('R$ #,##0.00', LJson.GetValue<real>('precoVenda'));
 
     LFrame.Margins.Left:= 24;
     LFrame.Margins.Right:= 24;

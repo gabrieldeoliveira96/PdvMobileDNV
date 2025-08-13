@@ -17,15 +17,16 @@ uses
   view.splash in 'view\view.splash.pas' {frmSplash},
   uConnection in 'feature\uConnection.pas',
   uLoading in 'feature\uLoading.pas',
+  uCombobox in 'feature\uCombobox.pas',
   uConstants in 'feature\uConstants.pas',
   frame.clientes in 'view\frame\frame.clientes.pas' {FrameClientes: TFrame},
-  view.addproduto in 'view\view.addproduto.pas' {frmaddproduto},
-  uCombobox in 'feature\uCombobox.pas';
+  view.addproduto in 'view\view.addproduto.pas' {frmaddproduto};
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  Application.FormFactor.Orientations := [TFormOrientation.Portrait];
   Application.CreateForm(TfrmSplash, frmSplash);
   Application.CreateForm(TfrmHerancaBase, frmHerancaBase);
   Application.CreateForm(TfrmHerancaBotao, frmHerancaBotao);

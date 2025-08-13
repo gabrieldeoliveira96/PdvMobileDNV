@@ -14,8 +14,6 @@ type
     lblEndereco: TSkLabel;
     Layout1: TLayout;
     Layout2: TLayout;
-    lblData: TSkLabel;
-    lblValor: TSkLabel;
   private
     { Private declarations }
   public

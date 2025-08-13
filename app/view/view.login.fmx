@@ -93,26 +93,28 @@ inherited frmLogin: TfrmLogin
           Size.Height = 65.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          object edtEmail: TALEdit
+          object edtEmail: TGosEditView
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Bottom
-            Fill.Color = xFFF8F8F8
-            Position.Y = 30.599998474121090000
+            Background.Border.Color.Default = xBFC0C0C0
+            Background.Border.Color.Pressed = claNull
+            Background.Border.Color.Focused = xFF0066CC
+            Background.Border.Color.Hovered = claSilver
+            Background.Border.Color.Selected = claNull
+            Background.Border.Color.Checked = claNull
+            Background.Border.Color.Enabled = claNull
+            ClipChildren = True
+            Padding.Left = 6.000000000000000000
+            Padding.Top = 2.000000000000000000
+            Padding.Right = 6.000000000000000000
+            Padding.Bottom = 2.000000000000000000
             Size.Width = 328.000000000000000000
-            Size.Height = 34.400001525878910000
+            Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
-            StateStyles.Disabled.Stroke.Thickness = 0.800000011920929000
-            StateStyles.Hovered.StateLayer.XRadius = 5.000000000000000000
-            StateStyles.Hovered.StateLayer.YRadius = 5.000000000000000000
-            StateStyles.Hovered.Stroke.Thickness = 0.800000011920929000
-            StateStyles.Focused.StateLayer.XRadius = 5.000000000000000000
-            StateStyles.Focused.StateLayer.YRadius = 5.000000000000000000
-            StateStyles.Focused.Stroke.Thickness = 0.800000011920929000
-            Stroke.Color = xFFCECECE
-            Stroke.Thickness = 0.800000011920929000
+            Position.Y = 31.000000000000000000
             TabOrder = 0
-            TextSettings.Font.Color = xFF929292
-            XRadius = 5.000000000000000000
-            YRadius = 5.000000000000000000
+            TextSettings.Gravity = CenterVertical
+            DisableFocusEffect = True
           end
           object Label3: TLabel
             Align = Top
@@ -146,26 +148,28 @@ inherited frmLogin: TfrmLogin
           Size.Height = 65.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          object edtSenha: TALEdit
+          object edtSenha: TGosEditView
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Bottom
-            Fill.Color = xFFF8F8F8
-            Position.Y = 30.599998474121090000
+            Background.Border.Color.Default = xBFC0C0C0
+            Background.Border.Color.Pressed = claNull
+            Background.Border.Color.Focused = xFF0066CC
+            Background.Border.Color.Hovered = claSilver
+            Background.Border.Color.Selected = claNull
+            Background.Border.Color.Checked = claNull
+            Background.Border.Color.Enabled = claNull
+            ClipChildren = True
+            Padding.Left = 6.000000000000000000
+            Padding.Top = 2.000000000000000000
+            Padding.Right = 6.000000000000000000
+            Padding.Bottom = 2.000000000000000000
             Size.Width = 328.000000000000000000
             Size.Height = 34.400001525878910000
             Size.PlatformDefault = False
-            StateStyles.Disabled.Stroke.Thickness = 0.800000011920929000
-            StateStyles.Hovered.StateLayer.XRadius = 5.000000000000000000
-            StateStyles.Hovered.StateLayer.YRadius = 5.000000000000000000
-            StateStyles.Hovered.Stroke.Thickness = 0.800000011920929000
-            StateStyles.Focused.StateLayer.XRadius = 5.000000000000000000
-            StateStyles.Focused.StateLayer.YRadius = 5.000000000000000000
-            StateStyles.Focused.Stroke.Thickness = 0.800000011920929000
-            Stroke.Color = xFFCECECE
-            Stroke.Thickness = 0.800000011920929000
+            Position.Y = 30.599998474121090000
             TabOrder = 0
-            TextSettings.Font.Color = xFF929292
-            XRadius = 5.000000000000000000
-            YRadius = 5.000000000000000000
+            TextSettings.Gravity = CenterVertical
+            DisableFocusEffect = True
             Password = True
           end
           object Label4: TLabel
@@ -197,7 +201,7 @@ inherited frmLogin: TfrmLogin
         Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        object btnLogin: TButtonView
+        object btnLogin: TGosButtonView
           Align = Center
           Background.XRadius = 5.000000000000000000
           Background.YRadius = 5.000000000000000000

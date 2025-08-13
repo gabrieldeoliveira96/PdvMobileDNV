@@ -45,7 +45,7 @@ inherited frmaddproduto: Tfrmaddproduto
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      object edtNome: TEditView
+      object edtNome: TGosEditView
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         Background.Border.Color.Default = xBFC0C0C0
@@ -105,7 +105,7 @@ inherited frmaddproduto: Tfrmaddproduto
             Text = 'Valor'
           end>
       end
-      object edtValor: TEditView
+      object edtValor: TGosEditView
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         Background.Border.Color.Default = xBFC0C0C0
@@ -137,7 +137,7 @@ inherited frmaddproduto: Tfrmaddproduto
       Size.Height = 65.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      object btnCadastrar: TButtonView
+      object btnCadastrar: TGosButtonView
         Align = Center
         Background.XRadius = 5.000000000000000000
         Background.YRadius = 5.000000000000000000
@@ -194,7 +194,7 @@ inherited frmaddproduto: Tfrmaddproduto
             Text = 'Cod Barra'
           end>
       end
-      object edtCodBarra: TEditView
+      object edtCodBarra: TGosEditView
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         Background.Border.Color.Default = xBFC0C0C0

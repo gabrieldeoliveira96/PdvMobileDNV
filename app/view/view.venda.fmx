@@ -30,7 +30,7 @@ inherited frmVenda: TfrmVenda
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 5
-      object edtCliente: TEditView
+      object edtCliente: TGosEditView
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         Background.Border.Color.Default = xBFC0C0C0
@@ -84,7 +84,7 @@ inherited frmVenda: TfrmVenda
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
-      object edtProduto: TEditView
+      object edtProduto: TGosEditView
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         Background.Border.Color.Default = xBFC0C0C0
@@ -171,7 +171,7 @@ inherited frmVenda: TfrmVenda
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object btnCadastrar: TButtonView
+    object btnCadastrar: TGosButtonView
       Align = Center
       Background.XRadius = 5.000000000000000000
       Background.YRadius = 5.000000000000000000

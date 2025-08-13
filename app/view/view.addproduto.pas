@@ -5,9 +5,10 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  heranca.base, System.Skia, UI.Standard, FMX.Skia, UI.Base, UI.Edit,
-  FMX.Layouts, FMX.Effects, FMX.Filter.Effects, FMX.Controls.Presentation,
-  uFancyDialog, uLoading, uConnection, uConstants, System.JSON, frame.produtos;
+  heranca.base, System.Skia, FMX.Skia, FMX.Layouts, FMX.Effects,
+  FMX.Filter.Effects, FMX.Controls.Presentation,
+  uFancyDialog, uLoading, uConnection, uConstants, System.JSON, frame.produtos,
+  uGosStandard, uGosBase, uGosEdit;
 
 type
   Tfrmaddproduto = class(TfrmHerancaBase)
@@ -16,16 +17,16 @@ type
     FillRGBEffect1: TFillRGBEffect;
     VertScrollBox1: TVertScrollBox;
     Layout2: TLayout;
-    edtNome: TEditView;
+    edtNome: TGosEditView;
     SkLabel1: TSkLabel;
     Layout3: TLayout;
     SkLabel2: TSkLabel;
-    edtValor: TEditView;
+    edtValor: TGosEditView;
     Layout5: TLayout;
-    btnCadastrar: TButtonView;
+    btnCadastrar: TGosButtonView;
     Layout4: TLayout;
     SkLabel3: TSkLabel;
-    edtCodBarra: TEditView;
+    edtCodBarra: TGosEditView;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnCadastrarClick(Sender: TObject);

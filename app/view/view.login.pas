@@ -6,8 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Layouts, FMX.Controls.Presentation, FMX.Objects,
-  Alcinoe.FMX.Controls, Alcinoe.FMX.Objects, Alcinoe.FMX.Edit, UI.Base,
-  UI.Standard, uConnection, view.principal, uConstants;
+  uConnection, view.principal, uConstants, uGosBase, uGosEdit, uGosStandard,
+  uLoading;
 
 type
   TfrmLogin = class(TfrmHerancaBase)
@@ -18,15 +18,15 @@ type
     Rectangle1: TRectangle;
     Layout3: TLayout;
     Layout4: TLayout;
-    edtEmail: TALEdit;
+    edtEmail: TGosEditView;
     Layout5: TLayout;
     Label3: TLabel;
     Layout6: TLayout;
     Layout7: TLayout;
-    edtSenha: TALEdit;
+    edtSenha: TGosEditView;
     Label4: TLabel;
     Layout8: TLayout;
-    btnLogin: TButtonView;
+    btnLogin: TGosButtonView;
     Layout9: TLayout;
     Layout10: TLayout;
     Label5: TLabel;
@@ -55,9 +55,13 @@ var
  LResult:string;
  LBasicAuth:TBasicAuth;
  LToken:string;
+ LLoading:TLoading;
 begin
 
   inherited;
+
+  LLoading:= TLoading.Create;
+  LLoading.show(self,'Aguarde efetuando login');
 
   LBasicAuth.Login:= 'crFsSV06nr';
   LBasicAuth.Senha:= 'V%zwEGo<M5A1SQTK[LnIHH<G?z7PdJ';
@@ -101,6 +105,7 @@ begin
 
     finally
       FreeAndNil(LCon);
+      FreeandNil(LLoading);
     end;
 
 
@@ -112,10 +117,8 @@ end;
 procedure TfrmLogin.FormShow(Sender: TObject);
 begin
   inherited;
-  {$IFDEF MSWINDOWS}
   edtEmail.Text := 'teste@teste.com';
   edtSenha.Text := '1';
-  {$ENDIF}
 end;
 
 end.

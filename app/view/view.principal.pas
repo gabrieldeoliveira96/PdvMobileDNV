@@ -6,27 +6,24 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Layouts, System.Skia, FMX.Skia,
-  FMX.Objects, Alcinoe.FMX.Objects, FMX.ListBox, FMX.Effects,
+  FMX.Objects, FMX.ListBox, FMX.Effects,
   FMX.Filter.Effects, heranca.botao, view.produtos,
   System.Generics.Collections, frame.vendas, view.addcliente,
-  Alcinoe.FMX.Controls, uLoading, uConnection, uConstants, System.JSON,
-  uFancyDialog, view.venda, UI.Base, UI.Standard;
+  uLoading, uConnection, uConstants, System.JSON, uFancyDialog, view.venda,
+  uGosBase, uGosStandard, uGosObjects;
 
 type
   TfrmPrincipal = class(TfrmHerancaBotao)
     Layout1: TLayout;
     SkLabel1: TSkLabel;
-    ButtonView1: TButtonView;
+    ButtonView1: TGosButtonView;
     Layout2: TLayout;
     SkLabel2: TSkLabel;
     SkLabel3: TSkLabel;
-    GosCircle1: TALCircle;
+    GosCircle1: TGosCircle;
     FillRGBEffect1: TFillRGBEffect;
-    ListBox1: TListBox;
-    ListBoxItem1: TListBoxItem;
-    ListBoxItem2: TListBoxItem;
-    ALRectangle1: TALRectangle;
-    ALRectangle2: TALRectangle;
+    ALRectangle1: TRectangle;
+    ALRectangle2: TRectangle;
     Layout3: TLayout;
     lblQtdClientes: TSkLabel;
     SkLabel5: TSkLabel;
@@ -38,23 +35,30 @@ type
     lblQtdProdutos: TSkLabel;
     SkLabel6: TSkLabel;
     SkLabel8: TSkLabel;
+    Layout4: TLayout;
+    Layout7: TLayout;
+    Layout9: TLayout;
     procedure btnAddClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure ListBoxItem1Click(Sender: TObject);
-    procedure ListBoxItem2Click(Sender: TObject);
+    procedure ALRectangle1Click(Sender: TObject);
+    procedure ALRectangle2Click(Sender: TObject);
   private
     { Private declarations }
     FListaVendas:TObjectList<TFrameVendas>;
     FMsg:TFancyDialog;
     procedure AtualizaContadorProduto;
     procedure AtualizaContadorCliente;
+    procedure CarregaListaVendas;
+    {$IFDEF MSWINDOWS}
     procedure OnClickVendas(Sender: TObject);
+    {$ELSE}
+    procedure OnClickVendas(Sender: TObject; const Point: TPointF);
+    {$ENDIF}
   public
     { Public declarations }
     procedure CarregaTela(ACodUser, AToken:string);
-    procedure CarregaListaVendas;
     var
      FToken:string;
      FCodUser:string;
@@ -123,7 +127,15 @@ begin
         LFrame.Margins.Right:= 24;
         LFrame.Margins.Top:= 16;
 
+
+        {$IFDEF MSWINDOWS}
         LFrame.OnClick:= OnClickVendas;
+        {$ELSE}
+        LFrame.OnTap:= OnClickVendas;
+        {$ENDIF}
+
+
+
         LFrame.Tag:= LJson.GetValue<integer>('codVenda');
 
 
@@ -138,7 +150,12 @@ begin
   end).Start;
 end;
 
+
+{$IFDEF MSWINDOWS}
 procedure TfrmPrincipal.OnClickVendas(Sender: TObject);
+{$ELSE}
+procedure TfrmPrincipal.OnClickVendas(Sender: TObject; const Point: TPointF);
+{$ENDIF}
 begin
   TLoading.Show(self,'Aguarde carregando tela');
 
@@ -153,8 +170,7 @@ begin
           Application.CreateForm(TfrmVenda,frmVenda);
       end);
 
-      frmVenda.CarregaTela(TFrameVendas(Sender).Tag, TTipoCarreTela.VisualizarVenda);
-
+      frmVenda.CarregaTela(TFrameVendas(Sender).Tag, TTipoCarreTela.VisualizarVenda, nil);
 
       TThread.Synchronize(nil,
       procedure
@@ -225,7 +241,7 @@ begin
 //  CarregaTela;
 end;
 
-procedure TfrmPrincipal.ListBoxItem1Click(Sender: TObject);
+procedure TfrmPrincipal.ALRectangle1Click(Sender: TObject);
 begin
   inherited;
 
@@ -263,9 +279,10 @@ begin
 
   end).Start;
 
+
 end;
 
-procedure TfrmPrincipal.ListBoxItem2Click(Sender: TObject);
+procedure TfrmPrincipal.ALRectangle2Click(Sender: TObject);
 begin
   inherited;
   TLoading.Show(self,'Aguarde, carregando produtos!');
@@ -375,6 +392,8 @@ begin
         if not Assigned(frmVenda) then
           Application.CreateForm(TfrmVenda,frmVenda);
       end);
+
+      frmVenda.carregaTela(0, NovaVenda, CarregaListaVendas);
 
       TThread.Synchronize(nil,
       procedure

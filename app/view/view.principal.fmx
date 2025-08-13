@@ -10,10 +10,11 @@ inherited frmPrincipal: TfrmPrincipal
     end
     inherited btnAdd: TLayout
       HitTest = True
-      Position.X = 160.000183105468800000
+      Position.X = 160.000000000000000000
+      Position.Y = 7.000000000000000000
       Size.Width = 80.000213623046880000
       OnClick = btnAddClick
-      inherited GosCircle3: TALCircle
+      inherited GosCircle3: TCircle
         Fill.Color = xFF1E8EBA
         HitTest = False
         Size.Width = 80.000213623046880000
@@ -58,7 +59,7 @@ inherited frmPrincipal: TfrmPrincipal
           Text = 'Pdv na Veia'
         end>
     end
-    object ButtonView1: TButtonView
+    object ButtonView1: TGosButtonView
       Align = Right
       Background.ItemDefault.Kind = None
       Margins.Right = 16.000000000000000000
@@ -115,7 +116,7 @@ inherited frmPrincipal: TfrmPrincipal
           Text = 'Gabriel'
         end>
     end
-    object GosCircle1: TALCircle
+    object GosCircle1: TGosCircle
       Align = MostRight
       Margins.Right = 16.000000000000000000
       Position.X = 320.000000000000000000
@@ -129,32 +130,66 @@ inherited frmPrincipal: TfrmPrincipal
       end
     end
   end
-  object ListBox1: TListBox
-    Align = Top
-    Margins.Top = 8.000000000000000000
-    Position.Y = 199.000000000000000000
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
     Size.Width = 400.000000000000000000
-    Size.Height = 158.000000000000000000
+    Size.Height = 148.000000000000000000
     Size.PlatformDefault = False
-    StyleLookup = 'transparentlistboxstyle'
     TabOrder = 5
-    Columns = 2
-    DisableFocusEffect = True
-    DefaultItemStyles.ItemStyle = ''
-    DefaultItemStyles.GroupHeaderStyle = ''
-    DefaultItemStyles.GroupFooterStyle = ''
     Viewport.Width = 400.000000000000000000
-    Viewport.Height = 158.000000000000000000
-    object ListBoxItem1: TListBoxItem
+    Viewport.Height = 148.000000000000000000
+  end
+  object SkLabel6: TSkLabel
+    Align = Top
+    Margins.Left = 16.000000000000000000
+    Margins.Top = 16.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 170.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 21.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, FontColor]
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.Weight = Bold
+    Words = <
+      item
+        Text = 'Resumo mensal'
+      end>
+  end
+  object SkLabel8: TSkLabel
+    Align = Top
+    Margins.Left = 16.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 349.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 21.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, FontColor]
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.Weight = Bold
+    Words = <
+      item
+        Text = 'Vendas'
+      end>
+  end
+  object Layout4: TLayout
+    Align = Top
+    Position.Y = 191.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 150.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object Layout7: TLayout
+      Align = Scale
       Size.Width = 200.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      OnClick = ListBoxItem1Click
-      object ALRectangle1: TALRectangle
+      object ALRectangle1: TRectangle
         Align = Client
         Fill.Color = xFF1E8EBA
-        HitTest = False
         Margins.Left = 16.000000000000000000
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
@@ -166,6 +201,7 @@ inherited frmPrincipal: TfrmPrincipal
         Stroke.Thickness = 0.800000011920929000
         XRadius = 15.000000000000000000
         YRadius = 15.000000000000000000
+        OnClick = ALRectangle1Click
         object Layout3: TLayout
           Align = VertCenter
           Margins.Left = 8.000000000000000000
@@ -225,18 +261,16 @@ inherited frmPrincipal: TfrmPrincipal
         end
       end
     end
-    object ListBoxItem2: TListBoxItem
-      HitTest = True
+    object Layout9: TLayout
+      Align = Scale
       Position.X = 200.000000000000000000
       Size.Width = 200.000000000000000000
       Size.Height = 150.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      OnClick = ListBoxItem2Click
-      object ALRectangle2: TALRectangle
+      object ALRectangle2: TRectangle
         Align = Client
         Fill.Color = xFFEDEDED
-        HitTest = False
         Margins.Left = 16.000000000000000000
         Margins.Top = 16.000000000000000000
         Margins.Right = 16.000000000000000000
@@ -248,6 +282,7 @@ inherited frmPrincipal: TfrmPrincipal
         Stroke.Thickness = 0.800000011920929000
         XRadius = 15.000000000000000000
         YRadius = 15.000000000000000000
+        OnClick = ALRectangle2Click
         object Layout6: TLayout
           Align = VertCenter
           Margins.Left = 8.000000000000000000
@@ -305,49 +340,5 @@ inherited frmPrincipal: TfrmPrincipal
         end
       end
     end
-  end
-  object VertScrollBox1: TVertScrollBox
-    Align = Client
-    Size.Width = 400.000000000000000000
-    Size.Height = 132.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 6
-    Viewport.Width = 400.000000000000000000
-    Viewport.Height = 132.000000000000000000
-  end
-  object SkLabel6: TSkLabel
-    Align = Top
-    Margins.Left = 16.000000000000000000
-    Margins.Top = 16.000000000000000000
-    Position.X = 16.000000000000000000
-    Position.Y = 170.000000000000000000
-    Size.Width = 384.000000000000000000
-    Size.Height = 21.000000000000000000
-    Size.PlatformDefault = False
-    StyledSettings = [Family, FontColor]
-    TextSettings.Font.Size = 16.000000000000000000
-    TextSettings.Font.Weight = Bold
-    Words = <
-      item
-        Text = 'Resumo mensal'
-      end>
-  end
-  object SkLabel8: TSkLabel
-    Align = Top
-    Margins.Left = 16.000000000000000000
-    Margins.Top = 8.000000000000000000
-    Margins.Bottom = 8.000000000000000000
-    Position.X = 16.000000000000000000
-    Position.Y = 365.000000000000000000
-    Size.Width = 384.000000000000000000
-    Size.Height = 21.000000000000000000
-    Size.PlatformDefault = False
-    StyledSettings = [Family, FontColor]
-    TextSettings.Font.Size = 16.000000000000000000
-    TextSettings.Font.Weight = Bold
-    Words = <
-      item
-        Text = 'Vendas'
-      end>
   end
 end

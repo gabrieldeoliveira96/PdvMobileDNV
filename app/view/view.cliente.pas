@@ -6,9 +6,10 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, frame.clientes, FMX.Layouts, FMX.Effects, FMX.Filter.Effects,
-  FMX.Controls.Presentation, UI.Base, UI.Edit, uConnection, uConstants,
+  FMX.Controls.Presentation, uConnection, uConstants,
   view.principal, System.JSON, uFancyDialog, System.Skia, FMX.Skia, FMX.Objects,
-  UI.Standard, frame.produtos, uLoading;
+  frame.produtos, uLoading, uGosStandard, uGosBase, uGosEdit, uGosObjects,
+  FMX.Gestures;
 
 type
   TfrmCliente = class(TfrmHerancaBase)
@@ -17,13 +18,14 @@ type
     FillRGBEffect1: TFillRGBEffect;
     VertScrollBox1: TVertScrollBox;
     Layout2: TLayout;
-    EditView1: TEditView;
+    EditView1: TGosEditView;
     SkLabel1: TSkLabel;
     SkLabel2: TSkLabel;
-    Circle1: TCircle;
+    Circle1: TGosCircle;
     SkLabel3: TSkLabel;
-    btnLogin: TButtonView;
+    btnLogin: TGosButtonView;
     SkLabel4: TSkLabel;
+    GestureManager1: TGestureManager;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -83,7 +85,7 @@ begin
     LFrame.Tag:= LJson.GetValue<integer>('cod');
 
     LFrame.lblCliente.Text:= LJson.GetValue<string>('nome');
-    LFrame.lblEndereco.Text:= LJson.GetValue<string>('complemento');
+    LFrame.lblEndereco.Text:= LJson.GetValue<string>('endereco');
 
     LFrame.Margins.Left:= 24;
     LFrame.Margins.Right:= 24;

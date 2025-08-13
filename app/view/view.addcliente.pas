@@ -6,9 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Effects, FMX.Filter.Effects, FMX.Controls.Presentation,
-  FMX.Layouts, System.Skia, FMX.Skia, UI.Base, UI.Edit, UI.Standard, UI.Calendar,
-  uFancyDialog, uLoading, uConnection, uConstants,
-  System.JSON;
+  FMX.Layouts, System.Skia, FMX.Skia, uFancyDialog, uLoading, uConnection,
+  uConstants, System.JSON, uGosStandard, uGosBase, uGosEdit;
 
 type
   Tfrmaddcliente = class(TfrmHerancaBase)
@@ -16,7 +15,7 @@ type
     SpeedButton1: TSpeedButton;
     FillRGBEffect1: TFillRGBEffect;
     VertScrollBox1: TVertScrollBox;
-    edtNome: TEditView;
+    edtNome: TGosEditView;
     Layout2: TLayout;
     SkLabel1: TSkLabel;
     Layout3: TLayout;
@@ -24,12 +23,12 @@ type
     Layout5: TLayout;
     Layout4: TLayout;
     SkLabel3: TSkLabel;
-    edtEndereco: TEditView;
-    edtTelefone: TEditView;
+    edtEndereco: TGosEditView;
+    edtTelefone: TGosEditView;
     Layout8: TLayout;
     SkLabel4: TSkLabel;
-    edtEmail: TEditView;
-    btnCadastrar: TButtonView;
+    edtEmail: TGosEditView;
+    btnCadastrar: TGosButtonView;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SpeedButton1Click(Sender: TObject);

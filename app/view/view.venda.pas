@@ -7,9 +7,9 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   heranca.base, FMX.Objects, FMX.Layouts,
   System.Skia, FMX.Skia, FMX.Effects, FMX.Filter.Effects,
-  FMX.Controls.Presentation, uFancyDialog, UI.Base, UI.Standard, UI.Edit,
-  uCombobox, uConnection, uConstants,
-  System.JSON, uLoading;
+  FMX.Controls.Presentation, uFancyDialog,
+  uCombobox, uConnection, uConstants, System.JSON, uLoading, uGosStandard,
+  uGosBase, uGosEdit;
 
 type
   TTipoCarreTela = (NovaVenda, VisualizarVenda);
@@ -21,12 +21,12 @@ type
     FillRGBEffect1: TFillRGBEffect;
     SkLabel9: TSkLabel;
     Layout5: TLayout;
-    btnCadastrar: TButtonView;
+    btnCadastrar: TGosButtonView;
     Layout1: TLayout;
-    edtCliente: TEditView;
+    edtCliente: TGosEditView;
     SkLabel1: TSkLabel;
     Layout3: TLayout;
-    edtProduto: TEditView;
+    edtProduto: TGosEditView;
     SkLabel2: TSkLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure GosButtonView1Click(Sender: TObject);
@@ -46,7 +46,7 @@ type
     FComboProduto:TCustomCombo;
     FCodCliente: integer;
     FCodProduto: integer;
-
+    FCallBack:TProc;
     procedure CriaComboboxCliente;
     procedure PopulaComboboxCliente;
     procedure CriaComboboxProduto;
@@ -64,7 +64,7 @@ type
     procedure CarregaVenda;
   public
     { Public declarations }
-    procedure CarregaTela(AIdVenda:Integer; ATipoCarregaTela:TTipoCarreTela);
+    procedure CarregaTela(AIdVenda:Integer; ATipoCarregaTela:TTipoCarreTela; ACallBack:TProc);
   end;
 
 var
@@ -157,6 +157,7 @@ begin
           'Ok',
           procedure
           begin
+            FCallBack;
             self.Close;
           end);
 
@@ -170,10 +171,11 @@ begin
   'Não');
 end;
 
-procedure TfrmVenda.CarregaTela(AIdVenda:Integer; ATipoCarregaTela:TTipoCarreTela);
+procedure TfrmVenda.CarregaTela(AIdVenda:Integer; ATipoCarregaTela:TTipoCarreTela; ACallBack:TProc);
 begin
   FIdVenda:= AIdVenda;
   FTipoCarregaTela:= ATipoCarregaTela;
+  FCallBack:= ACallBack;
 
   if ATipoCarregaTela = TTipoCarreTela.VisualizarVenda then
   begin
